@@ -459,6 +459,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -477,6 +480,8 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> articleCardHover = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> animateClass = <span class="string">&#x27;animated pulse&#x27;</span>;</span><br><span class="line">    $(<span class="string">&#x27;article .article&#x27;</span>).<span class="title function_">hover</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        $(<span class="variable language_">this</span>).<span class="title function_">addClass</span>(animateClass);</span><br><span class="line">    &#125;, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        $(<span class="variable language_">this</span>).<span class="title function_">removeClass</span>(animateClass);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">articleCardHover</span>();</span><br></pre></td></tr></table></figure>
+
 
                 
             </div>
