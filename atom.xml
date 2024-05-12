@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>大貔貅的博客</title>
+  
+  <subtitle>灵魂深处是温柔</subtitle>
+  <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://zhangyao0329.github.io/"/>
+  <updated>2024-05-12T08:13:16.349Z</updated>
+  <id>http://zhangyao0329.github.io/</id>
+  
+  <author>
+    <name>ZhangYao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://zhangyao0329.github.io/2024/05/12/hello-world/"/>
+    <id>http://zhangyao0329.github.io/2024/05/12/hello-world/</id>
+    <published>2024-05-12T06:00:36.253Z</published>
+    <updated>2024-05-12T08:13:16.349Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
