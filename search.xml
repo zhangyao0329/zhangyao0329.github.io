@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>博客平台搭建的初衷</title>
+      <link href="/2024/05/13/bo-ke-ping-tai-da-jian-de-chu-zhong/"/>
+      <url>/2024/05/13/bo-ke-ping-tai-da-jian-de-chu-zhong/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>现在个人博客已经非常常见了，知乎， csdn， 稀土掘金，甚至不可见的朋友圈等等早已可以替代个人博客，满足日常笔记的需求，但是作为独立思考的个体，自由意志未必允许出现在公共平台，我的博客由此诞生。</p><p>一个个人博客无疑有些优点的：</p><ul><li>记录成长与反思</li><li>持续学习的动力</li><li>个人的精神家园</li></ul><h1 id="记录一些教程"><a href="#记录一些教程" class="headerlink" title="记录一些教程"></a>记录一些教程</h1><p>看心情写。。。</p><h1 id="写文章、发布文章"><a href="#写文章、发布文章" class="headerlink" title="写文章、发布文章"></a>写文章、发布文章</h1><p>首先在博客根目录下右键打开git bash，安装一个扩展<code>npm i hexo-deployer-git</code>。</p><p>然后输入<code>hexo new post "article title"</code>，新建一篇文章。</p><p>然后打开<code>\blog\source\_posts</code>的目录，可以发现下面多了一个<code>.md</code>文件，一个用来存放你的图片等数据，另一个就是你的文章文件啦。</p><h1 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h1><p>这个时候需要先安装deploy-git ，也就是部署的命令,这样你才能用命令部署到GitHub。</p><figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-deployer-git --save</span><br></pre></td></tr></tbody></table></figure><p>然后：</p><figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo</span> clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></tbody></table></figure><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/img//img/202405131632213.png" alt="end"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> 初衷 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2024/05/12/hello-world/"/>
       <url>/2024/05/12/hello-world/</url>
