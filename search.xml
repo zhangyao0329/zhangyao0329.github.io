@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>虚拟机中jdk17</title>
+      <link href="/2024/05/17/xu-ni-ji-zhong-jdk17/"/>
+      <url>/2024/05/17/xu-ni-ji-zhong-jdk17/</url>
+      
+        <content type="html"><![CDATA[<p>如果您希望在线安装 JDK 17 到 <code>/usr/local</code> 目录下，您可以执行以下步骤：</p><ol><li><p><strong>下载 JDK 17 存档</strong>：您可以从 AdoptOpenJDK 网站下载 JDK 17 存档。在命令行中使用 <code>wget</code> 命令下载存档文件，例如：</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_linux-x64_bin.tar.gz</span><br></pre></td></tr></tbody></table></figure><p>这将下载 JDK 17 存档文件到当前目录。</p></li><li><p><strong>解压存档并移动到 <code>/usr/local</code> 目录</strong>：执行以下命令将存档解压并移动到 <code>/usr/local</code> 目录：</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -xzf openjdk-17_linux-x64_bin.tar.gz -C /usr/local</span><br></pre></td></tr></tbody></table></figure><p>这将在 <code>/usr/local</code> 目录下创建一个名为 <code>jdk-17</code> 的目录，并将 JDK 17 文件解压缩到其中。</p></li><li><p><strong>设置环境变量</strong>：编辑 <code>~/.bashrc</code> 或 <code>/etc/profile</code> 文件，并添加以下行：</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/local/jdk-17</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></tbody></table></figure><p>保存并关闭文件，然后执行以下命令使更改生效：</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></tbody></table></figure><p>或者如果您修改了 <code>/etc/profile</code>，可以执行以下命令：</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></tbody></table></figure></li><li><p><strong>验证安装</strong>：执行以下命令验证 JDK 是否已成功安装：</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></tbody></table></figure><p>这将显示 Java 的版本信息，以确保 JDK 17 已成功安装并配置。</p></li></ol><p>通过以上步骤，您应该可以在线将 JDK 17 安装到 <code>/usr/local</code> 目录下，并在系统中正确配置。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> 虚拟机 </tag>
+            
+            <tag> 环境配置 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux知识点</title>
       <link href="/2024/05/17/linux-zhi-shi-dian/"/>
       <url>/2024/05/17/linux-zhi-shi-dian/</url>

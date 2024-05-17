@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-05-17T12:57:33.030Z</updated>
+  <updated>2024-05-17T13:38:32.031Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>虚拟机中jdk17</title>
+    <link href="http://zhangyao0329.github.io/2024/05/17/xu-ni-ji-zhong-jdk17/"/>
+    <id>http://zhangyao0329.github.io/2024/05/17/xu-ni-ji-zhong-jdk17/</id>
+    <published>2024-05-17T13:37:22.000Z</published>
+    <updated>2024-05-17T13:38:32.031Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;如果您希望在线安装 JDK 17 到 &lt;code&gt;/usr/local&lt;/code&gt; 目录下，您可以执行以下步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;下载 JDK 17 存档&lt;/strong&gt;：您可以从 AdoptOpenJDK 网站下载 JDK 17</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Linux" scheme="http://zhangyao0329.github.io/tags/Linux/"/>
+    
+    <category term="虚拟机" scheme="http://zhangyao0329.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+    <category term="环境配置" scheme="http://zhangyao0329.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux知识点</title>
