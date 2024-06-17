@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
+    <meta name="keywords" content="CentOS7 中安装Redis, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
     <meta name="description" content="Java开发 | 机器学习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 大貔貅的博客</title>
+    <title>CentOS7 中安装Redis | 大貔貅的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202405131750625.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">CentOS7 中安装Redis</h1>
                 </div>
             </div>
         </div>
@@ -432,12 +432,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">工具</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -446,28 +463,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-06-16
+                    2024-06-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-12
+                    2024-06-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    96
+                    829
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -490,21 +507,72 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure>
+                <hr>
+<h2 id="开放端口-8080-8081-8082-3306-和-6379"><a href="#开放端口-8080-8081-8082-3306-和-6379" class="headerlink" title="开放端口 8080, 8081, 8082, 3306, 和 6379"></a>开放端口 8080, 8081, 8082, 3306, 和 6379</h2><ol>
+<li><p><strong>检查当前防火墙状态</strong>（可选）：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --state</span><br></pre></td></tr></tbody></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure>
+<p>确保防火墙处于运行状态。</p>
+</li>
+<li><p><strong>开放端口</strong>：<br>使用 <code>--add-port</code> 参数来开放每个端口，然后使用 <code>--permanent</code> 参数使规则永久生效，最后使用 <code>reload</code> 命令重新加载防火墙配置。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=8081/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=8082/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=6379/tcp --permanent</span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+<ul>
+<li><code>--zone=public</code>：指定防火墙区域为 public（你可以根据需要选择其他区域，如 <code>--zone=internal</code> 等）。<ul>
+<li><code>--add-port=&lt;port&gt;/tcp</code>：指定要开放的端口和协议（这里使用 TCP）。</li>
+<li><code>--permanent</code>：将规则永久性地添加到防火墙配置中。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><p><strong>重新加载防火墙</strong>：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></tbody></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure>
+<p>这会重新加载防火墙配置，使新的规则生效。</p>
+</li>
+<li><p><strong>确认端口是否已开放</strong>（可选）：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></tbody></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure>
+<p>这会列出所有已经在 <code>public</code> 区域开放的端口，确认你所需的端口是否正确显示在列表中。</p>
+</li>
+</ol>
+<p>通过这些步骤，你应该能够在 CentOS 7 上成功地开放端口 8080, 8081, 8082, 3306, 和 6379，并确保防火墙规则永久性生效。</p>
+<h2 id="要查看-CentOS-7-上已经开放的端口，你可以使用以下几种方法："><a href="#要查看-CentOS-7-上已经开放的端口，你可以使用以下几种方法：" class="headerlink" title="要查看 CentOS 7 上已经开放的端口，你可以使用以下几种方法："></a>要查看 CentOS 7 上已经开放的端口，你可以使用以下几种方法：</h2><h3 id="方法一：使用-netstat-命令"><a href="#方法一：使用-netstat-命令" class="headerlink" title="方法一：使用 netstat 命令"></a>方法一：使用 <code>netstat</code> 命令</h3><ol>
+<li><p>打开终端。</p>
+</li>
+<li><p>输入以下命令来查看当前开放的端口及其状态：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -tuln</span><br></pre></td></tr></tbody></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h3><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> articleCardHover = <span class="keyword">function</span> (<span class="params"></span>) {</span><br><span class="line">    <span class="keyword">let</span> animateClass = <span class="string">'animated pulse'</span>;</span><br><span class="line">    $(<span class="string">'article .article'</span>).<span class="title function_">hover</span>(<span class="keyword">function</span> (<span class="params"></span>) {</span><br><span class="line">        $(<span class="variable language_">this</span>).<span class="title function_">addClass</span>(animateClass);</span><br><span class="line">    }, <span class="keyword">function</span> (<span class="params"></span>) {</span><br><span class="line">        $(<span class="variable language_">this</span>).<span class="title function_">removeClass</span>(animateClass);</span><br><span class="line">    });</span><br><span class="line">};</span><br><span class="line"><span class="title function_">articleCardHover</span>();</span><br></pre></td></tr></tbody></table></figure>
+<p>这会显示所有正在运行的服务的端口号及其状态：</p>
+<ul>
+<li><code>-t</code>：显示 TCP 端口</li>
+<li><code>-u</code>：显示 UDP 端口</li>
+<li><code>-l</code>：仅显示正在监听的端口</li>
+<li><code>-n</code>：直接显示 IP 地址，而不进行反向解析</li>
+</ul>
+<p>如果你不使用 <code>sudo</code> 执行该命令，则只会显示当前用户下的端口，可能不包含所有的端口信息。</p>
+</li>
+</ol>
+<h3 id="方法二：使用-ss-命令"><a href="#方法二：使用-ss-命令" class="headerlink" title="方法二：使用 ss 命令"></a>方法二：使用 <code>ss</code> 命令</h3><p><code>ss</code> 命令是 <code>netstat</code> 的替代工具，也可以用来显示套接字统计信息。在 CentOS 7 上，<code>ss</code> 命令通常比 <code>netstat</code> 更快速和有效：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ss -tuln</span><br></pre></td></tr></tbody></table></figure>
 
+<h3 id="方法三：使用-firewall-cmd-命令"><a href="#方法三：使用-firewall-cmd-命令" class="headerlink" title="方法三：使用 firewall-cmd 命令"></a>方法三：使用 <code>firewall-cmd</code> 命令</h3><p>如果你使用了 <code>firewalld</code> 作为防火墙管理工具，可以通过以下命令查看已经开放的端口：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --list-ports</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这会列出已经在防火墙中开放的所有端口。</p>
+<h3 id="方法四：使用-lsof-命令"><a href="#方法四：使用-lsof-命令" class="headerlink" title="方法四：使用 lsof 命令"></a>方法四：使用 <code>lsof</code> 命令</h3><p><code>lsof</code> 命令可以列出所有打开的文件和网络连接。你可以使用它来查看正在使用的端口：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i -P -n | grep LISTEN</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这将列出所有正在监听的网络连接及其对应的进程。</p>
+<h3 id="方法五：使用-nmap-命令（需要安装）"><a href="#方法五：使用-nmap-命令（需要安装）" class="headerlink" title="方法五：使用 nmap 命令（需要安装）"></a>方法五：使用 <code>nmap</code> 命令（需要安装）</h3><p>如果你安装了 <code>nmap</code>，你可以使用它来扫描目标主机上开放的端口：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nmap -sT -O localhost</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这会扫描 <code>localhost</code> 上的所有 TCP 端口，并显示它们的状态。</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>以上命令中大多数需要使用 <code>sudo</code> 或者具有足够的权限来查看所有的端口信息。</li>
+<li>如果使用了其他防火墙管理工具或者特定的网络配置，端口的显示方式可能会有所不同。</li>
+</ul>
+<p>通过这些方法，你可以很容易地查看 CentOS 7 上已经开放的端口及其状态。</p>
 
                 
             </div>
@@ -531,7 +599,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhangyao0329.github.io/2024/06/16/hello-world/">http://zhangyao0329.github.io/2024/06/16/hello-world/</a>
+                    <a href="http://zhangyao0329.github.io/2024/06/17/centos7-kai-fang-chang-yong-duan-kou/">http://zhangyao0329.github.io/2024/06/17/centos7-kai-fang-chang-yong-duan-kou/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -568,7 +636,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">工具</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -758,16 +834,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/06/16/centos7-an-zhuang-nginx/">
+                <a href="/2024/06/17/centos7-kai-fang-chang-yong-duan-kou/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406051735661.jpg" class="responsive-img" alt="CentOS7中安装nginx">
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202405131750625.jpg" class="responsive-img" alt="CentOS7 中安装Redis">
                         
-                        <span class="card-title">CentOS7中安装nginx</span>
+                        <span class="card-title">CentOS7 中安装Redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -777,9 +854,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -792,6 +869,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -814,13 +892,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/17/xu-ni-ji-zhong-jdk17/">
+                <a href="/2024/06/16/centos7-zhong-an-zhuang-redis/">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202405191804590.jpg" class="responsive-img" alt="CentOS7 中安装Redis">
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="虚拟机中jdk17">
-                        
-                        <span class="card-title">虚拟机中jdk17</span>
+                        <span class="card-title">CentOS7 中安装Redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -831,7 +908,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-16
                             </span>
                         <span class="publish-author">
                             
@@ -852,12 +929,8 @@
                         <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="chip bg-color">虚拟机</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">环境配置</span>
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
