@@ -74,18 +74,20 @@
   </entry>
   
   <entry>
-    <title>CentOS7 中安装MySQL</title>
-    <link href="http://zhangyao0329.github.io/2024/06/16/centos7-zhong-an-zhuang-mysql/"/>
-    <id>http://zhangyao0329.github.io/2024/06/16/centos7-zhong-an-zhuang-mysql/</id>
+    <title>CentOS7中安装nginx</title>
+    <link href="http://zhangyao0329.github.io/2024/06/16/centos7-an-zhuang-nginx/"/>
+    <id>http://zhangyao0329.github.io/2024/06/16/centos7-an-zhuang-nginx/</id>
     <published>2024-06-16T09:33:58.000Z</published>
-    <updated>2024-06-16T10:13:04.283Z</updated>
+    <updated>2024-06-19T11:35:56.332Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;1、下载安装包&quot;&gt;&lt;a href=&quot;#1、下载安装包&quot; class=&quot;headerlink&quot; title=&quot;1、下载安装包&quot;&gt;&lt;/a&gt;1、下载安装包&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;查看nginx进程，有则杀掉&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
         
       
     
@@ -101,20 +103,18 @@
   </entry>
   
   <entry>
-    <title>CentOS7中安装nginx</title>
-    <link href="http://zhangyao0329.github.io/2024/06/16/centos7-an-zhuang-nginx/"/>
-    <id>http://zhangyao0329.github.io/2024/06/16/centos7-an-zhuang-nginx/</id>
+    <title>CentOS7 中安装MySQL</title>
+    <link href="http://zhangyao0329.github.io/2024/06/16/centos7-zhong-an-zhuang-mysql/"/>
+    <id>http://zhangyao0329.github.io/2024/06/16/centos7-zhong-an-zhuang-mysql/</id>
     <published>2024-06-16T09:33:58.000Z</published>
-    <updated>2024-06-16T10:39:44.353Z</updated>
+    <updated>2024-06-16T10:13:04.283Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;查看nginx进程，有则杀掉&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+    <summary type="html">&lt;h1 id=&quot;1、下载安装包&quot;&gt;&lt;a href=&quot;#1、下载安装包&quot; class=&quot;headerlink&quot; title=&quot;1、下载安装包&quot;&gt;&lt;/a&gt;1、下载安装包&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
         
       
     
