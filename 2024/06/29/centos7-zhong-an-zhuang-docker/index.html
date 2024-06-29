@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CentOS7开放常用端口, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
+    <meta name="keywords" content="CentOS7中安装docker, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
     <meta name="description" content="Java开发 | 机器学习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CentOS7开放常用端口 | 大貔貅的博客</title>
+    <title>CentOS7中安装docker | 大貔貅的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202405131750625.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406291829959.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CentOS7开放常用端口</h1>
+                    <h1 class="description center-align post-title">CentOS7中安装docker</h1>
                 </div>
             </div>
         </div>
@@ -463,28 +463,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-06-17
+                    2024-06-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-17
+                    2024-06-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    829
+                    507
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -507,72 +507,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h2 id="开放端口-8080-8081-8082-3306-和-6379"><a href="#开放端口-8080-8081-8082-3306-和-6379" class="headerlink" title="开放端口 8080, 8081, 8082, 3306, 和 6379"></a>开放端口 8080, 8081, 8082, 3306, 和 6379</h2><ol>
-<li><p><strong>检查当前防火墙状态</strong>（可选）：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --state</span><br></pre></td></tr></tbody></table></figure>
+                <p>本安装教程参考Docker官方文档，地址如下：</p>
+<p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/</a></p>
+<p>可能大人们又要自研docker了，以至于docker被处于ban位，作为非ban必选的ban了也要选的工具之一，接下来记录更适合中国宝宝的docker搭建教程。</p>
+<h1 id="1-卸载旧版"><a href="#1-卸载旧版" class="headerlink" title="1.卸载旧版"></a>1.卸载旧版</h1><p>首先如果系统中已经存在旧的Docker，则先卸载：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum remove docker \</span><br><span class="line">    docker-client \</span><br><span class="line">    docker-client-latest \</span><br><span class="line">    docker-common \</span><br><span class="line">    docker-latest \</span><br><span class="line">    docker-latest-logrotate \</span><br><span class="line">    docker-logrotate \</span><br><span class="line">    docker-engine</span><br></pre></td></tr></tbody></table></figure>
 
-<p>确保防火墙处于运行状态。</p>
-</li>
-<li><p><strong>开放端口</strong>：<br>使用 <code>--add-port</code> 参数来开放每个端口，然后使用 <code>--permanent</code> 参数使规则永久生效，最后使用 <code>reload</code> 命令重新加载防火墙配置。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=8081/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=8082/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=6379/tcp --permanent</span><br></pre></td></tr></tbody></table></figure></li>
-</ol>
-<ul>
-<li><code>--zone=public</code>：指定防火墙区域为 public（你可以根据需要选择其他区域，如 <code>--zone=internal</code> 等）。<ul>
-<li><code>--add-port=&lt;port&gt;/tcp</code>：指定要开放的端口和协议（这里使用 TCP）。</li>
-<li><code>--permanent</code>：将规则永久性地添加到防火墙配置中。</li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li><p><strong>重新加载防火墙</strong>：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="2-配置Docker的yum库"><a href="#2-配置Docker的yum库" class="headerlink" title="2.配置Docker的yum库"></a>2.配置Docker的yum库</h1><p>首先要安装一个yum工具：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils</span><br></pre></td></tr></tbody></table></figure>
 
-<p>这会重新加载防火墙配置，使新的规则生效。</p>
-</li>
-<li><p><strong>确认端口是否已开放</strong>（可选）：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></tbody></table></figure>
+<p>安装成功后，执行命令，配置Docker的yum源：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">yum makecache fast</span><br></pre></td></tr></tbody></table></figure>
 
-<p>这会列出所有已经在 <code>public</code> 区域开放的端口，确认你所需的端口是否正确显示在列表中。</p>
-</li>
-</ol>
-<p>通过这些步骤，你应该能够在 CentOS 7 上成功地开放端口 8080, 8081, 8082, 3306, 和 6379，并确保防火墙规则永久性生效。</p>
-<h2 id="要查看-CentOS-7-上已经开放的端口，你可以使用以下几种方法："><a href="#要查看-CentOS-7-上已经开放的端口，你可以使用以下几种方法：" class="headerlink" title="要查看 CentOS 7 上已经开放的端口，你可以使用以下几种方法："></a>要查看 CentOS 7 上已经开放的端口，你可以使用以下几种方法：</h2><h3 id="方法一：使用-netstat-命令"><a href="#方法一：使用-netstat-命令" class="headerlink" title="方法一：使用 netstat 命令"></a>方法一：使用 <code>netstat</code> 命令</h3><ol>
-<li><p>打开终端。</p>
-</li>
-<li><p>输入以下命令来查看当前开放的端口及其状态：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -tuln</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="3-安装Docker"><a href="#3-安装Docker" class="headerlink" title="3.安装Docker"></a>3.安装Docker</h1><p>最后，执行命令，安装Docker:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</span><br></pre></td></tr></tbody></table></figure>
 
-<p>这会显示所有正在运行的服务的端口号及其状态：</p>
-<ul>
-<li><code>-t</code>：显示 TCP 端口</li>
-<li><code>-u</code>：显示 UDP 端口</li>
-<li><code>-l</code>：仅显示正在监听的端口</li>
-<li><code>-n</code>：直接显示 IP 地址，而不进行反向解析</li>
-</ul>
-<p>如果你不使用 <code>sudo</code> 执行该命令，则只会显示当前用户下的端口，可能不包含所有的端口信息。</p>
-</li>
-</ol>
-<h3 id="方法二：使用-ss-命令"><a href="#方法二：使用-ss-命令" class="headerlink" title="方法二：使用 ss 命令"></a>方法二：使用 <code>ss</code> 命令</h3><p><code>ss</code> 命令是 <code>netstat</code> 的替代工具，也可以用来显示套接字统计信息。在 CentOS 7 上，<code>ss</code> 命令通常比 <code>netstat</code> 更快速和有效：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ss -tuln</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="4-启动和校验"><a href="#4-启动和校验" class="headerlink" title="4.启动和校验"></a>4.启动和校验</h1><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动Docker</span></span><br><span class="line">systemctl start docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止Docker</span></span><br><span class="line">systemctl stop docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">systemctl restart docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置开机自启</span></span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行docker ps命令，如果不报错，说明安装启动成功</span></span><br><span class="line">docker ps</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="方法三：使用-firewall-cmd-命令"><a href="#方法三：使用-firewall-cmd-命令" class="headerlink" title="方法三：使用 firewall-cmd 命令"></a>方法三：使用 <code>firewall-cmd</code> 命令</h3><p>如果你使用了 <code>firewalld</code> 作为防火墙管理工具，可以通过以下命令查看已经开放的端口：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --list-ports</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="5-配置镜像加速"><a href="#5-配置镜像加速" class="headerlink" title="5.配置镜像加速"></a>5.配置镜像加速</h1><p>这里以阿里云镜像加速为例。</p>
+<h2 id="5-1-注册阿里云账号"><a href="#5-1-注册阿里云账号" class="headerlink" title="5.1.注册阿里云账号"></a>5.1.注册阿里云账号</h2><p>首先访问阿里云网站:</p>
+<p><a target="_blank" rel="noopener" href="https://www.aliyun.com/">https://www.aliyun.com/</a></p>
+<p>注册一个账号。</p>
+<h2 id="5-2-开通镜像服务"><a href="#5-2-开通镜像服务" class="headerlink" title="5.2.开通镜像服务"></a>5.2.开通镜像服务</h2><p>在首页的产品中，找到阿里云的<strong>容器镜像服务</strong>：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406291848469.png" alt="1"></p>
+<p>点击后进入控制台：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406291849484.png" alt="2"></p>
+<p>首次可能需要选择立刻开通，然后进入控制台。</p>
+<h2 id="5-3-配置镜像加速"><a href="#5-3-配置镜像加速" class="headerlink" title="5.3.配置镜像加速"></a>5.3.配置镜像加速</h2><p>找到<strong>镜像工具</strong>下的<strong>镜像****加速器</strong>：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406291849057.png" alt="3"></p>
+<p>页面向下滚动，即可找到配置的文档说明：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406291850825.png" alt="4"></p>
+<p>具体命令如下：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.创建目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.复制内容，注意把其中的镜像加速地址改成你自己的</span></span><br><span class="line"><span class="built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="string">'EOF'</span></span><br><span class="line">{</span><br><span class="line">  <span class="string">"registry-mirrors"</span>: [<span class="string">"https://xxxx.mirror.aliyuncs.com"</span>]</span><br><span class="line">}</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.重新加载配置</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.重启Docker</span></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></tbody></table></figure>
 
-<p>这会列出已经在防火墙中开放的所有端口。</p>
-<h3 id="方法四：使用-lsof-命令"><a href="#方法四：使用-lsof-命令" class="headerlink" title="方法四：使用 lsof 命令"></a>方法四：使用 <code>lsof</code> 命令</h3><p><code>lsof</code> 命令可以列出所有打开的文件和网络连接。你可以使用它来查看正在使用的端口：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i -P -n | grep LISTEN</span><br></pre></td></tr></tbody></table></figure>
 
-<p>这将列出所有正在监听的网络连接及其对应的进程。</p>
-<h3 id="方法五：使用-nmap-命令（需要安装）"><a href="#方法五：使用-nmap-命令（需要安装）" class="headerlink" title="方法五：使用 nmap 命令（需要安装）"></a>方法五：使用 <code>nmap</code> 命令（需要安装）</h3><p>如果你安装了 <code>nmap</code>，你可以使用它来扫描目标主机上开放的端口：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nmap -sT -O localhost</span><br></pre></td></tr></tbody></table></figure>
 
-<p>这会扫描 <code>localhost</code> 上的所有 TCP 端口，并显示它们的状态。</p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>以上命令中大多数需要使用 <code>sudo</code> 或者具有足够的权限来查看所有的端口信息。</li>
-<li>如果使用了其他防火墙管理工具或者特定的网络配置，端口的显示方式可能会有所不同。</li>
-</ul>
-<p>通过这些方法，你可以很容易地查看 CentOS 7 上已经开放的端口及其状态。</p>
+<hr>
+<h1 id="6-安装Mysql"><a href="#6-安装Mysql" class="headerlink" title="6.安装Mysql"></a>6.安装Mysql</h1><figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="literal">-d</span> \</span><br><span class="line">  <span class="literal">--name</span> mysql \</span><br><span class="line">  <span class="literal">-p</span> <span class="number">3306</span>:<span class="number">3306</span> \</span><br><span class="line">  <span class="literal">-e</span> TZ=Asia/Shanghai \</span><br><span class="line">  <span class="literal">-e</span> MYSQL_ROOT_PASSWORD=<span class="number">123456</span> \</span><br><span class="line">  mysql</span><br></pre></td></tr></tbody></table></figure>
+
+<p>大家一定要记得重启mysql以及设置mysql自启动:</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker restart mysql  </span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker update mysql --restart=always</span><br></pre></td></tr></tbody></table></figure>
+
 
                 
             </div>
@@ -599,7 +576,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhangyao0329.github.io/2024/06/17/centos7-kai-fang-chang-yong-duan-kou/">http://zhangyao0329.github.io/2024/06/17/centos7-kai-fang-chang-yong-duan-kou/</a>
+                    <a href="http://zhangyao0329.github.io/2024/06/29/centos7-zhong-an-zhuang-docker/">http://zhangyao0329.github.io/2024/06/29/centos7-zhong-an-zhuang-docker/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -834,9 +811,63 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/06/29/centos7-zhong-an-zhuang-docker/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406291829959.jpg" class="responsive-img" alt="CentOS7中安装docker">
+                        
+                        <span class="card-title">CentOS7中安装docker</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Linux常用工具
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2024/06/26/ji-huo-windows10-zhuan-ye-ban/">
                     <div class="card-image">
@@ -854,9 +885,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -870,58 +901,6 @@
                     
                     <a href="/tags/win%E7%8E%AF%E5%A2%83/">
                         <span class="chip bg-color">win环境</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/06/16/centos7-zhong-an-zhuang-redis/">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202405191804590.jpg" class="responsive-img" alt="CentOS7 中安装Redis">
-                        
-                        <span class="card-title">CentOS7 中安装Redis</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Linux常用工具
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-16
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>

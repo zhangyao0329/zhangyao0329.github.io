@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-06-29T09:31:35.084Z</updated>
+  <updated>2024-06-29T11:01:15.717Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CentOS7中安装docker</title>
+    <link href="http://zhangyao0329.github.io/2024/06/29/centos7-zhong-an-zhuang-docker/"/>
+    <id>http://zhangyao0329.github.io/2024/06/29/centos7-zhong-an-zhuang-docker/</id>
+    <published>2024-06-29T10:27:54.000Z</published>
+    <updated>2024-06-29T11:01:15.717Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本安装教程参考Docker官方文档，地址如下：&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="http://zhangyao0329.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://zhangyao0329.github.io/tags/Linux/"/>
+    
+    <category term="工具" scheme="http://zhangyao0329.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>激活Windows10 专业版</title>
