@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-06-30T08:05:24.812Z</updated>
+  <updated>2024-06-30T13:37:53.245Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CentOS7中docker项目部署</title>
+    <link href="http://zhangyao0329.github.io/2024/06/30/centos7-zhong-docker-xiang-mu-bu-shu/"/>
+    <id>http://zhangyao0329.github.io/2024/06/30/centos7-zhong-docker-xiang-mu-bu-shu/</id>
+    <published>2024-06-30T15:11:10.000Z</published>
+    <updated>2024-06-30T13:37:53.245Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Docker Compose就可以帮助我们实现&lt;strong&gt;多个相互关联的Docker容器的快速部署&lt;/strong&gt;。它允许用户通过一个单独的 docker-compose.yml 模板文件（YAML 格式）来定义一组相关联的应用容器。&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="部署" scheme="http://zhangyao0329.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="Linux" scheme="http://zhangyao0329.github.io/tags/Linux/"/>
+    
+    <category term="工具" scheme="http://zhangyao0329.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>CentOS7中docker的基础用法</title>
