@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="大貔貅的博客" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="大貔貅的博客" type="application/atom+xml">
 </head>
 
 
@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    507
+                    509
                 </div>
                 
 
@@ -446,6 +446,11 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
@@ -453,18 +458,39 @@
 <p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/</a></p>
 <p>可能大人们又要自研docker了，以至于docker被处于ban位，作为非ban必选的ban了也要选的工具之一，接下来记录更适合中国宝宝的docker搭建教程。</p>
 <h1 id="1-卸载旧版"><a href="#1-卸载旧版" class="headerlink" title="1.卸载旧版"></a>1.卸载旧版</h1><p>首先如果系统中已经存在旧的Docker，则先卸载：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum remove docker \</span><br><span class="line">    docker-client \</span><br><span class="line">    docker-client-latest \</span><br><span class="line">    docker-common \</span><br><span class="line">    docker-latest \</span><br><span class="line">    docker-latest-logrotate \</span><br><span class="line">    docker-logrotate \</span><br><span class="line">    docker-engine</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">yum remove docker \
+    docker-client \
+    docker-client-latest \
+    docker-common \
+    docker-latest \
+    docker-latest-logrotate \
+    docker-logrotate \
+    docker-engine<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="2-配置Docker的yum库"><a href="#2-配置Docker的yum库" class="headerlink" title="2.配置Docker的yum库"></a>2.配置Docker的yum库</h1><p>首先要安装一个yum工具：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-Bash" data-language="Bash"><code class="language-Bash">yum install -y yum-utils<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>安装成功后，执行命令，配置Docker的yum源：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">yum makecache fast</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+yum makecache fast<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h1 id="3-安装Docker"><a href="#3-安装Docker" class="headerlink" title="3.安装Docker"></a>3.安装Docker</h1><p>最后，执行命令，安装Docker:</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-Bash" data-language="Bash"><code class="language-Bash">yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h1 id="4-启动和校验"><a href="#4-启动和校验" class="headerlink" title="4.启动和校验"></a>4.启动和校验</h1><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动Docker</span></span><br><span class="line">systemctl start docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止Docker</span></span><br><span class="line">systemctl stop docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">systemctl restart docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置开机自启</span></span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行docker ps命令，如果不报错，说明安装启动成功</span></span><br><span class="line">docker ps</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="4-启动和校验"><a href="#4-启动和校验" class="headerlink" title="4.启动和校验"></a>4.启动和校验</h1><pre class="line-numbers language-Bash" data-language="Bash"><code class="language-Bash"># 启动Docker
+systemctl start docker
+
+# 停止Docker
+systemctl stop docker
+
+# 重启
+systemctl restart docker
+
+# 设置开机自启
+systemctl enable docker
+
+# 执行docker ps命令，如果不报错，说明安装启动成功
+docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="5-配置镜像加速"><a href="#5-配置镜像加速" class="headerlink" title="5.配置镜像加速"></a>5.配置镜像加速</h1><p>这里以阿里云镜像加速为例。</p>
 <h2 id="5-1-注册阿里云账号"><a href="#5-1-注册阿里云账号" class="headerlink" title="5.1.注册阿里云账号"></a>5.1.注册阿里云账号</h2><p>首先访问阿里云网站:</p>
@@ -480,17 +506,36 @@
 <p>页面向下滚动，即可找到配置的文档说明：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406291850825.png" alt="4"></p>
 <p>具体命令如下：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.创建目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.复制内容，注意把其中的镜像加速地址改成你自己的</span></span><br><span class="line"><span class="built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="string">'EOF'</span></span><br><span class="line">{</span><br><span class="line">  <span class="string">"registry-mirrors"</span>: [<span class="string">"https://xxxx.mirror.aliyuncs.com"</span>]</span><br><span class="line">}</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.重新加载配置</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.重启Docker</span></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-Bash" data-language="Bash"><code class="language-Bash"># 1.创建目录
+mkdir -p /etc/docker
+
+# 2.复制内容，注意把其中的镜像加速地址改成你自己的
+tee /etc/docker/daemon.json &lt;&lt;-'EOF'
+{
+  "registry-mirrors": ["https://xxxx.mirror.aliyuncs.com"]
+}
+EOF
+
+# 3.重新加载配置
+systemctl daemon-reload
+
+# 4.重启Docker
+systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <hr>
-<h1 id="6-安装Mysql"><a href="#6-安装Mysql" class="headerlink" title="6.安装Mysql"></a>6.安装Mysql</h1><figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run <span class="literal">-d</span> \</span><br><span class="line">  <span class="literal">--name</span> mysql \</span><br><span class="line">  <span class="literal">-p</span> <span class="number">3306</span>:<span class="number">3306</span> \</span><br><span class="line">  <span class="literal">-e</span> TZ=Asia/Shanghai \</span><br><span class="line">  <span class="literal">-e</span> MYSQL_ROOT_PASSWORD=<span class="number">123456</span> \</span><br><span class="line">  mysql</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="6-安装Mysql"><a href="#6-安装Mysql" class="headerlink" title="6.安装Mysql"></a>6.安装Mysql</h1><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">docker run <span class="token operator">-</span>d \
+  <span class="token operator">--</span>name mysql \
+  <span class="token operator">-</span>p 3306:3306 \
+  <span class="token operator">-</span>e TZ=Asia/Shanghai \
+  <span class="token operator">-</span>e MYSQL_ROOT_PASSWORD=123456 \
+  mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>大家一定要记得重启mysql以及设置mysql自启动:</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker restart mysql  </span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">docker</span> restart mysql  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker update mysql --restart=always</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">docker</span> update mysql <span class="token parameter variable">--restart</span><span class="token operator">=</span>always<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
                 
@@ -857,11 +902,17 @@
 
 <!-- 代码语言 -->
 
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
 
 <!-- 代码块复制 -->
 
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
     </div>

@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="大貔貅的博客" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="大貔貅的博客" type="application/atom+xml">
 </head>
 
 
@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    829
+                    833
                 </div>
                 
 
@@ -446,18 +446,27 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
 <h2 id="开放端口-8080-8081-8082-3306-和-6379"><a href="#开放端口-8080-8081-8082-3306-和-6379" class="headerlink" title="开放端口 8080, 8081, 8082, 3306, 和 6379"></a>开放端口 8080, 8081, 8082, 3306, 和 6379</h2><ol>
 <li><p><strong>检查当前防火墙状态</strong>（可选）：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --state</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--state</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>确保防火墙处于运行状态。</p>
 </li>
 <li><p><strong>开放端口</strong>：<br>使用 <code>--add-port</code> 参数来开放每个端口，然后使用 <code>--permanent</code> 参数使规则永久生效，最后使用 <code>reload</code> 命令重新加载防火墙配置。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=8081/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=8082/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=6379/tcp --permanent</span><br></pre></td></tr></tbody></table></figure></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">8080</span>/tcp <span class="token parameter variable">--permanent</span>
+<span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">8081</span>/tcp <span class="token parameter variable">--permanent</span>
+<span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">8082</span>/tcp <span class="token parameter variable">--permanent</span>
+<span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">3306</span>/tcp <span class="token parameter variable">--permanent</span>
+<span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">6379</span>/tcp <span class="token parameter variable">--permanent</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <ul>
 <li><code>--zone=public</code>：指定防火墙区域为 public（你可以根据需要选择其他区域，如 <code>--zone=internal</code> 等）。<ul>
@@ -468,12 +477,12 @@
 </ul>
 <ol start="3">
 <li><p><strong>重新加载防火墙</strong>：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--reload</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>这会重新加载防火墙配置，使新的规则生效。</p>
 </li>
 <li><p><strong>确认端口是否已开放</strong>（可选）：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--zone</span><span class="token operator">=</span>public --list-ports<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>这会列出所有已经在 <code>public</code> 区域开放的端口，确认你所需的端口是否正确显示在列表中。</p>
 </li>
@@ -483,7 +492,7 @@
 <li><p>打开终端。</p>
 </li>
 <li><p>输入以下命令来查看当前开放的端口及其状态：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -tuln</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">netstat</span> <span class="token parameter variable">-tuln</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>这会显示所有正在运行的服务的端口号及其状态：</p>
 <ul>
@@ -496,18 +505,18 @@
 </li>
 </ol>
 <h3 id="方法二：使用-ss-命令"><a href="#方法二：使用-ss-命令" class="headerlink" title="方法二：使用 ss 命令"></a>方法二：使用 <code>ss</code> 命令</h3><p><code>ss</code> 命令是 <code>netstat</code> 的替代工具，也可以用来显示套接字统计信息。在 CentOS 7 上，<code>ss</code> 命令通常比 <code>netstat</code> 更快速和有效：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ss -tuln</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> ss <span class="token parameter variable">-tuln</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="方法三：使用-firewall-cmd-命令"><a href="#方法三：使用-firewall-cmd-命令" class="headerlink" title="方法三：使用 firewall-cmd 命令"></a>方法三：使用 <code>firewall-cmd</code> 命令</h3><p>如果你使用了 <code>firewalld</code> 作为防火墙管理工具，可以通过以下命令查看已经开放的端口：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --list-ports</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> firewall-cmd --list-ports<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>这会列出已经在防火墙中开放的所有端口。</p>
 <h3 id="方法四：使用-lsof-命令"><a href="#方法四：使用-lsof-命令" class="headerlink" title="方法四：使用 lsof 命令"></a>方法四：使用 <code>lsof</code> 命令</h3><p><code>lsof</code> 命令可以列出所有打开的文件和网络连接。你可以使用它来查看正在使用的端口：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i -P -n | grep LISTEN</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">lsof</span> <span class="token parameter variable">-i</span> <span class="token parameter variable">-P</span> <span class="token parameter variable">-n</span> <span class="token operator">|</span> <span class="token function">grep</span> LISTEN<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>这将列出所有正在监听的网络连接及其对应的进程。</p>
 <h3 id="方法五：使用-nmap-命令（需要安装）"><a href="#方法五：使用-nmap-命令（需要安装）" class="headerlink" title="方法五：使用 nmap 命令（需要安装）"></a>方法五：使用 <code>nmap</code> 命令（需要安装）</h3><p>如果你安装了 <code>nmap</code>，你可以使用它来扫描目标主机上开放的端口：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nmap -sT -O localhost</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> nmap <span class="token parameter variable">-sT</span> <span class="token parameter variable">-O</span> localhost<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>这会扫描 <code>localhost</code> 上的所有 TCP 端口，并显示它们的状态。</p>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
@@ -880,11 +889,17 @@
 
 <!-- 代码语言 -->
 
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
 
 <!-- 代码块复制 -->
 
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
     </div>

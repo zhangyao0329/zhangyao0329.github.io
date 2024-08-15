@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CentOS7 中安装MySQL, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
+    <meta name="keywords" content="CentOS7中docker项目部署, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
     <meta name="description" content="Java开发 | 机器学习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CentOS7 中安装MySQL | 大貔貅的博客</title>
+    <title>CentOS7中docker项目部署 | 大貔貅的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -260,12 +260,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406152116309.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://w.wallhaven.cc/full/zx/wallhaven-zx5oey.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CentOS7 中安装MySQL</h1>
+                    <h1 class="description center-align post-title">CentOS7中docker项目部署</h1>
                 </div>
             </div>
         </div>
@@ -381,12 +381,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
-                            </a>
-                        
                             <a href="/tags/%E5%B7%A5%E5%85%B7/">
                                 <span class="chip bg-color">工具</span>
+                            </a>
+                        
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
                             </a>
                         
                     </div>
@@ -397,8 +397,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Linux/" class="post-category">
-                                Linux
+                            <a href="/categories/%E9%95%9C%E5%83%8F%E6%BA%90/" class="post-category">
+                                镜像源
                             </a>
                         
                     </div>
@@ -410,21 +410,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-06-16
+                    2024-08-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-07-15
+                    2024-08-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    296
+                    232
                 </div>
                 
 
@@ -454,122 +454,84 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1、下载安装包"><a href="#1、下载安装包" class="headerlink" title="1、下载安装包"></a>1、下载安装包</h1><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406161737233.png" alt="安装包下载"></p>
-<h1 id="2、上传到根目录并解压"><a href="#2、上传到根目录并解压" class="headerlink" title="2、上传到根目录并解压"></a>2、上传到根目录并解压</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-xvf</span> mysql-8.4.0-1.el7.x86_64.rpm-bundle.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="Docker镜像源"><a href="#Docker镜像源" class="headerlink" title="Docker镜像源"></a>Docker镜像源</h1><pre class="line-numbers language-docker" data-language="docker"><code class="language-docker"><span class="token comment"># 创建目录</span>
+sudo mkdir -p /etc/docker
 
-<ol>
-<li>依次执行以下命令,删除冲突依赖：</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">rpm -qa | grep mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span class="token comment"># 复制内容，注意把其中的镜像加速地址改成你自己的</span>
+tee /etc/docker/daemon.json &lt;&lt;-'EOF'
+{
+  "registry-mirrors": ["https://docker.1panel.live"]
+}
+EOF
 
-<pre class="line-numbers language-none"><code class="language-none">rpm -e --nodeps mariadb-libs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span class="token comment"># 重新加载配置</span>
+sudo systemctl daemon-reload
 
-
-
-<ol start="2">
-<li>依次执如下命令，进行安装：</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">rpm -ivh mysql-community-common-8.4.0-1.el7.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">rpm -ivh mysql-community-client-plugins-8.4.0-1.el7.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">rpm -ivh mysql-community-libs-8.4.0-1.el7.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">rpm -ivh mysql-community-client-8.4.0-1.el7.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">rpm -ivh mysql-community-icu-data-files-8.4.0-1.el7.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span class="token comment"># 重启Docker</span>
+sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<pre class="line-numbers language-none"><code class="language-none">sudo yum install libaio<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">yum install net-tools<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">rpm -ivh mysql-community-server-8.4.0-1.el7.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看是否换源成功</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">docker info<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<ol start="3">
-<li>初始化MySQL</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">mysqld --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>可用镜像</p>
+<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//dockerpull.com</span></span>
+<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.1panel.live</span></span>
+<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//dockerproxy.cn</span></span>
+<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.hpcloud.cloud</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<ol start="4">
-<li>授权</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">chown mysql:mysql -R /var/lib/mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>自建镜像</p>
+<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.dapixiu.cloudns.ch/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="5">
-<li>再次初始化</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">mysqld --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<ol start="6">
-<li>启动</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">systemctl start mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ol start="7">
-<li>查看运行状态</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">systemctl status mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ol start="8">
-<li>查看版本</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">mysqladmin --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ol start="9">
-<li>查看默认密码</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">grep 'temporary password' /var/log/mysqld.log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ol start="10">
-<li>用查到的密码登录</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">mysql -u root -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ol start="11">
-<li>修改初始密码</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
-exit;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<ol start="12">
-<li>用重置的密码登录</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">mysql -u root -p
-123456<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="卸载docker"><a href="#卸载docker" class="headerlink" title="卸载docker"></a>卸载docker</h2><pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum remove docker \
+    docker-client \
+    docker-client-latest \
+    docker-common \
+    docker-latest \
+    docker-latest-logrotate \
+    docker-logrotate \
+    docker-engine<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<h1 id="3、远程连接（从此告别本地环境）"><a href="#3、远程连接（从此告别本地环境）" class="headerlink" title="3、远程连接（从此告别本地环境）"></a>3、远程连接（从此告别本地环境）</h1><ol>
-<li>进入数据库</li>
-</ol>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p
-<span class="token number">123456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<ol start="2">
-<li>创建用户</li>
-</ol>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">USER</span> <span class="token string">'zhang_aliyun'</span><span class="token variable">@'%'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'forever0329'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="3">
-<li>赋权</li>
-</ol>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">GRANT</span> <span class="token keyword">ALL</span> <span class="token keyword">PRIVILEGES</span> <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'zhang_aliyun'</span><span class="token variable">@'%'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum install -y yum-utils
+||&lt; --- yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<ol start="4">
-<li>刷新</li>
-</ol>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="5">
-<li>查看用户权限</li>
-</ol>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">user</span><span class="token punctuation">,</span> host <span class="token keyword">FROM</span> mysql<span class="token punctuation">.</span><span class="token keyword">user</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+yum makecache fast
+
+yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<h2 id="docker常用命令："><a href="#docker常用命令：" class="headerlink" title="docker常用命令："></a>docker常用命令：</h2><pre class="line-numbers language-none"><code class="language-none"># 启动Docker
+systemctl start docker
+
+# 停止Docker
+systemctl stop docker
+
+# 重启
+systemctl restart docker
+
+# 设置开机自启
+systemctl enable docker
+
+# 执行docker ps命令，如果不报错，说明安装启动成功
+docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 
 
                 
@@ -597,7 +559,7 @@ exit;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhangyao0329.github.io/2024/06/16/centos7-zhong-an-zhuang-mysql/">http://zhangyao0329.github.io/2024/06/16/centos7-zhong-an-zhuang-mysql/</a>
+                    <a href="http://zhangyao0329.github.io/2024/08/15/docker-jing-xiang/">http://zhangyao0329.github.io/2024/08/15/docker-jing-xiang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -635,12 +597,12 @@ exit;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
-                                </a>
-                            
                                 <a href="/tags/%E5%B7%A5%E5%85%B7/">
                                     <span class="chip bg-color">工具</span>
+                                </a>
+                            
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
                                 </a>
                             
                         </div>
@@ -829,49 +791,51 @@ exit;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/06/16/centos7-zhong-an-zhuang-redis/">
+                <a href="/2024/08/15/docker-jing-xiang/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202405191804590.jpg" class="responsive-img" alt="CentOS7 中安装Redis">
+                        <img src="https://w.wallhaven.cc/full/zx/wallhaven-zx5oey.png" class="responsive-img" alt="CentOS7中docker项目部署">
                         
-                        <span class="card-title">CentOS7 中安装Redis</span>
+                        <span class="card-title">CentOS7中docker项目部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Linux常用工具
+                            docker应用
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/%E9%95%9C%E5%83%8F%E6%BA%90/" class="post-category">
+                                    镜像源
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
                     <a href="/tags/%E5%B7%A5%E5%85%B7/">
                         <span class="chip bg-color">工具</span>
+                    </a>
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
                     </a>
                     
                 </div>
@@ -885,12 +849,12 @@ exit;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/06/16/centos7-an-zhuang-nginx/">
+                <a href="/2024/07/15/centos7-an-zhuang-rabbitmq/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406051735661.jpg" class="responsive-img" alt="CentOS7中安装nginx">
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202407152126816.png" class="responsive-img" alt="CentOS7安装RabbitMQ">
                         
-                        <span class="card-title">CentOS7中安装nginx</span>
+                        <span class="card-title">CentOS7安装RabbitMQ</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -901,7 +865,7 @@ exit;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-15
                             </span>
                         <span class="publish-author">
                             

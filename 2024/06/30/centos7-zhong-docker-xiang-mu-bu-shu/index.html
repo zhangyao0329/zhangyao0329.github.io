@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="大貔貅的博客" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="大貔貅的博客" type="application/atom+xml">
 </head>
 
 
@@ -446,23 +446,45 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>Docker Compose就可以帮助我们实现<strong>多个相互关联的Docker容器的快速部署</strong>。它允许用户通过一个单独的 docker-compose.yml 模板文件（YAML 格式）来定义一组相关联的应用容器。</p>
 <h1 id="3-项目部署"><a href="#3-项目部署" class="headerlink" title="3.项目部署"></a>3.项目部署</h1><h3 id="3-3-1-基本语法"><a href="#3-3-1-基本语法" class="headerlink" title="3.3.1.基本语法"></a>3.3.1.基本语法</h3><p>docker-compose.yml文件的基本语法可以参考官方文档：</p>
 <p><a target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/compose-file-v3/">https://docs.docker.com/compose/compose-file/compose-file-v3/</a></p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker network create hmall</span><br><span class="line">docker network ls</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">docker network create hmall
+docker network ls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network connect hmall mysql</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">docker network connect hmall mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">  --name mysql \</span><br><span class="line">  -p 3306:3306 \</span><br><span class="line">  -e TZ=Asia/Shanghai \</span><br><span class="line">  -e MYSQL_ROOT_PASSWORD=123456 \</span><br><span class="line">  -v ./mysql/data:/var/lib/mysql \</span><br><span class="line">  -v ./mysql/conf:/etc/mysql/conf.d \</span><br><span class="line">  -v ./mysql/init:/docker-entrypoint-initdb.d \</span><br><span class="line">  --network heima\</span><br><span class="line">  mysql</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">docker run -d \
+  --name mysql \
+  -p 3306:3306 \
+  -e TZ=Asia/Shanghai \
+  -e MYSQL_ROOT_PASSWORD=123456 \
+  -v ./mysql/data:/var/lib/mysql \
+  -v ./mysql/conf:/etc/mysql/conf.d \
+  -v ./mysql/init:/docker-entrypoint-initdb.d \
+  --network heima\
+  mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it mysql mysql -uroot -p123456</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">docker exec -it mysql mysql -uroot -p123456<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">  --name nginx \</span><br><span class="line">  -p 18080:18080 \</span><br><span class="line">  -p 18081:18081 \</span><br><span class="line">  -v /root/nginx/html:/usr/share/nginx/html \</span><br><span class="line">  -v /root/nginx/nginx.conf:/etc/nginx/nginx.conf \</span><br><span class="line">  --network heima \</span><br><span class="line">  nginx</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">docker run -d \
+  --name nginx \
+  -p 18080:18080 \
+  -p 18081:18081 \
+  -v /root/nginx/html:/usr/share/nginx/html \
+  -v /root/nginx/nginx.conf:/etc/nginx/nginx.conf \
+  --network heima \
+  nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
 <p>docker-compose.yml文件的基本语法可以参考官方文档：</p>
@@ -471,10 +493,37 @@
 <p><a target="_blank" rel="noopener" href="https://docs.docker.com/compose/install/linux/">https://docs.docker.com/compose/install/linux/</a></p>
 <p>docker-compose文件中可以定义多个相互关联的应用容器，每一个应用容器被称为一个服务（service）。由于service就是在定义某个应用的运行时参数，因此与<code>docker run</code>参数非常相似。</p>
 <p>举例来说，用docker run部署MySQL的命令如下：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">  --name mysql \</span><br><span class="line">  -p 3306:3306 \</span><br><span class="line">  -e TZ=Asia/Shanghai \</span><br><span class="line">  -e MYSQL_ROOT_PASSWORD=123 \</span><br><span class="line">  -v ./mysql/data:/var/lib/mysql \</span><br><span class="line">  -v ./mysql/conf:/etc/mysql/conf.d \</span><br><span class="line">  -v ./mysql/init:/docker-entrypoint-initdb.d \</span><br><span class="line">  --network hmall</span><br><span class="line">  mysql</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-Bash" data-language="Bash"><code class="language-Bash">docker run -d \
+  --name mysql \
+  -p 3306:3306 \
+  -e TZ=Asia/Shanghai \
+  -e MYSQL_ROOT_PASSWORD=123 \
+  -v ./mysql/data:/var/lib/mysql \
+  -v ./mysql/conf:/etc/mysql/conf.d \
+  -v ./mysql/init:/docker-entrypoint-initdb.d \
+  --network hmall
+  mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>如果用<code>docker-compose.yml</code>文件来定义，就是这样：</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3.8"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"3306:3306"</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">TZ:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="number">123</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"./mysql/conf:/etc/mysql/conf.d"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"./mysql/data:/var/lib/mysql"</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">new</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">new:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hmall</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-YAML" data-language="YAML"><code class="language-YAML">version: "3.8"
+
+services:
+  mysql:
+    image: mysql
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: 123
+    volumes:
+      - "./mysql/conf:/etc/mysql/conf.d"
+      - "./mysql/data:/var/lib/mysql"
+    networks:
+      - new
+networks:
+  new:
+    name: hmall<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -514,12 +563,55 @@
 </tr>
 </tbody></table>
 <p>明白了其中的对应关系，相信编写<code>docker-compose</code>文件应该难不倒大家。</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3.8"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"3306:3306"</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">TZ:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="number">123</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"./mysql/conf:/etc/mysql/conf.d"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"./mysql/data:/var/lib/mysql"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"./mysql/init:/docker-entrypoint-initdb.d"</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hm-net</span></span><br><span class="line">  <span class="attr">hmall:</span></span><br><span class="line">    <span class="attr">build:</span> </span><br><span class="line">      <span class="attr">context:</span> <span class="string">.</span></span><br><span class="line">      <span class="attr">dockerfile:</span> <span class="string">Dockerfile</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">hmall</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"8080:8080"</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hm-net</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mysql</span></span><br><span class="line">  <span class="attr">nginx:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">nginx</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"18080:18080"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"18081:18081"</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"./nginx/nginx.conf:/etc/nginx/nginx.conf"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"./nginx/html:/usr/share/nginx/html"</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hmall</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hm-net</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">hm-net:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">hmall</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-YAML" data-language="YAML"><code class="language-YAML">version: "3.8"
+
+services:
+  mysql:
+    image: mysql
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: 123
+    volumes:
+      - "./mysql/conf:/etc/mysql/conf.d"
+      - "./mysql/data:/var/lib/mysql"
+      - "./mysql/init:/docker-entrypoint-initdb.d"
+    networks:
+      - hm-net
+  hmall:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: hmall
+    ports:
+      - "8080:8080"
+    networks:
+      - hm-net
+    depends_on:
+      - mysql
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - "18080:18080"
+      - "18081:18081"
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+      - "./nginx/html:/usr/share/nginx/html"
+    depends_on:
+      - hmall
+    networks:
+      - hm-net
+networks:
+  hm-net:
+    name: hmall<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="3-3-2-基础命令"><a href="#3-3-2-基础命令" class="headerlink" title="3.3.2.基础命令"></a>3.3.2.基础命令</h3><p>编写好docker-compose.yml文件，就可以部署项目了。常见的命令：</p>
 <p><a target="_blank" rel="noopener" href="https://docs.docker.com/compose/reference/">https://docs.docker.com/compose/reference/</a></p>
 <p>基本语法如下：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose [OPTIONS] [COMMAND]</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-Bash" data-language="Bash"><code class="language-Bash">docker compose [OPTIONS] [COMMAND]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>其中，OPTIONS和COMMAND都是可选参数，比较常见的有：</p>
 <table>
@@ -586,7 +678,57 @@
 <td align="left"></td>
 </tr>
 </tbody></table>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.进入root目录</span></span><br><span class="line"><span class="built_in">cd</span> /root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.删除旧容器</span></span><br><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -qa)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.删除hmall镜像</span></span><br><span class="line">docker rmi hmall</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.清空MySQL数据</span></span><br><span class="line"><span class="built_in">rm</span> -rf mysql/data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.启动所有, -d 参数是后台启动</span></span><br><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line">[+] Building 15.5s (8/8) FINISHED</span><br><span class="line"> =&gt; [internal] load build definition from Dockerfile                                    0.0s</span><br><span class="line"> =&gt; =&gt; transferring dockerfile: 358B                                                    0.0s</span><br><span class="line"> =&gt; [internal] load .dockerignore                                                       0.0s</span><br><span class="line"> =&gt; =&gt; transferring context: 2B                                                         0.0s</span><br><span class="line"> =&gt; [internal] load metadata <span class="keyword">for</span> docker.io/library/openjdk:11.0-jre-buster             15.4s</span><br><span class="line"> =&gt; [1/3] FROM docker.io/library/openjdk:11.0-jre-buster@sha256:3546a17e6fb4ff4fa681c3  0.0s</span><br><span class="line"> =&gt; [internal] load build context                                                       0.0s</span><br><span class="line"> =&gt; =&gt; transferring context: 98B                                                        0.0s</span><br><span class="line"> =&gt; CACHED [2/3] RUN <span class="built_in">ln</span> -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &amp;&amp; <span class="built_in">echo</span>   0.0s</span><br><span class="line"> =&gt; CACHED [3/3] COPY hm-service.jar /app.jar                                           0.0s</span><br><span class="line"> =&gt; exporting to image                                                                  0.0s</span><br><span class="line"> =&gt; =&gt; exporting layers                                                                 0.0s</span><br><span class="line"> =&gt; =&gt; writing image sha256:32eebee16acde22550232f2eb80c69d2ce813ed099640e4cfed2193f71  0.0s</span><br><span class="line"> =&gt; =&gt; naming to docker.io/library/root-hmall                                           0.0s</span><br><span class="line">[+] Running 4/4</span><br><span class="line"> ✔ Network hmall    Created                                                             0.2s</span><br><span class="line"> ✔ Container mysql  Started                                                             0.5s</span><br><span class="line"> ✔ Container hmall  Started                                                             0.9s</span><br><span class="line"> ✔ Container nginx  Started                                                             1.5s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6.查看镜像</span></span><br><span class="line">docker compose images</span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">CONTAINER           REPOSITORY          TAG                 IMAGE ID            SIZE</span><br><span class="line">hmall               root-hmall          latest              32eebee16acd        362MB</span><br><span class="line">mysql               mysql               latest              3218b38490ce        516MB</span><br><span class="line">nginx               nginx               latest              605c77e624dd        141MB</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7.查看容器</span></span><br><span class="line">docker compose ps</span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line">NAME                IMAGE               COMMAND                  SERVICE             CREATED             STATUS              PORTS</span><br><span class="line">hmall               root-hmall          <span class="string">"java -jar /app.jar"</span>     hmall               54 seconds ago      Up 52 seconds       0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp</span><br><span class="line">mysql               mysql               <span class="string">"docker-entrypoint.s…"</span>   mysql               54 seconds ago      Up 53 seconds       0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp, 33060/tcp</span><br><span class="line">nginx               nginx               <span class="string">"/docker-entrypoint.…"</span>   nginx               54 seconds ago      Up 52 seconds       80/tcp, 0.0.0.0:18080-18081-&gt;18080-18081/tcp, :::18080-18081-&gt;18080-18081/tcp</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-Bash" data-language="Bash"><code class="language-Bash"># 1.进入root目录
+cd /root
+
+# 2.删除旧容器
+docker rm -f $(docker ps -qa)
+
+# 3.删除hmall镜像
+docker rmi hmall
+
+# 4.清空MySQL数据
+rm -rf mysql/data
+
+# 5.启动所有, -d 参数是后台启动
+docker compose up -d
+# 结果：
+[+] Building 15.5s (8/8) FINISHED
+ =&gt; [internal] load build definition from Dockerfile                                    0.0s
+ =&gt; =&gt; transferring dockerfile: 358B                                                    0.0s
+ =&gt; [internal] load .dockerignore                                                       0.0s
+ =&gt; =&gt; transferring context: 2B                                                         0.0s
+ =&gt; [internal] load metadata for docker.io/library/openjdk:11.0-jre-buster             15.4s
+ =&gt; [1/3] FROM docker.io/library/openjdk:11.0-jre-buster@sha256:3546a17e6fb4ff4fa681c3  0.0s
+ =&gt; [internal] load build context                                                       0.0s
+ =&gt; =&gt; transferring context: 98B                                                        0.0s
+ =&gt; CACHED [2/3] RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &amp;&amp; echo   0.0s
+ =&gt; CACHED [3/3] COPY hm-service.jar /app.jar                                           0.0s
+ =&gt; exporting to image                                                                  0.0s
+ =&gt; =&gt; exporting layers                                                                 0.0s
+ =&gt; =&gt; writing image sha256:32eebee16acde22550232f2eb80c69d2ce813ed099640e4cfed2193f71  0.0s
+ =&gt; =&gt; naming to docker.io/library/root-hmall                                           0.0s
+[+] Running 4/4
+ ✔ Network hmall    Created                                                             0.2s
+ ✔ Container mysql  Started                                                             0.5s
+ ✔ Container hmall  Started                                                             0.9s
+ ✔ Container nginx  Started                                                             1.5s
+
+# 6.查看镜像
+docker compose images
+# 结果
+CONTAINER           REPOSITORY          TAG                 IMAGE ID            SIZE
+hmall               root-hmall          latest              32eebee16acd        362MB
+mysql               mysql               latest              3218b38490ce        516MB
+nginx               nginx               latest              605c77e624dd        141MB
+
+# 7.查看容器
+docker compose ps
+# 结果
+NAME                IMAGE               COMMAND                  SERVICE             CREATED             STATUS              PORTS
+hmall               root-hmall          "java -jar /app.jar"     hmall               54 seconds ago      Up 52 seconds       0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp
+mysql               mysql               "docker-entrypoint.s…"   mysql               54 seconds ago      Up 53 seconds       0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp, 33060/tcp
+nginx               nginx               "/docker-entrypoint.…"   nginx               54 seconds ago      Up 52 seconds       80/tcp, 0.0.0.0:18080-18081-&gt;18080-18081/tcp, :::18080-18081-&gt;18080-18081/tcp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -968,11 +1110,17 @@
 
 <!-- 代码语言 -->
 
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
 
 <!-- 代码块复制 -->
 
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
     </div>

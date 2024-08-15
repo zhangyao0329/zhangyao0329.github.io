@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-07-15T13:47:31.844Z</updated>
+  <updated>2024-08-15T14:44:44.502Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CentOS7中docker项目部署</title>
+    <link href="http://zhangyao0329.github.io/2024/08/15/docker-jing-xiang/"/>
+    <id>http://zhangyao0329.github.io/2024/08/15/docker-jing-xiang/</id>
+    <published>2024-08-15T14:11:10.000Z</published>
+    <updated>2024-08-15T14:44:44.502Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Docker镜像源&quot;&gt;&lt;a href=&quot;#Docker镜像源&quot; class=&quot;headerlink&quot; title=&quot;Docker镜像源&quot;&gt;&lt;/a&gt;Docker镜像源&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-docker&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="镜像源" scheme="http://zhangyao0329.github.io/categories/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+    
+    
+    <category term="工具" scheme="http://zhangyao0329.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="Docker" scheme="http://zhangyao0329.github.io/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>CentOS7安装RabbitMQ</title>
@@ -64,7 +91,7 @@
     <summary type="html">&lt;h1 id=&quot;1-前期准备&quot;&gt;&lt;a href=&quot;#1-前期准备&quot; class=&quot;headerlink&quot; title=&quot;1. 前期准备&quot;&gt;&lt;/a&gt;1. 前期准备&lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;安装在opt文件夹下&lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure</summary>
+&lt;pre</summary>
         
       
     
@@ -227,7 +254,8 @@
         
     <summary type="html">&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;下载安装包&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;#下载redis压缩包
+wget</summary>
         
       
     
@@ -283,7 +311,7 @@
         
     <summary type="html">&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;查看nginx进程，有则杀掉&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;ps -ef|grep nginx&lt;span</summary>
         
       
     
