@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="博客平台搭建的初衷, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
+    <meta name="keywords" content="Docker镜像源, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
     <meta name="description" content="Java开发 | 机器学习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>博客平台搭建的初衷 | 大貔貅的博客</title>
+    <title>Docker镜像源 | 大貔貅的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -260,7 +260,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = 'b32e34101aaa68e28420ed6e8cd79b3ce6e417842495896e7733c02b9bbacc49';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -273,12 +273,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202408152245346.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">博客平台搭建的初衷</h1>
+                    <h1 class="description center-align post-title">Docker镜像源</h1>
                 </div>
             </div>
         </div>
@@ -394,12 +394,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                <span class="chip bg-color">博客</span>
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
                             </a>
                         
-                            <a href="/tags/%E5%88%9D%E8%A1%B7/">
-                                <span class="chip bg-color">初衷</span>
+                            <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">工具</span>
                             </a>
                         
                     </div>
@@ -410,8 +410,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
-                                博客搭建
+                            <a href="/categories/%E9%95%9C%E5%83%8F%E6%BA%90/" class="post-category">
+                                镜像源
                             </a>
                         
                     </div>
@@ -423,7 +423,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-05-13
+                    2024-09-01
                 </div>
                 
 
@@ -437,7 +437,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    304
+                    232
                 </div>
                 
 
@@ -467,28 +467,82 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>现在个人博客已经非常常见了，知乎， csdn， 稀土掘金，甚至不可见的朋友圈等等早已可以替代个人博客，满足日常笔记的需求，但是作为独立思考的个体，自由意志未必允许出现在公共平台，我的博客由此诞生。</p>
-<p>一个个人博客无疑有些优点的：</p>
-<ul>
-<li>记录成长与反思</li>
-<li>持续学习的动力</li>
-<li>个人的精神家园</li>
-</ul>
-<h1 id="记录一些教程"><a href="#记录一些教程" class="headerlink" title="记录一些教程"></a>记录一些教程</h1><p>看心情写。。。</p>
-<h1 id="时刻铭记上网三要素"><a href="#时刻铭记上网三要素" class="headerlink" title="时刻铭记上网三要素"></a>时刻铭记上网三要素</h1><p>不评政治 不谈宗教 不碰黄赌毒<br>龙的传人需自律</p>
-<h1 id="写文章、发布文章"><a href="#写文章、发布文章" class="headerlink" title="写文章、发布文章"></a>写文章、发布文章</h1><p>首先在博客根目录下右键打开git bash，安装一个扩展<code>npm i hexo-deployer-git</code>。</p>
-<p>然后输入<code>hexo new post "article title"</code>，新建一篇文章。</p>
-<p>然后打开<code>\blog\source\_posts</code>的目录，可以发现下面多了一个<code>.md</code>文件，一个用来存放你的图片等数据，另一个就是你的文章文件啦。</p>
-<h1 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h1><p>这个时候需要先安装deploy-git ，也就是部署的命令,这样你才能用命令部署到GitHub。</p>
-<pre class="line-numbers language-nginx" data-language="nginx"><code class="language-nginx">npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="Docker镜像源"><a href="#Docker镜像源" class="headerlink" title="Docker镜像源"></a>Docker镜像源</h1><pre class="line-numbers language-docker" data-language="docker"><code class="language-docker"><span class="token comment"># 创建目录</span>
+sudo mkdir -p /etc/docker
 
-<p>然后：</p>
-<pre class="line-numbers language-nginx" data-language="nginx"><code class="language-nginx">hexo clean
-hexo generate
-hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 复制内容，注意把其中的镜像加速地址改成你自己的</span>
+tee /etc/docker/daemon.json &lt;&lt;-'EOF'
+{
+  "registry-mirrors": ["https://docker.1panel.live"]
+}
+EOF
+
+<span class="token comment"># 重新加载配置</span>
+sudo systemctl daemon-reload
+
+<span class="token comment"># 重启Docker</span>
+sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
+<p>查看是否换源成功</p>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">docker info<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>可用镜像</p>
+<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//dockerpull.com</span></span>
+<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.1panel.live</span></span>
+<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//dockerproxy.cn</span></span>
+<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.hpcloud.cloud</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>自建镜像</p>
+<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.dapixiu.cloudns.ch/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<h2 id="卸载docker"><a href="#卸载docker" class="headerlink" title="卸载docker"></a>卸载docker</h2><pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum remove docker \
+    docker-client \
+    docker-client-latest \
+    docker-common \
+    docker-latest \
+    docker-latest-logrotate \
+    docker-logrotate \
+    docker-engine<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum install -y yum-utils
+||&lt; --- yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+yum makecache fast
+
+yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<h2 id="docker常用命令："><a href="#docker常用命令：" class="headerlink" title="docker常用命令："></a>docker常用命令：</h2><pre class="line-numbers language-none"><code class="language-none"># 启动Docker
+systemctl start docker
+
+# 停止Docker
+systemctl stop docker
+
+# 重启
+systemctl restart docker
+
+# 设置开机自启
+systemctl enable docker
+
+# 执行docker ps命令，如果不报错，说明安装启动成功
+docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -518,7 +572,7 @@ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhangyao0329.github.io/2024/05/13/bo-ke-ping-tai-da-jian-de-chu-zhong/">http://zhangyao0329.github.io/2024/05/13/bo-ke-ping-tai-da-jian-de-chu-zhong/</a>
+                    <a href="http://zhangyao0329.github.io/2024/09/01/docker-jing-xiang/">http://zhangyao0329.github.io/2024/09/01/docker-jing-xiang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -556,12 +610,12 @@ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                    <span class="chip bg-color">博客</span>
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
                                 </a>
                             
-                                <a href="/tags/%E5%88%9D%E8%A1%B7/">
-                                    <span class="chip bg-color">初衷</span>
+                                <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">工具</span>
                                 </a>
                             
                         </div>
@@ -750,11 +804,65 @@ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/05/13/da-jian-yi-ge-tu-chuang/">
+                <a href="/2024/09/01/docker-jing-xiang/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202408152245346.png" class="responsive-img" alt="Docker镜像源">
+                        
+                        <span class="card-title">Docker镜像源</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            docker应用
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%95%9C%E5%83%8F%E6%BA%90/" class="post-category">
+                                    镜像源
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/09/01/da-jian-yi-ge-tu-chuang/">
                     <div class="card-image">
                         
                         
@@ -770,9 +878,9 @@ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -794,60 +902,6 @@ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span
                     
                     <a href="/tags/%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/">
                         <span class="chip bg-color">图床教程</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/05/13/bo-ke-ping-tai-da-jian-de-chu-zhong/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="博客平台搭建的初衷">
-                        
-                        <span class="card-title">博客平台搭建的初衷</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            独立思考与自由意志的平台
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    博客搭建
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%88%9D%E8%A1%B7/">
-                        <span class="chip bg-color">初衷</span>
                     </a>
                     
                 </div>
