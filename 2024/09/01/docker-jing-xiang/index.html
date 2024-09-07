@@ -430,14 +430,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-09-01
+                    2024-09-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    232
+                    101
                 </div>
                 
 
@@ -483,68 +483,16 @@ sudo systemctl daemon-reload
 <span class="token comment"># 重启Docker</span>
 sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
 <p>查看是否换源成功</p>
 <pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">docker info<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-
-
 <p>可用镜像</p>
-<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//dockerpull.com</span></span>
-<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.1panel.live</span></span>
-<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//dockerproxy.cn</span></span>
-<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.hpcloud.cloud</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">https://docker.1panel.live
+https://dockerproxy.cn
+https://docker.hpcloud.cloud<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>自建镜像</p>
-<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.dapixiu.cloudns.ch/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<hr>
-<h2 id="卸载docker"><a href="#卸载docker" class="headerlink" title="卸载docker"></a>卸载docker</h2><pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum remove docker \
-    docker-client \
-    docker-client-latest \
-    docker-common \
-    docker-latest \
-    docker-latest-logrotate \
-    docker-logrotate \
-    docker-engine<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum install -y yum-utils
-||&lt; --- yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-
-
-<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-yum makecache fast
-
-yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-<h2 id="docker常用命令："><a href="#docker常用命令：" class="headerlink" title="docker常用命令："></a>docker常用命令：</h2><pre class="line-numbers language-none"><code class="language-none"># 启动Docker
-systemctl start docker
-
-# 停止Docker
-systemctl stop docker
-
-# 重启
-systemctl restart docker
-
-# 设置开机自启
-systemctl enable docker
-
-# 执行docker ps命令，如果不报错，说明安装启动成功
-docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">https://docker.dapixiu.cloudns.ch/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
                 
@@ -804,50 +752,51 @@ docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/09/01/guan-yu-ci-bo-ke-ping-tai/">
+                <a href="/2024/09/01/docker-jing-xiang/">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202408152245346.png" class="responsive-img" alt="Docker镜像源">
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="关于此博客平台">
-                        
-                        <span class="card-title">关于此博客平台</span>
+                        <span class="card-title">Docker镜像源</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            独立思考与自由意志的平台
+                            docker应用
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    博客搭建
+                            <a href="/categories/%E9%95%9C%E5%83%8F%E6%BA%90/" class="post-category">
+                                    镜像源
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
                     </a>
                     
-                    <a href="/tags/%E5%88%9D%E8%A1%B7/">
-                        <span class="chip bg-color">初衷</span>
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
