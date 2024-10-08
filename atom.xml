@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-09-08T06:54:18.165Z</updated>
+  <updated>2024-10-08T07:22:05.688Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,18 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Docker镜像源</title>
-    <link href="http://zhangyao0329.github.io/2024/09/01/docker-jing-xiang/"/>
-    <id>http://zhangyao0329.github.io/2024/09/01/docker-jing-xiang/</id>
-    <published>2024-09-01T11:11:10.000Z</published>
-    <updated>2024-09-08T06:54:18.165Z</updated>
+    <title>Docker镜像</title>
+    <link href="http://zhangyao0329.github.io/2024/10/08/docker-jing-xiang/"/>
+    <id>http://zhangyao0329.github.io/2024/10/08/docker-jing-xiang/</id>
+    <published>2024-10-08T15:01:31.000Z</published>
+    <updated>2024-10-08T07:22:05.688Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Docker镜像源&quot;&gt;&lt;a href=&quot;#Docker镜像源&quot; class=&quot;headerlink&quot; title=&quot;Docker镜像源&quot;&gt;&lt;/a&gt;Docker镜像源&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-docker&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;1、配置镜像源&quot;&gt;&lt;a href=&quot;#1、配置镜像源&quot; class=&quot;headerlink&quot; title=&quot;1、配置镜像源&quot;&gt;&lt;/a&gt;1、配置镜像源&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
         
       
     
@@ -48,7 +48,7 @@
     <link href="http://zhangyao0329.github.io/2024/09/01/da-jian-yi-ge-tu-chuang/"/>
     <id>http://zhangyao0329.github.io/2024/09/01/da-jian-yi-ge-tu-chuang/</id>
     <published>2024-09-01T10:47:46.000Z</published>
-    <updated>2024-09-08T06:54:18.165Z</updated>
+    <updated>2024-10-08T07:22:05.688Z</updated>
     
     
       
@@ -75,14 +75,14 @@
     <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
     <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
     <published>2024-09-01T10:40:33.000Z</published>
-    <updated>2024-09-08T06:54:18.165Z</updated>
+    <updated>2024-10-08T07:22:05.688Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;关于&quot;&gt;&lt;a href=&quot;#关于&quot; class=&quot;headerlink&quot; title=&quot;关于&quot;&gt;&lt;/a&gt;关于&lt;/h2&gt;&lt;p&gt;现在个人博客已经非常常见了，知乎， csdn，</summary>
+    <summary type="html">&lt;h2 id=&quot;1、关于&quot;&gt;&lt;a href=&quot;#1、关于&quot; class=&quot;headerlink&quot; title=&quot;1、关于&quot;&gt;&lt;/a&gt;1、关于&lt;/h2&gt;&lt;p&gt;现在个人博客已经非常常见了，知乎， csdn，</summary>
         
       
     
