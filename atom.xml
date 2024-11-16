@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>大貔貅的博客</title>
+  
+  <subtitle>灵魂深处是温柔</subtitle>
+  <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://zhangyao0329.github.io/"/>
+  <updated>2024-09-01T03:24:17.781Z</updated>
+  <id>http://zhangyao0329.github.io/</id>
+  
+  <author>
+    <name>ZhangYao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker镜像源</title>
+    <link href="http://zhangyao0329.github.io/2024/09/01/docker-jing-xiang/"/>
+    <id>http://zhangyao0329.github.io/2024/09/01/docker-jing-xiang/</id>
+    <published>2024-09-01T03:11:10.000Z</published>
+    <updated>2024-09-01T03:24:17.781Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Docker镜像源&quot;&gt;&lt;a href=&quot;#Docker镜像源&quot; class=&quot;headerlink&quot; title=&quot;Docker镜像源&quot;&gt;&lt;/a&gt;Docker镜像源&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-docker&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="镜像源" scheme="http://zhangyao0329.github.io/categories/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+    
+    
+    <category term="Docker" scheme="http://zhangyao0329.github.io/tags/Docker/"/>
+    
+    <category term="工具" scheme="http://zhangyao0329.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建一个图床</title>
+    <link href="http://zhangyao0329.github.io/2024/09/01/da-jian-yi-ge-tu-chuang/"/>
+    <id>http://zhangyao0329.github.io/2024/09/01/da-jian-yi-ge-tu-chuang/</id>
+    <published>2024-09-01T02:47:46.000Z</published>
+    <updated>2024-09-01T03:23:58.580Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;GitHub-PicGo-JsDelivr-打造高效免费图床详细教程&quot;&gt;&lt;a href=&quot;#GitHub-PicGo-JsDelivr-打造高效免费图床详细教程&quot; class=&quot;headerlink&quot; title=&quot;GitHub+PicGo+JsDelivr</summary>
+        
+      
+    
+    
+    
+    <category term="图床搭建搭建" scheme="http://zhangyao0329.github.io/categories/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="博客" scheme="http://zhangyao0329.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="图床教程" scheme="http://zhangyao0329.github.io/tags/%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客平台搭建的初衷</title>
+    <link href="http://zhangyao0329.github.io/2024/09/01/bo-ke-ping-tai-da-jian-de-chu-zhong/"/>
+    <id>http://zhangyao0329.github.io/2024/09/01/bo-ke-ping-tai-da-jian-de-chu-zhong/</id>
+    <published>2024-09-01T02:40:33.000Z</published>
+    <updated>2024-09-01T03:23:32.774Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;现在个人博客已经非常常见了，知乎， csdn，</summary>
+        
+      
+    
+    
+    
+    <category term="博客搭建" scheme="http://zhangyao0329.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="博客" scheme="http://zhangyao0329.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="初衷" scheme="http://zhangyao0329.github.io/tags/%E5%88%9D%E8%A1%B7/"/>
+    
+  </entry>
+  
+</feed>
