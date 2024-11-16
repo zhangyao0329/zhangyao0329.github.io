@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Docker镜像源, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
+    <meta name="keywords" content="Docker镜像, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
     <meta name="description" content="Java开发 | 机器学习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Docker镜像源 | 大貔貅的博客</title>
+    <title>Docker镜像 | 大貔貅的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -260,7 +260,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = 'b32e34101aaa68e28420ed6e8cd79b3ce6e417842495896e7733c02b9bbacc49';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -278,7 +278,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Docker镜像源</h1>
+                    <h1 class="description center-align post-title">Docker镜像</h1>
                 </div>
             </div>
         </div>
@@ -423,21 +423,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-09-01
+                    2024-10-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-09-01
+                    2024-11-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    232
+                    109
                 </div>
                 
 
@@ -467,82 +467,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Docker镜像源"><a href="#Docker镜像源" class="headerlink" title="Docker镜像源"></a>Docker镜像源</h1><pre class="line-numbers language-docker" data-language="docker"><code class="language-docker"><span class="token comment"># 创建目录</span>
-sudo mkdir -p /etc/docker
+                <h1 id="1、配置镜像源"><a href="#1、配置镜像源" class="headerlink" title="1、配置镜像源"></a>1、配置镜像源</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建目录</span>
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /etc/docker
 
 <span class="token comment"># 复制内容，注意把其中的镜像加速地址改成你自己的</span>
-tee /etc/docker/daemon.json &lt;&lt;-'EOF'
+<span class="token function">tee</span> /etc/docker/daemon.json <span class="token operator">&lt;&lt;-</span><span class="token string">'EOF'
 {
   "registry-mirrors": ["https://docker.1panel.live"]
 }
-EOF
+EOF</span>
 
 <span class="token comment"># 重新加载配置</span>
-sudo systemctl daemon-reload
+<span class="token function">sudo</span> systemctl daemon-reload
 
 <span class="token comment"># 重启Docker</span>
-sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">sudo</span> systemctl restart <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>查看换源是否成功</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> info<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p>可以使用的镜像源</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https://docker.1panel.live
+https://dockerproxy.cn
+https://docker.hpcloud.cloud<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>查看是否换源成功</p>
-<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">docker info<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<p>可用镜像</p>
-<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//dockerpull.com</span></span>
-<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.1panel.live</span></span>
-<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//dockerproxy.cn</span></span>
-<span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.hpcloud.cloud</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>自建镜像</p>
-<pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.dapixiu.cloudns.ch/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<hr>
-<h2 id="卸载docker"><a href="#卸载docker" class="headerlink" title="卸载docker"></a>卸载docker</h2><pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum remove docker \
-    docker-client \
-    docker-client-latest \
-    docker-common \
-    docker-latest \
-    docker-latest-logrotate \
-    docker-logrotate \
-    docker-engine<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum install -y yum-utils
-||&lt; --- yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-
-
-<pre class="line-numbers language-docker" data-language="docker"><code class="language-docker">yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-yum makecache fast
-
-yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-<h2 id="docker常用命令："><a href="#docker常用命令：" class="headerlink" title="docker常用命令："></a>docker常用命令：</h2><pre class="line-numbers language-none"><code class="language-none"># 启动Docker
-systemctl start docker
-
-# 停止Docker
-systemctl stop docker
-
-# 重启
-systemctl restart docker
-
-# 设置开机自启
-systemctl enable docker
-
-# 执行docker ps命令，如果不报错，说明安装启动成功
-docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="2、自建镜像源"><a href="#2、自建镜像源" class="headerlink" title="2、自建镜像源"></a>2、自建镜像源</h1><pre class="line-numbers language-http" data-language="http"><code class="language-http"><span class="token header"><span class="token header-name keyword">https</span><span class="token punctuation">:</span><span class="token header-value">//docker.dapixiu.cloudns.ch/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -572,7 +521,7 @@ docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhangyao0329.github.io/2024/09/01/docker-jing-xiang/">http://zhangyao0329.github.io/2024/09/01/docker-jing-xiang/</a>
+                    <a href="http://zhangyao0329.github.io/2024/10/08/docker-jing-xiang/">http://zhangyao0329.github.io/2024/10/08/docker-jing-xiang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -804,51 +753,53 @@ docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/09/01/docker-jing-xiang/">
+                <a href="/2024/11/14/javase-zhi-ri-qi-ji-he-cao-zuo/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202408152245346.png" class="responsive-img" alt="Docker镜像源">
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411142129335.png" class="responsive-img" alt="JavaSE之日期集合操作">
                         
-                        <span class="card-title">Docker镜像源</span>
+                        <span class="card-title">JavaSE之日期集合操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            docker应用
+                            日期和集合的操作知识点
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-11-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%95%9C%E5%83%8F%E6%BA%90/" class="post-category">
-                                    镜像源
+                            <a href="/categories/JavaSE/" class="post-category">
+                                    JavaSE
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
+                    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">基础知识</span>
                     </a>
                     
-                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">工具</span>
+                    <a href="/tags/%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C/">
+                        <span class="chip bg-color">日期操作</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/">
+                        <span class="chip bg-color">集合操作</span>
                     </a>
                     
                 </div>
@@ -862,19 +813,19 @@ docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/09/01/da-jian-yi-ge-tu-chuang/">
+                <a href="/2024/09/01/guan-yu-ci-bo-ke-ping-tai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="搭建一个图床">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="关于此博客平台">
                         
-                        <span class="card-title">搭建一个图床</span>
+                        <span class="card-title">关于此博客平台</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PicGo、cdn、github搭建的免费图床
+                            独立思考与自由意志的平台
                         
                     </div>
                     <div class="publish-info">
@@ -885,8 +836,8 @@ docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    图床搭建搭建
+                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
+                                    博客搭建
                                 </a>
                             
                             
@@ -900,8 +851,8 @@ docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                         <span class="chip bg-color">博客</span>
                     </a>
                     
-                    <a href="/tags/%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">图床教程</span>
+                    <a href="/tags/%E5%88%9D%E8%A1%B7/">
+                        <span class="chip bg-color">初衷</span>
                     </a>
                     
                 </div>

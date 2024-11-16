@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-09-01T03:24:17.781Z</updated>
+  <updated>2024-11-16T02:24:59.000Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,18 +17,105 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Docker镜像源</title>
-    <link href="http://zhangyao0329.github.io/2024/09/01/docker-jing-xiang/"/>
-    <id>http://zhangyao0329.github.io/2024/09/01/docker-jing-xiang/</id>
-    <published>2024-09-01T03:11:10.000Z</published>
-    <updated>2024-09-01T03:24:17.781Z</updated>
+    <title></title>
+    <link href="http://zhangyao0329.github.io/2024/11/15/stream-liu-he-io-liu/"/>
+    <id>http://zhangyao0329.github.io/2024/11/15/stream-liu-he-io-liu/</id>
+    <published>2024-11-15T14:37:47.000Z</published>
+    <updated>2024-11-16T02:24:59.000Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Docker镜像源&quot;&gt;&lt;a href=&quot;#Docker镜像源&quot; class=&quot;headerlink&quot; title=&quot;Docker镜像源&quot;&gt;&lt;/a&gt;Docker镜像源&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-docker&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;Stream流、文件、IO流&quot;&gt;&lt;a href=&quot;#Stream流、文件、IO流&quot; class=&quot;headerlink&quot; title=&quot;Stream流、文件、IO流&quot;&gt;&lt;/a&gt;Stream流、文件、IO流&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="http://zhangyao0329.github.io/categories/JavaSE/"/>
+    
+    
+    <category term="基础知识" scheme="http://zhangyao0329.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="文件" scheme="http://zhangyao0329.github.io/tags/%E6%96%87%E4%BB%B6/"/>
+    
+    <category term="Stream流" scheme="http://zhangyao0329.github.io/tags/Stream%E6%B5%81/"/>
+    
+    <category term="IO流" scheme="http://zhangyao0329.github.io/tags/IO%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Video Download</title>
+    <link href="http://zhangyao0329.github.io/2024/11/15/video-download/"/>
+    <id>http://zhangyao0329.github.io/2024/11/15/video-download/</id>
+    <published>2024-11-15T03:02:44.000Z</published>
+    <updated>2024-11-16T06:58:51.301Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;逛GitHub的时候看到一款视频下载工具，挺好用的，记录下使用过程。&quot;&gt;&lt;a href=&quot;#逛GitHub的时候看到一款视频下载工具，挺好用的，记录下使用过程。&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Video" scheme="http://zhangyao0329.github.io/categories/Video/"/>
+    
+    
+    <category term="Youtube Video" scheme="http://zhangyao0329.github.io/tags/Youtube-Video/"/>
+    
+    <category term="Bilibili" scheme="http://zhangyao0329.github.io/tags/Bilibili/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaSE之日期集合操作</title>
+    <link href="http://zhangyao0329.github.io/2024/11/14/javase-zhi-ri-qi-ji-he-cao-zuo/"/>
+    <id>http://zhangyao0329.github.io/2024/11/14/javase-zhi-ri-qi-ji-he-cao-zuo/</id>
+    <published>2024-11-14T13:26:50.000Z</published>
+    <updated>2024-11-16T06:57:43.152Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;日期、正则表达式、单列集合&quot;&gt;&lt;a href=&quot;#日期、正则表达式、单列集合&quot; class=&quot;headerlink&quot; title=&quot;日期、正则表达式、单列集合&quot;&gt;&lt;/a&gt;日期、正则表达式、单列集合&lt;/h1&gt;&lt;h2 id=&quot;1、日期&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="http://zhangyao0329.github.io/categories/JavaSE/"/>
+    
+    
+    <category term="基础知识" scheme="http://zhangyao0329.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="日期操作" scheme="http://zhangyao0329.github.io/tags/%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C/"/>
+    
+    <category term="集合操作" scheme="http://zhangyao0329.github.io/tags/%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker镜像</title>
+    <link href="http://zhangyao0329.github.io/2024/10/08/docker-jing-xiang/"/>
+    <id>http://zhangyao0329.github.io/2024/10/08/docker-jing-xiang/</id>
+    <published>2024-10-08T07:01:31.000Z</published>
+    <updated>2024-11-16T06:52:01.268Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1、配置镜像源&quot;&gt;&lt;a href=&quot;#1、配置镜像源&quot; class=&quot;headerlink&quot; title=&quot;1、配置镜像源&quot;&gt;&lt;/a&gt;1、配置镜像源&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
         
       
     
@@ -44,11 +131,38 @@
   </entry>
   
   <entry>
+    <title>关于此博客平台</title>
+    <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
+    <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
+    <published>2024-09-01T10:40:33.000Z</published>
+    <updated>2024-11-16T07:16:16.383Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1、关于&quot;&gt;&lt;a href=&quot;#1、关于&quot; class=&quot;headerlink&quot; title=&quot;1、关于&quot;&gt;&lt;/a&gt;1、关于&lt;/h2&gt;&lt;p&gt;现在个人博客已经非常常见了，知乎， csdn，</summary>
+        
+      
+    
+    
+    
+    <category term="博客搭建" scheme="http://zhangyao0329.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="博客" scheme="http://zhangyao0329.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="初衷" scheme="http://zhangyao0329.github.io/tags/%E5%88%9D%E8%A1%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>搭建一个图床</title>
     <link href="http://zhangyao0329.github.io/2024/09/01/da-jian-yi-ge-tu-chuang/"/>
     <id>http://zhangyao0329.github.io/2024/09/01/da-jian-yi-ge-tu-chuang/</id>
     <published>2024-09-01T02:47:46.000Z</published>
-    <updated>2024-09-01T03:23:58.580Z</updated>
+    <updated>2024-11-16T02:24:59.000Z</updated>
     
     
       
@@ -71,29 +185,56 @@
   </entry>
   
   <entry>
-    <title>博客平台搭建的初衷</title>
-    <link href="http://zhangyao0329.github.io/2024/09/01/bo-ke-ping-tai-da-jian-de-chu-zhong/"/>
-    <id>http://zhangyao0329.github.io/2024/09/01/bo-ke-ping-tai-da-jian-de-chu-zhong/</id>
-    <published>2024-09-01T02:40:33.000Z</published>
-    <updated>2024-09-01T03:23:32.774Z</updated>
+    <title>激活Windows10 专业版</title>
+    <link href="http://zhangyao0329.github.io/2024/06/26/ji-huo-windows10-zhuan-ye-ban/"/>
+    <id>http://zhangyao0329.github.io/2024/06/26/ji-huo-windows10-zhuan-ye-ban/</id>
+    <published>2024-06-26T14:32:35.000Z</published>
+    <updated>2024-06-29T09:31:35.084Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;现在个人博客已经非常常见了，知乎， csdn，</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406262234395.png&quot;</summary>
         
       
     
     
     
-    <category term="博客搭建" scheme="http://zhangyao0329.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="win环境" scheme="http://zhangyao0329.github.io/tags/win%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7原生安装一些工具</title>
+    <link href="http://zhangyao0329.github.io/2024/05/17/centos7-zhong-yuan-sheng-an-zhuang-yi-xie-gong-ju/"/>
+    <id>http://zhangyao0329.github.io/2024/05/17/centos7-zhong-yuan-sheng-an-zhuang-yi-xie-gong-ju/</id>
+    <published>2024-05-17T21:37:22.000Z</published>
+    <updated>2024-11-16T07:16:16.383Z</updated>
     
     
-    <category term="博客" scheme="http://zhangyao0329.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;CentOS7原生安装一些工具&quot;&gt;&lt;a href=&quot;#CentOS7原生安装一些工具&quot; class=&quot;headerlink&quot; title=&quot;CentOS7原生安装一些工具&quot;&gt;&lt;/a&gt;CentOS7原生安装一些工具&lt;/h1&gt;&lt;h2</summary>
+        
+      
     
-    <category term="初衷" scheme="http://zhangyao0329.github.io/tags/%E5%88%9D%E8%A1%B7/"/>
+    
+    
+    <category term="Linux" scheme="http://zhangyao0329.github.io/categories/Linux/"/>
+    
+    
+    <category term="redis" scheme="http://zhangyao0329.github.io/tags/redis/"/>
+    
+    <category term="mysql" scheme="http://zhangyao0329.github.io/tags/mysql/"/>
+    
+    <category term="Nginx" scheme="http://zhangyao0329.github.io/tags/Nginx/"/>
+    
+    <category term="rebbitmq" scheme="http://zhangyao0329.github.io/tags/rebbitmq/"/>
     
   </entry>
   
