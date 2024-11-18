@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> win10 </category>
           
       </categories>
       
@@ -205,6 +205,12 @@
       
         <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406262234395.png" alt="image-20240626223424058"></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GXslmgr /skms kms.03k.orgslmgr /ato<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
       
+      
+      <categories>
+          
+          <category> win10 </category>
+          
+      </categories>
       
       
         <tags>
