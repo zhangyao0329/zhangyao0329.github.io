@@ -438,7 +438,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-11-16
+                    2024-11-18
                 </div>
                 
 
@@ -475,7 +475,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Stream流、文件、IO流"><a href="#Stream流、文件、IO流" class="headerlink" title="Stream流、文件、IO流"></a>Stream流、文件、IO流</h1><h2 id="1-1-什么是Stream流？"><a href="#1-1-什么是Stream流？" class="headerlink" title="1.1 什么是Stream流？"></a>1.1 什么是Stream流？</h2><ul>
+                <h1 id="Stream流、文件、IO流"><a href="#Stream流、文件、IO流" class="headerlink" title="Stream流、文件、IO流"></a>Stream流、文件、IO流</h1><h2 id="1、-Stream流"><a href="#1、-Stream流" class="headerlink" title="1、 Stream流"></a>1、 Stream流</h2><ul>
 <li>也叫Stream流，是Jdk8开始新增的一套API(java.util.stream.*)，可以用于操作集合或者数组的数据。</li>
 <li>优势:Stream流大量的结合了Lambda的语法风格来编程，提供了一种更加强大，更加简单的方式操作集合或者数组中的数据，代码更简洁，可读性更好</li>
 </ul>
@@ -491,7 +491,7 @@
         <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> zhangList <span class="token operator">=</span> names<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>s <span class="token operator">-&gt;</span> s<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"张"</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>s <span class="token operator">-&gt;</span> s<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">"之"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>zhangList<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="1-2-获取Stream流"><a href="#1-2-获取Stream流" class="headerlink" title="1.2 获取Stream流"></a>1.2 获取Stream流</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411142224903.png" alt="获取Stream流"></p>
+<h3 id="1-1-获取Stream流"><a href="#1-1-获取Stream流" class="headerlink" title="1.1 获取Stream流"></a>1.1 获取Stream流</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411142224903.png" alt="获取Stream流"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//        List集合获取Stream流</span>
         <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> names <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>names<span class="token punctuation">,</span> <span class="token string">"陆林轩"</span><span class="token punctuation">,</span> <span class="token string">"李星云"</span><span class="token punctuation">,</span> <span class="token string">"姬如雪"</span><span class="token punctuation">,</span> <span class="token string">"张子凡"</span><span class="token punctuation">,</span> <span class="token string">"女帝"</span><span class="token punctuation">,</span> <span class="token string">"张谏之"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -532,7 +532,7 @@
 
 
 
-<h3 id="1-3-Stream流常见的中间方法"><a href="#1-3-Stream流常见的中间方法" class="headerlink" title="1.3 Stream流常见的中间方法"></a>1.3 Stream流常见的中间方法</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411151640049.png" alt="常见的中间方法"></p>
+<h3 id="1-2-Stream流常见的中间方法"><a href="#1-2-Stream流常见的中间方法" class="headerlink" title="1.2 Stream流常见的中间方法"></a>1.2 Stream流常见的中间方法</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411151640049.png" alt="常见的中间方法"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>dapixiu</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">ArrayList</span></span><span class="token punctuation">;</span>
@@ -1098,59 +1098,49 @@ is<span class="token punctuation">.</span><span class="token function">close</sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/11/15/stream-liu-he-io-liu/">
+                <a href="/2024/11/18/win10-gen-ju-duan-kou-sha-si-jin-cheng/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411152244041.png" class="responsive-img" alt="">
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411181906744.jpeg" class="responsive-img" alt="win10根据端口杀死进程">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">win10根据端口杀死进程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Stream流和IO流的操作知识点
+                            杀死端口进程
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-11-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaSE/" class="post-category">
-                                    JavaSE
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-                        <span class="chip bg-color">基础知识</span>
+                    <a href="/tags/win10/">
+                        <span class="chip bg-color">win10</span>
                     </a>
                     
-                    <a href="/tags/%E6%96%87%E4%BB%B6/">
-                        <span class="chip bg-color">文件</span>
-                    </a>
-                    
-                    <a href="/tags/Stream%E6%B5%81/">
-                        <span class="chip bg-color">Stream流</span>
-                    </a>
-                    
-                    <a href="/tags/IO%E6%B5%81/">
-                        <span class="chip bg-color">IO流</span>
+                    <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/">
+                        <span class="chip bg-color">端口占用</span>
                     </a>
                     
                 </div>

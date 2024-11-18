@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-11-16T02:24:59.000Z</updated>
+  <updated>2024-11-18T11:13:18.299Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,18 +17,47 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>win10根据端口杀死进程</title>
+    <link href="http://zhangyao0329.github.io/2024/11/18/win10-gen-ju-duan-kou-sha-si-jin-cheng/"/>
+    <id>http://zhangyao0329.github.io/2024/11/18/win10-gen-ju-duan-kou-sha-si-jin-cheng/</id>
+    <published>2024-11-18T10:15:48.000Z</published>
+    <updated>2024-11-18T11:13:18.299Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在日常使用中，Vmwear和Stram++总是会出现端口冲突的问题，每次一步步查太慢了，想到用脚本解决，一键杀死端口进程。&lt;/p&gt;
+&lt;p&gt;该脚本需要&lt;strong&gt;管理员权限&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="http://zhangyao0329.github.io/categories/Linux/"/>
+    
+    
+    <category term="win10" scheme="http://zhangyao0329.github.io/tags/win10/"/>
+    
+    <category term="端口占用" scheme="http://zhangyao0329.github.io/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title></title>
     <link href="http://zhangyao0329.github.io/2024/11/15/stream-liu-he-io-liu/"/>
     <id>http://zhangyao0329.github.io/2024/11/15/stream-liu-he-io-liu/</id>
     <published>2024-11-15T14:37:47.000Z</published>
-    <updated>2024-11-16T02:24:59.000Z</updated>
+    <updated>2024-11-18T10:16:07.105Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Stream流、文件、IO流&quot;&gt;&lt;a href=&quot;#Stream流、文件、IO流&quot; class=&quot;headerlink&quot; title=&quot;Stream流、文件、IO流&quot;&gt;&lt;/a&gt;Stream流、文件、IO流&lt;/h1&gt;&lt;h2</summary>
+    <summary type="html">&lt;h1 id=&quot;Stream流、文件、IO流&quot;&gt;&lt;a href=&quot;#Stream流、文件、IO流&quot; class=&quot;headerlink&quot; title=&quot;Stream流、文件、IO流&quot;&gt;&lt;/a&gt;Stream流、文件、IO流&lt;/h1&gt;&lt;h2 id=&quot;1、-Stream流&quot;&gt;&lt;a</summary>
         
       
     
@@ -131,38 +160,11 @@
   </entry>
   
   <entry>
-    <title>关于此博客平台</title>
-    <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
-    <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
-    <published>2024-09-01T10:40:33.000Z</published>
-    <updated>2024-11-16T07:16:16.383Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1、关于&quot;&gt;&lt;a href=&quot;#1、关于&quot; class=&quot;headerlink&quot; title=&quot;1、关于&quot;&gt;&lt;/a&gt;1、关于&lt;/h2&gt;&lt;p&gt;现在个人博客已经非常常见了，知乎， csdn，</summary>
-        
-      
-    
-    
-    
-    <category term="博客搭建" scheme="http://zhangyao0329.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="博客" scheme="http://zhangyao0329.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="初衷" scheme="http://zhangyao0329.github.io/tags/%E5%88%9D%E8%A1%B7/"/>
-    
-  </entry>
-  
-  <entry>
     <title>搭建一个图床</title>
     <link href="http://zhangyao0329.github.io/2024/09/01/da-jian-yi-ge-tu-chuang/"/>
     <id>http://zhangyao0329.github.io/2024/09/01/da-jian-yi-ge-tu-chuang/</id>
-    <published>2024-09-01T02:47:46.000Z</published>
-    <updated>2024-11-16T02:24:59.000Z</updated>
+    <published>2024-09-01T10:47:46.000Z</published>
+    <updated>2024-11-18T11:59:55.990Z</updated>
     
     
       
@@ -181,6 +183,33 @@
     <category term="博客" scheme="http://zhangyao0329.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="图床教程" scheme="http://zhangyao0329.github.io/tags/%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于此博客平台</title>
+    <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
+    <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
+    <published>2024-09-01T10:40:33.000Z</published>
+    <updated>2024-11-18T11:59:55.990Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1、关于&quot;&gt;&lt;a href=&quot;#1、关于&quot; class=&quot;headerlink&quot; title=&quot;1、关于&quot;&gt;&lt;/a&gt;1、关于&lt;/h2&gt;&lt;p&gt;现在个人博客已经非常常见了，知乎， csdn，</summary>
+        
+      
+    
+    
+    
+    <category term="博客搭建" scheme="http://zhangyao0329.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="博客" scheme="http://zhangyao0329.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="初衷" scheme="http://zhangyao0329.github.io/tags/%E5%88%9D%E8%A1%B7/"/>
     
   </entry>
   
@@ -211,8 +240,8 @@
     <title>CentOS7原生安装一些工具</title>
     <link href="http://zhangyao0329.github.io/2024/05/17/centos7-zhong-yuan-sheng-an-zhuang-yi-xie-gong-ju/"/>
     <id>http://zhangyao0329.github.io/2024/05/17/centos7-zhong-yuan-sheng-an-zhuang-yi-xie-gong-ju/</id>
-    <published>2024-05-17T21:37:22.000Z</published>
-    <updated>2024-11-16T07:16:16.383Z</updated>
+    <published>2024-05-17T13:37:22.000Z</published>
+    <updated>2024-11-18T10:16:37.591Z</updated>
     
     
       

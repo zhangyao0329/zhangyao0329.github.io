@@ -260,7 +260,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = 'b32e34101aaa68e28420ed6e8cd79b3ce6e417842495896e7733c02b9bbacc49';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -430,21 +430,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-11-16
+                    2024-11-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    673
+                    828
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -526,6 +526,33 @@
 <p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202405131806601.png" alt="12"></p>
 <h2 id="5、Minio搭建图床"><a href="#5、Minio搭建图床" class="headerlink" title="5、Minio搭建图床"></a>5、Minio搭建图床</h2><p>最简单的办法还是使用minio搭建图床:</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202410081530510.png"></p>
+<hr>
+<p>以上方案在使用过程中，很容易造成卡顿，比较影响使用体验。</p>
+<h2 id="6、typora-PicGo-Core实现图片自动上传"><a href="#6、typora-PicGo-Core实现图片自动上传" class="headerlink" title="6、typora+PicGo-Core实现图片自动上传"></a>6、typora+PicGo-Core实现图片自动上传</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241117092800812.png" alt="操作步骤"></p>
+<p>鼠标右键，点击<code>上传图片</code>，然后图片会被上传到图床。直接使用picGo内核，而不是picGo应用程序，卡顿的可能性会更小一些。</p>
+<p>步骤6的配置文件：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"picBed"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"current"</span><span class="token operator">:</span> <span class="token string">"github"</span><span class="token punctuation">,</span>
+    <span class="token property">"github"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"repo"</span><span class="token operator">:</span> <span class="token string">"zhangyao0329/tuchuang-blog"</span><span class="token punctuation">,</span> <span class="token comment">//自己的仓库名</span>
+      <span class="token property">"branch"</span><span class="token operator">:</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token comment">//默认</span>
+      <span class="token property">"token"</span><span class="token operator">:</span> <span class="token string">"《》《》《》《》《》"</span><span class="token punctuation">,</span> <span class="token comment">//github的token</span>
+      <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"img/"</span><span class="token punctuation">,</span> <span class="token comment">//在仓库下再建一个img文件夹，可以为空</span>
+      <span class="token property">"customUrl"</span><span class="token operator">:</span> <span class="token string">"https://github.com/zhangyao0329/tuchuang-blog/raw/main"</span> <span class="token comment">//按自己的来</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"uploader"</span><span class="token operator">:</span> <span class="token string">"github"</span><span class="token punctuation">,</span>
+    <span class="token property">"transformer"</span><span class="token operator">:</span> <span class="token string">"path"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"picgoPlugins"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"picgo-plugin-github-plus"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
 
                 
             </div>
@@ -788,6 +815,58 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2024/10/08/docker-jing-xiang/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202408152245346.png" class="responsive-img" alt="Docker镜像">
+                        
+                        <span class="card-title">Docker镜像</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            docker应用
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-10-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%95%9C%E5%83%8F%E6%BA%90/" class="post-category">
+                                    镜像源
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2024/09/01/guan-yu-ci-bo-ke-ping-tai/">
                     <div class="card-image">
                         
@@ -804,9 +883,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -828,51 +907,6 @@
                     
                     <a href="/tags/%E5%88%9D%E8%A1%B7/">
                         <span class="chip bg-color">初衷</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/06/26/ji-huo-windows10-zhuan-ye-ban/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="激活Windows10 专业版">
-                        
-                        <span class="card-title">激活Windows10 专业版</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            windows10系统续
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-26
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            ZhangYao
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/win%E7%8E%AF%E5%A2%83/">
-                        <span class="chip bg-color">win环境</span>
                     </a>
                     
                 </div>
