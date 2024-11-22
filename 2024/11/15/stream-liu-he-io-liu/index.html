@@ -475,11 +475,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Stream流、文件、IO流"><a href="#Stream流、文件、IO流" class="headerlink" title="Stream流、文件、IO流"></a>Stream流、文件、IO流</h1><h1 id="1、Stream流"><a href="#1、Stream流" class="headerlink" title="1、Stream流"></a>1、Stream流</h1><h2 id="1-1-什么是Stream流？"><a href="#1-1-什么是Stream流？" class="headerlink" title="1.1 什么是Stream流？"></a>1.1 什么是Stream流？</h2><ul>
+                <h1 id="Stream流和IO流"><a href="#Stream流和IO流" class="headerlink" title="Stream流和IO流"></a>Stream流和IO流</h1><h2 id="1、Stream流"><a href="#1、Stream流" class="headerlink" title="1、Stream流"></a>1、Stream流</h2><h3 id="1-1-什么是Stream流？"><a href="#1-1-什么是Stream流？" class="headerlink" title="1.1 什么是Stream流？"></a>1.1 什么是Stream流？</h3><ul>
 <li>也叫Stream流，是Jdk8开始新增的一套API(java.util.stream.*)，可以用于操作集合或者数组的数据。</li>
 <li>优势:Stream流大量的结合了Lambda的语法风格来编程，提供了一种更加强大，更加简单的方式操作集合或者数组中的数据，代码更简洁，可读性更好</li>
 </ul>
-<p><img src="D:%5CUsers%5CZhangYao%5CDesktop%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2@@@@%5CHexo-Blog%5Cblog%5Csource%5C_posts%5CStream%E6%B5%81%E5%92%8CIO%E6%B5%81.assets%5C202411142218860.png" alt="stream流的使用步骤"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411222042871.png" alt="stream流的使用步骤"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">        <span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> names <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>names<span class="token punctuation">,</span><span class="token string">"陆林轩"</span><span class="token punctuation">,</span><span class="token string">"李星云"</span><span class="token punctuation">,</span><span class="token string">"姬如雪"</span><span class="token punctuation">,</span><span class="token string">"张子凡"</span><span class="token punctuation">,</span><span class="token string">"女帝"</span><span class="token punctuation">,</span><span class="token string">"张谏之"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -491,7 +491,7 @@
         <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> zhangList <span class="token operator">=</span> names<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>s <span class="token operator">-&gt;</span> s<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"张"</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>s <span class="token operator">-&gt;</span> s<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">"之"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>zhangList<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="1-2-获取Stream流"><a href="#1-2-获取Stream流" class="headerlink" title="1.2 获取Stream流"></a>1.2 获取Stream流</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411142224903.png" alt="获取Stream流"></p>
+<h3 id="1-2-获取Stream流"><a href="#1-2-获取Stream流" class="headerlink" title="1.2 获取Stream流"></a>1.2 获取Stream流</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411142224903.png" alt="获取Stream流"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//        List集合获取Stream流</span>
         <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> names <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>names<span class="token punctuation">,</span> <span class="token string">"陆林轩"</span><span class="token punctuation">,</span> <span class="token string">"李星云"</span><span class="token punctuation">,</span> <span class="token string">"姬如雪"</span><span class="token punctuation">,</span> <span class="token string">"张子凡"</span><span class="token punctuation">,</span> <span class="token string">"女帝"</span><span class="token punctuation">,</span> <span class="token string">"张谏之"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -532,7 +532,7 @@
 
 
 
-<h2 id="1-3-Stream流常见的中间方法"><a href="#1-3-Stream流常见的中间方法" class="headerlink" title="1.3 Stream流常见的中间方法"></a>1.3 Stream流常见的中间方法</h2><p><img src="D:%5CUsers%5CZhangYao%5CDesktop%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2@@@@%5CHexo-Blog%5Cblog%5Csource%5C_posts%5CStream%E6%B5%81%E5%92%8CIO%E6%B5%81.assets%5C202411151640049.png" alt="常见的中间方法"></p>
+<h3 id="1-3-Stream流常见的中间方法"><a href="#1-3-Stream流常见的中间方法" class="headerlink" title="1.3 Stream流常见的中间方法"></a>1.3 Stream流常见的中间方法</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411222042916.png" alt="常见的中间方法"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>dapixiu</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">ArrayList</span></span><span class="token punctuation">;</span>
@@ -579,8 +579,8 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="1-3-Stream流常见的终结方法"><a href="#1-3-Stream流常见的终结方法" class="headerlink" title="1.3 Stream流常见的终结方法"></a>1.3 Stream流常见的终结方法</h2><p><img src="D:%5CUsers%5CZhangYao%5CDesktop%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2@@@@%5CHexo-Blog%5Cblog%5Csource%5C_posts%5CStream%E6%B5%81%E5%92%8CIO%E6%B5%81.assets%5C202411151639392.png" alt="常见的终结方法"></p>
-<p><img src="D:%5CUsers%5CZhangYao%5CDesktop%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2@@@@%5CHexo-Blog%5Cblog%5Csource%5C_posts%5CStream%E6%B5%81%E5%92%8CIO%E6%B5%81.assets%5C202411151657814.png" alt="常见的终结方法"></p>
+<h3 id="1-4-Stream流常见的终结方法"><a href="#1-4-Stream流常见的终结方法" class="headerlink" title="1.4 Stream流常见的终结方法"></a>1.4 Stream流常见的终结方法</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411222042807.png" alt="常见的终结方法"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411222042049.png" alt="常见的终结方法"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 操作对象</span>
 <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Student</span><span class="token punctuation">&gt;</span></span> students <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">Student</span> ss <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"李星云"</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">175.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -630,8 +630,8 @@
 
 
 
-<h1 id="2、File-操作文件"><a href="#2、File-操作文件" class="headerlink" title="2、File-操作文件"></a>2、File-操作文件</h1><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411151725289.png" alt="File介绍"></p>
-<h2 id="2-1-判断文件类型-获取文件信息"><a href="#2-1-判断文件类型-获取文件信息" class="headerlink" title="2.1 判断文件类型 获取文件信息"></a>2.1 判断文件类型 获取文件信息</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411151740910.png" alt="常见方法"></p>
+<h2 id="2、File-操作文件"><a href="#2、File-操作文件" class="headerlink" title="2、File-操作文件"></a>2、File-操作文件</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411151725289.png" alt="File介绍"></p>
+<h3 id="2-1-判断文件类型-获取文件信息"><a href="#2-1-判断文件类型-获取文件信息" class="headerlink" title="2.1 判断文件类型 获取文件信息"></a>2.1 判断文件类型 获取文件信息</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411151740910.png" alt="常见方法"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411151745613.png" alt="常见方法"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//1、创建File对象，指向指定路径的文件</span>
         <span class="token class-name">File</span> file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\Users\\ZhangYao\\Desktop\\常用方法.md"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -673,7 +673,7 @@
 
 
 
-<h2 id="2-2-创建文件-删除文件"><a href="#2-2-创建文件-删除文件" class="headerlink" title="2.2 创建文件 删除文件"></a>2.2 创建文件 删除文件</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411151817721.png" alt="创建、删除文件夹"></p>
+<h3 id="2-2-创建文件-删除文件"><a href="#2-2-创建文件-删除文件" class="headerlink" title="2.2 创建文件 删除文件"></a>2.2 创建文件 删除文件</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411151817721.png" alt="创建、删除文件夹"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//1、public boolean createNewFile():创建一个新文件(文件内容为空)，创建成功返回true,反之。</span>
         <span class="token class-name">File</span> file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:\\Users\\ZhangYao\\Desktop\\测试.md"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">boolean</span> newFile <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">createNewFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -690,7 +690,7 @@
         <span class="token keyword">boolean</span> delete <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>delete<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="2-3-遍历文件夹"><a href="#2-3-遍历文件夹" class="headerlink" title="2.3 遍历文件夹"></a>2.3 遍历文件夹</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411151945856.png" alt="遍历"></p>
+<h3 id="2-3-遍历文件夹"><a href="#2-3-遍历文件夹" class="headerlink" title="2.3 遍历文件夹"></a>2.3 遍历文件夹</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411151945856.png" alt="遍历"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 1、public String[] list():获取当前目录下所有的"一级文件名称"到一个字符串数组中去返回。</span>
         <span class="token class-name">File</span> f1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"D:/Users/ZhangYao/Desktop/测试文件夹/q/w/e/r/t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> list <span class="token operator">=</span> f1<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -741,7 +741,7 @@
 <span class="token class-name">Runtime</span> runtime <span class="token operator">=</span> <span class="token class-name">Runtime</span><span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 runtime<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">getAbsolutePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="2-4-删除非空文件夹"><a href="#2-4-删除非空文件夹" class="headerlink" title="2.4 删除非空文件夹"></a>2.4 删除非空文件夹</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//       方法一</span>
+<h3 id="2-4-删除非空文件夹"><a href="#2-4-删除非空文件夹" class="headerlink" title="2.4 删除非空文件夹"></a>2.4 删除非空文件夹</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//       方法一</span>
         <span class="token class-name">Path</span> dir <span class="token operator">=</span> <span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"path/to/your/directory"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 替换为你要删除的目录路径</span>
 
         <span class="token keyword">try</span> <span class="token punctuation">{</span>
@@ -799,7 +799,7 @@ runtime<span class="token punctuation">.</span><span class="token function">exec
     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"删除已完成"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="3、IO流-字节流"><a href="#3、IO流-字节流" class="headerlink" title="3、IO流-字节流"></a>3、IO流-字节流</h1><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411152124594.png" alt="字符的编码和解码"></p>
+<h2 id="3、IO流-字节流"><a href="#3、IO流-字节流" class="headerlink" title="3、IO流-字节流"></a>3、IO流-字节流</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411152124594.png" alt="字符的编码和解码"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//        编码</span>
         <span class="token class-name">String</span> data <span class="token operator">=</span> <span class="token string">"传国玉玺"</span><span class="token punctuation">;</span>
         <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -809,14 +809,14 @@ runtime<span class="token punctuation">.</span><span class="token function">exec
         <span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>bytes<span class="token punctuation">,</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="D:%5CUsers%5CZhangYao%5CDesktop%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2@@@@%5CHexo-Blog%5Cblog%5Csource%5C_posts%5CStream%E6%B5%81%E5%92%8CIO%E6%B5%81.assets%5C202411152124050.png" alt="以内存为参照的输入输出"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411222043461.png" alt="以内存为参照的输入输出"></p>
 <ul>
 <li>字节流—&gt;适合操作所有类型的文件</li>
 <li>字符流—&gt;只适合操作纯文本文件</li>
 </ul>
-<p><img src="D:%5CUsers%5CZhangYao%5CDesktop%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2@@@@%5CHexo-Blog%5Cblog%5Csource%5C_posts%5CStream%E6%B5%81%E5%92%8CIO%E6%B5%81.assets%5C202411152128663.png" alt="分类"></p>
-<p><img src="D:%5CUsers%5CZhangYao%5CDesktop%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2@@@@%5CHexo-Blog%5Cblog%5Csource%5C_posts%5CStream%E6%B5%81%E5%92%8CIO%E6%B5%81.assets%5C202411152129700.png" alt="IO流体系"></p>
-<h2 id="3-1-文件字节输入流"><a href="#3-1-文件字节输入流" class="headerlink" title="3.1 文件字节输入流"></a>3.1 文件字节输入流</h2><p><img src="D:%5CUsers%5CZhangYao%5CDesktop%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2@@@@%5CHexo-Blog%5Cblog%5Csource%5C_posts%5CStream%E6%B5%81%E5%92%8CIO%E6%B5%81.assets%5C202411152135485.png" alt="可以操作所有文件"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411222043747.png" alt="分类"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411222043670.png" alt="IO流体系"></p>
+<h3 id="3-1-文件字节输入流"><a href="#3-1-文件字节输入流" class="headerlink" title="3.1 文件字节输入流"></a>3.1 文件字节输入流</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411222043194.png" alt="可以操作所有文件"></p>
 <p>读取文本内容：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 创建文件输入流，指向待读取的文本文件</span>
 <span class="token class-name">InputStream</span> is <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">"D:\\Users\\ZhangYao\\Desktop\\测试文本.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -936,7 +936,7 @@ is<span class="token punctuation">.</span><span class="token function">close</sp
 is<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411162103699.png"></p>
-<h2 id="3-2-文件字节输出流"><a href="#3-2-文件字节输出流" class="headerlink" title="3.2 文件字节输出流"></a>3.2 文件字节输出流</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411162106337.png" alt="文件字节输出流"></p>
+<h3 id="3-2-文件字节输出流"><a href="#3-2-文件字节输出流" class="headerlink" title="3.2 文件字节输出流"></a>3.2 文件字节输出流</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411162106337.png" alt="文件字节输出流"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411162107320.png" alt="方法"></p>
 <ul>
 <li>写入会覆盖原文件内容。弱文件不存在，可自动产生文件。</li>
@@ -964,12 +964,12 @@ is<span class="token punctuation">.</span><span class="token function">close</sp
 <ul>
 <li>换行：<code>os.write(bytes);</code></li>
 </ul>
-<h1 id="4、IO流-字符流"><a href="#4、IO流-字符流" class="headerlink" title="4、IO流-字符流"></a>4、IO流-字符流</h1><ul>
+<h2 id="4、IO流-字符流"><a href="#4、IO流-字符流" class="headerlink" title="4、IO流-字符流"></a>4、IO流-字符流</h2><ul>
 <li>字节流，适合文本复制，不适合读写文本文件。</li>
 <li>字符流，非常适合读写文本文件内容。</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411162208874.png" alt="字符流"></p>
-<h2 id="4-1-文件字符输入流"><a href="#4-1-文件字符输入流" class="headerlink" title="4.1 文件字符输入流"></a>4.1 文件字符输入流</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411162208955.png" alt="方法"></p>
+<h3 id="4-1-文件字符输入流"><a href="#4-1-文件字符输入流" class="headerlink" title="4.1 文件字符输入流"></a>4.1 文件字符输入流</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411162208955.png" alt="方法"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//        创建一个字节输入流，与源文件连接</span>
         <span class="token class-name">String</span> path <span class="token operator">=</span> <span class="token string">"D:/Users/ZhangYao/Desktop/测试文本.txt"</span><span class="token punctuation">;</span>
         <span class="token keyword">try</span> <span class="token punctuation">(</span><span class="token class-name">Reader</span> fr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1000,7 +1000,7 @@ is<span class="token punctuation">.</span><span class="token function">close</sp
             e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="4-2-文件字符输出流"><a href="#4-2-文件字符输出流" class="headerlink" title="4.2 文件字符输出流"></a>4.2 文件字符输出流</h2><p><img src="D:%5CUsers%5CZhangYao%5CDesktop%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2@@@@%5CHexo-Blog%5Cblog%5Csource%5C_posts%5CStream%E6%B5%81%E5%92%8CIO%E6%B5%81.assets%5Cimage-20241118093759952.png" alt="方法"></p>
+<h3 id="4-2-文件字符输出流"><a href="#4-2-文件字符输出流" class="headerlink" title="4.2 文件字符输出流"></a>4.2 文件字符输出流</h3><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411222043392.png" alt="方法"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> path <span class="token operator">=</span> <span class="token string">"D:/Users/ZhangYao/Desktop/测试文本.txt"</span><span class="token punctuation">;</span>
         <span class="token keyword">try</span> <span class="token punctuation">(</span>
                 <span class="token comment">//        创建一个字节输出流，与源文件连接</span>
@@ -1024,15 +1024,15 @@ is<span class="token punctuation">.</span><span class="token function">close</sp
             e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="字符流、字节流–-小结"><a href="#字符流、字节流–-小结" class="headerlink" title="字符流、字节流–>小结"></a>字符流、字节流–&gt;小结</h1><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241118095443405.png" alt="注意"></p>
+<h2 id="字符流、字节流–-小结"><a href="#字符流、字节流–-小结" class="headerlink" title="字符流、字节流–>小结"></a>字符流、字节流–&gt;小结</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241118095443405.png" alt="注意"></p>
 <hr>
-<h1 id="5、缓冲流"><a href="#5、缓冲流" class="headerlink" title="5、缓冲流"></a>5、缓冲流</h1><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241118100012625.png" alt="体系"></p>
-<h2 id="5-1-字符缓冲输入流"><a href="#5-1-字符缓冲输入流" class="headerlink" title="5.1 字符缓冲输入流"></a>5.1 字符缓冲输入流</h2><p>原理:</p>
+<h2 id="5、缓冲流"><a href="#5、缓冲流" class="headerlink" title="5、缓冲流"></a>5、缓冲流</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241118100012625.png" alt="体系"></p>
+<h3 id="5-1-字符缓冲输入流"><a href="#5-1-字符缓冲输入流" class="headerlink" title="5.1 字符缓冲输入流"></a>5.1 字符缓冲输入流</h3><p>原理:</p>
 <ul>
 <li>字节缓冲输入流自带了8KB缓冲池;</li>
 <li>字节缓冲输出流也自带了8KB缓冲池;</li>
 </ul>
-<p><img src="D:%5CUsers%5CZhangYao%5CDesktop%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2@@@@%5CHexo-Blog%5Cblog%5Csource%5C_posts%5CStream%E6%B5%81%E5%92%8CIO%E6%B5%81.assets%5Cimage-20241118224002167.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202411222044003.png"></p>
 <p>原始流的文件复制：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 原始文件路径</span>
 <span class="token class-name">String</span> path <span class="token operator">=</span> <span class="token string">"D:/Users/ZhangYao/Desktop/测试文本.txt"</span><span class="token punctuation">;</span>
@@ -1103,7 +1103,7 @@ is<span class="token punctuation">.</span><span class="token function">close</sp
     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="5-2-字符缓冲输出流"><a href="#5-2-字符缓冲输出流" class="headerlink" title="5.2 字符缓冲输出流"></a>5.2 字符缓冲输出流</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122164914978.png"></p>
+<h3 id="5-2-字符缓冲输出流"><a href="#5-2-字符缓冲输出流" class="headerlink" title="5.2 字符缓冲输出流"></a>5.2 字符缓冲输出流</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122164914978.png"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 原始文件路径</span>
 <span class="token class-name">String</span> path <span class="token operator">=</span> <span class="token string">"D:/Users/ZhangYao/Desktop/测试文本.txt"</span><span class="token punctuation">;</span>
 <span class="token class-name">FileWriter</span> fw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1113,10 +1113,10 @@ bfw<span class="token punctuation">.</span><span class="token function">write</s
 bfw<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 bfw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="6、转换流"><a href="#6、转换流" class="headerlink" title="6、转换流"></a>6、转换流</h1><h2 id="6-1-字符输入转换流"><a href="#6-1-字符输入转换流" class="headerlink" title="6.1 字符输入转换流"></a>6.1 字符输入转换流</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122190620529.png"></p>
+<h2 id="6、转换流"><a href="#6、转换流" class="headerlink" title="6、转换流"></a>6、转换流</h2><h3 id="6-1-字符输入转换流"><a href="#6-1-字符输入转换流" class="headerlink" title="6.1 字符输入转换流"></a>6.1 字符输入转换流</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122190620529.png"></p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122190654878.png"></p>
-<h2 id="6-2-字符输出转换流"><a href="#6-2-字符输出转换流" class="headerlink" title="6.2 字符输出转换流"></a>6.2 字符输出转换流</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122190822058.png"></p>
-<h1 id="7、打印流"><a href="#7、打印流" class="headerlink" title="7、打印流"></a>7、打印流</h1><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122190923768.png" alt="打印流"></p>
+<h3 id="6-2-字符输出转换流"><a href="#6-2-字符输出转换流" class="headerlink" title="6.2 字符输出转换流"></a>6.2 字符输出转换流</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122190822058.png"></p>
+<h2 id="7、打印流"><a href="#7、打印流" class="headerlink" title="7、打印流"></a>7、打印流</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122190923768.png" alt="打印流"></p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122191019269.png" alt="方法"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> path <span class="token operator">=</span> <span class="token string">"D:/Users/ZhangYao/Desktop/测试文本.txt"</span><span class="token punctuation">;</span>
 <span class="token class-name">PrintStream</span> ps <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PrintStream</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token class-name">Charset</span><span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1130,7 +1130,7 @@ ps<span class="token punctuation">.</span><span class="token function">println</
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> path <span class="token operator">=</span> <span class="token string">"D:/Users/ZhangYao/Desktop/测试文本.txt"</span><span class="token punctuation">;</span>
 <span class="token class-name">PrintStream</span> ps <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PrintStream</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token class-name">Charset</span><span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h1 id="8、数据流"><a href="#8、数据流" class="headerlink" title="8、数据流"></a>8、数据流</h1><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122193438446.png" alt="数据流"></p>
+<h2 id="8、数据流"><a href="#8、数据流" class="headerlink" title="8、数据流"></a>8、数据流</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122193438446.png" alt="数据流"></p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122193543079.png" alt="数据输出流"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> path <span class="token operator">=</span> <span class="token string">"D:/Users/ZhangYao/Desktop/测试文本.txt"</span><span class="token punctuation">;</span>
 <span class="token class-name">DataOutputStream</span> dos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataOutputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1210,8 +1210,8 @@ dos<span class="token punctuation">.</span><span class="token function">writeUTF
 
 
 
-<h1 id="9、IO框架"><a href="#9、IO框架" class="headerlink" title="9、IO框架"></a>9、IO框架</h1><h2 id="9-1-什么是IO框架"><a href="#9-1-什么是IO框架" class="headerlink" title="9.1 什么是IO框架"></a>9.1 什么是IO框架</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122202337810.png" alt="介绍"></p>
-<h2 id="9-2-使用IO框架"><a href="#9-2-使用IO框架" class="headerlink" title="9.2 使用IO框架"></a>9.2 使用IO框架</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122202548259.png"></p>
+<h2 id="9、IO框架"><a href="#9、IO框架" class="headerlink" title="9、IO框架"></a>9、IO框架</h2><h3 id="9-1-什么是IO框架"><a href="#9-1-什么是IO框架" class="headerlink" title="9.1 什么是IO框架"></a>9.1 什么是IO框架</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122202337810.png" alt="介绍"></p>
+<h3 id="9-2-使用IO框架"><a href="#9-2-使用IO框架" class="headerlink" title="9.2 使用IO框架"></a>9.2 使用IO框架</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241122202548259.png"></p>
 
                 
             </div>
