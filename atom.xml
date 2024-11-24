@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-11-22T17:10:55.155Z</updated>
+  <updated>2024-11-24T04:30:02.706Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>多线程</title>
+    <link href="http://zhangyao0329.github.io/2024/11/24/duo-xian-cheng/"/>
+    <id>http://zhangyao0329.github.io/2024/11/24/duo-xian-cheng/</id>
+    <published>2024-11-24T12:12:46.000Z</published>
+    <updated>2024-11-24T04:30:02.706Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;线程&quot;&gt;&lt;a href=&quot;#线程&quot; class=&quot;headerlink&quot; title=&quot;线程&quot;&gt;&lt;/a&gt;线程&lt;/h1&gt;&lt;h2 id=&quot;1、什么是多线程？&quot;&gt;&lt;a href=&quot;#1、什么是多线程？&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="http://zhangyao0329.github.io/categories/JavaSE/"/>
+    
+    
+    <category term="基础知识" scheme="http://zhangyao0329.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="多线程" scheme="http://zhangyao0329.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>特殊文本文件、日志技术</title>
-    <link href="http://zhangyao0329.github.io/2024/11/23/te-shu-wen-ben-wen-jian-ri-zhi-ji-zhu/"/>
-    <id>http://zhangyao0329.github.io/2024/11/23/te-shu-wen-ben-wen-jian-ri-zhi-ji-zhu/</id>
-    <published>2024-11-23T01:04:53.000Z</published>
-    <updated>2024-11-22T17:10:55.155Z</updated>
+    <link href="http://zhangyao0329.github.io/2024/11/22/te-shu-wen-ben-wen-jian-ri-zhi-ji-zhu/"/>
+    <id>http://zhangyao0329.github.io/2024/11/22/te-shu-wen-ben-wen-jian-ri-zhi-ji-zhu/</id>
+    <published>2024-11-22T17:04:53.000Z</published>
+    <updated>2024-11-23T03:16:30.317Z</updated>
     
     
       
@@ -193,7 +220,7 @@
     <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
     <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
     <published>2024-09-01T10:40:33.000Z</published>
-    <updated>2024-11-22T17:10:55.151Z</updated>
+    <updated>2024-11-24T04:30:02.706Z</updated>
     
     
       
