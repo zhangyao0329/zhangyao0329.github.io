@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-11-26T11:08:47.603Z</updated>
+  <updated>2024-11-26T15:11:37.482Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>注解</title>
+    <link href="http://zhangyao0329.github.io/2024/11/26/zhu-jie/"/>
+    <id>http://zhangyao0329.github.io/2024/11/26/zhu-jie/</id>
+    <published>2024-11-26T15:08:46.000Z</published>
+    <updated>2024-11-26T15:11:37.482Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Java高级&quot;&gt;&lt;a href=&quot;#Java高级&quot; class=&quot;headerlink&quot; title=&quot;Java高级&quot;&gt;&lt;/a&gt;Java高级&lt;/h1&gt;&lt;h2 id=&quot;1、测试&quot;&gt;&lt;a href=&quot;#1、测试&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaSE" scheme="http://zhangyao0329.github.io/categories/JavaSE/"/>
+    
+    
+    <category term="注解" scheme="http://zhangyao0329.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
+    
+    <category term="反射" scheme="http://zhangyao0329.github.io/tags/%E5%8F%8D%E5%B0%84/"/>
+    
+    <category term="junit测试" scheme="http://zhangyao0329.github.io/tags/junit%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>网络通信</title>
@@ -249,7 +278,7 @@
     <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
     <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
     <published>2024-09-01T10:40:33.000Z</published>
-    <updated>2024-11-26T11:10:31.639Z</updated>
+    <updated>2024-11-26T15:14:06.191Z</updated>
     
     
       
