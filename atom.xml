@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-11-28T08:22:10.112Z</updated>
+  <updated>2024-11-28T09:42:10.543Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SpringBootWeb请求响应</title>
+    <link href="http://zhangyao0329.github.io/2024/11/28/springbootweb-qing-qiu-xiang-ying/"/>
+    <id>http://zhangyao0329.github.io/2024/11/28/springbootweb-qing-qiu-xiang-ying/</id>
+    <published>2024-11-28T17:33:05.000Z</published>
+    <updated>2024-11-28T09:42:10.543Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;SpringBootWeb请求响应&quot;&gt;&lt;a href=&quot;#SpringBootWeb请求响应&quot; class=&quot;headerlink&quot; title=&quot;SpringBootWeb请求响应&quot;&gt;&lt;/a&gt;SpringBootWeb请求响应&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
+    
+    
+    <category term="Postman" scheme="http://zhangyao0329.github.io/tags/Postman/"/>
+    
+    <category term="请求和响应" scheme="http://zhangyao0329.github.io/tags/%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94/"/>
+    
+    <category term="解耦" scheme="http://zhangyao0329.github.io/tags/%E8%A7%A3%E8%80%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SpringBootWeb入门</title>
     <link href="http://zhangyao0329.github.io/2024/11/28/springbootweb-ru-men/"/>
     <id>http://zhangyao0329.github.io/2024/11/28/springbootweb-ru-men/</id>
     <published>2024-11-28T08:19:08.000Z</published>
-    <updated>2024-11-28T08:22:10.112Z</updated>
+    <updated>2024-11-28T08:30:01.904Z</updated>
     
     
       
@@ -361,7 +390,7 @@
     <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
     <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
     <published>2024-09-01T10:40:33.000Z</published>
-    <updated>2024-11-28T08:23:31.605Z</updated>
+    <updated>2024-11-28T09:42:10.543Z</updated>
     
     
       
