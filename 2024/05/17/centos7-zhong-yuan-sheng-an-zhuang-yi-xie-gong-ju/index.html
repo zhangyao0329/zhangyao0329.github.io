@@ -438,14 +438,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-11-18
+                    2024-11-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2k
                 </div>
                 
 
@@ -504,117 +504,106 @@
 </li>
 </ol>
 <p>通过以上步骤，您应该可以在线将 JDK 17 安装到 <code>/usr/local</code> 目录下，并在系统中正确配置。</p>
-<h2 id="2、安装redis"><a href="#2、安装redis" class="headerlink" title="2、安装redis"></a>2、安装redis</h2><ol>
-<li><p>下载安装包</p>
-<pre class="line-numbers language-none"><code class="language-none">#下载redis压缩包
+<h2 id="2、安装redis"><a href="#2、安装redis" class="headerlink" title="2、安装redis"></a>2、安装redis</h2><pre class="line-numbers language-none"><code class="language-none">#下载redis压缩包
 wget https://download.redis.io/releases/redis-7.0.0.tar.gz
  
 #如果wget命令无效，先执行下面这个命令安装wget
 yum -y install wget<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-</li>
-<li><p>解压到在/usr/local下</p>
+
 <pre class="line-numbers language-none"><code class="language-none">tar -zxvf redis-7.0.0.tar.gz -C /usr/local<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
-</li>
-<li><p>安装依赖</p>
+
 <pre class="line-numbers language-none"><code class="language-none">#安装C语言依赖
 yum install gcc-c++<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>到目标文件夹下</p>
+
+
+
 <pre class="line-numbers language-none"><code class="language-none">cd /usr/local
 
 ls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
-</li>
-<li><p>进入目标文件夹，并编译</p>
+
 <pre class="line-numbers language-none"><code class="language-none">cd redis-7.0.0/
 
 make<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>启动</p>
+
+
+
 <pre class="line-numbers language-none"><code class="language-none">cd src
 
 ./redis-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>文件配置(redis.conf)</p>
+
+
+
 <pre class="line-numbers language-none"><code class="language-none">cd ..
 
 ll<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>打开配置文件</p>
-</li>
-<li><pre><code>#打开redis配置文件
-vi redis.conf
-<pre class="line-numbers language-none"><code class="language-none">
-   
-
-修改这几个值
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</code></pre>
-</li>
-</ol>
-<h1 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h1><p>daemonize yes<br>port 6379<br>requirepass 123456<br>bind 0.0.0.0</p>
-<h1 id="no值，允许外部连接"><a href="#no值，允许外部连接" class="headerlink" title="no值，允许外部连接"></a>no值，允许外部连接</h1><p>protected-mode no</p>
-<pre class="line-numbers language-none"><code class="language-none">
-
-
-9. 关闭redis服务
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>#以指定的redis-xxx下的redis配置文件启动redis服务<br>./redis-server /usr/local/redis-7.0.0/redis.conf</p>
-<p>#查看redis相关进程<br>ps -ef | grep redis</p>
-<pre class="line-numbers language-none"><code class="language-none">
-
-
-10. 开机自启
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>#在/etc/systemd/system路径下创建redis.service文件<br>vi /etc/systemd/system/redis.service</p>
-<pre class="line-numbers language-none"><code class="language-none">
-复制进去
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>[Unit]<br>Description=redis-server<br>After=network.target</p>
-<p>[Service]<br>Type=forking<br>#前面是redis-server的路径，后面是redis.conf的路径，填错了会无效<br>ExecStart=/usr/local/redis-7.0.0/src/redis-server /usr/local/redis-7.0.0/redis.conf<br>PrivateTmp=true</p>
-<p>[Install]<br>WantedBy=multi-user.target</p>
-<pre class="line-numbers language-none"><code class="language-none">
-
-
-11. 启动并查看进程
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>systemctl start redis</p>
-<p>ps -ef|grep redis</p>
-<pre class="line-numbers language-none"><code class="language-none">
-
-
-## 3、安装Mysql
-
-### 1、下载安装包
-
-![安装包下载](D:%5CUsers%5CZhangYao%5CDesktop%5Cmd%5C%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%ADjdk17.assets%5C202406161737233.png)
 
 
 
-### 2、上传到根目录并解压
+<pre class="line-numbers language-none"><code class="language-none">#打开redis配置文件
+vi redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
-```sh
-tar -xvf mysql-8.4.0-1.el7.x86_64.rpm-bundle.tar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>修改这几个值</p>
+<pre class="line-numbers language-none"><code class="language-none"># 守护进程
+daemonize yes
+port 6379
+requirepass 123456
+bind 0.0.0.0
+# no值，允许外部连接
+protected-mode no<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<ol>
-<li>依次执行以下命令,删除冲突依赖：</li>
-</ol>
+
+
+<pre class="line-numbers language-none"><code class="language-none">#以指定的redis-xxx下的redis配置文件启动redis服务
+./redis-server /usr/local/redis-7.0.0/redis.conf
+
+#查看redis相关进程
+ps -ef | grep redis<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">#在/etc/systemd/system路径下创建redis.service文件
+vi /etc/systemd/system/redis.service<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">[Unit]
+Description=redis-server
+After=network.target
+ 
+[Service]
+Type=forking
+#前面是redis-server的路径，后面是redis.conf的路径，填错了会无效
+ExecStart=/usr/local/redis-7.0.0/src/redis-server /usr/local/redis-7.0.0/redis.conf
+PrivateTmp=true
+ 
+[Install]
+WantedBy=multi-user.target<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">systemctl start redis
+
+ps -ef|grep redis<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="3、安装Mysql"><a href="#3、安装Mysql" class="headerlink" title="3、安装Mysql"></a>3、安装Mysql</h2><h3 id="3-1-下载安装包"><a href="#3-1-下载安装包" class="headerlink" title="3.1. 下载安装包"></a>3.1. 下载安装包</h3><p>通过网盘分享的文件：mysql-8.4.0-1.el7.x86_64.rpm-bundle.tar<br>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1MJ4D35ROxV2ZYeQTpzWq8g?pwd=6666">https://pan.baidu.com/s/1MJ4D35ROxV2ZYeQTpzWq8g?pwd=6666</a> 提取码: 6666</p>
+<h3 id="3-2-上传到根目录并解压"><a href="#3-2-上传到根目录并解压" class="headerlink" title="3.2. 上传到根目录并解压"></a>3.2. 上传到根目录并解压</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-xvf</span> mysql-8.4.0-1.el7.x86_64.rpm-bundle.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <pre class="line-numbers language-none"><code class="language-none">rpm -qa | grep mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <pre class="line-numbers language-none"><code class="language-none">rpm -e --nodeps mariadb-libs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<ol start="2">
-<li>依次执如下命令，进行安装：</li>
-</ol>
 <pre class="line-numbers language-none"><code class="language-none">rpm -ivh mysql-community-common-8.4.0-1.el7.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <pre class="line-numbers language-none"><code class="language-none">rpm -ivh mysql-community-client-plugins-8.4.0-1.el7.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -633,86 +622,41 @@ tar -xvf mysql-8.4.0-1.el7.x86_64.rpm-bundle.tar<span aria-hidden="true" class="
 
 
 
-<ol start="3">
-<li>初始化MySQL</li>
-</ol>
 <pre class="line-numbers language-none"><code class="language-none">mysqld --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="4">
-<li>授权</li>
-</ol>
 <pre class="line-numbers language-none"><code class="language-none">chown mysql:mysql -R /var/lib/mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="5">
-<li>再次初始化</li>
-</ol>
 <pre class="line-numbers language-none"><code class="language-none">mysqld --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<ol start="6">
-<li>启动</li>
-</ol>
 <pre class="line-numbers language-none"><code class="language-none">systemctl start mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="7">
-<li>查看运行状态</li>
-</ol>
 <pre class="line-numbers language-none"><code class="language-none">systemctl status mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="8">
-<li>查看版本</li>
-</ol>
 <pre class="line-numbers language-none"><code class="language-none">mysqladmin --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="9">
-<li>查看默认密码</li>
-</ol>
 <pre class="line-numbers language-none"><code class="language-none">grep 'temporary password' /var/log/mysqld.log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="10">
-<li>用查到的密码登录</li>
-</ol>
 <pre class="line-numbers language-none"><code class="language-none">mysql -u root -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="11">
-<li>修改初始密码</li>
-</ol>
 <pre class="line-numbers language-none"><code class="language-none">ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
 exit;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<ol start="12">
-<li>用重置的密码登录</li>
-</ol>
 <pre class="line-numbers language-none"><code class="language-none">mysql -u root -p
 123456<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
-<h3 id="3、远程连接（从此告别本地环境）"><a href="#3、远程连接（从此告别本地环境）" class="headerlink" title="3、远程连接（从此告别本地环境）"></a>3、远程连接（从此告别本地环境）</h3><ol>
-<li>进入数据库</li>
-</ol>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p
+<h3 id="3-3-远程连接（从此告别本地环境）"><a href="#3-3-远程连接（从此告别本地环境）" class="headerlink" title="3.3  远程连接（从此告别本地环境）"></a>3.3  远程连接（从此告别本地环境）</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p
 <span class="token number">123456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<ol start="2">
-<li>创建用户</li>
-</ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">USER</span> <span class="token string">'zhang_aliyun'</span><span class="token variable">@'%'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'forever0329'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="3">
-<li>赋权</li>
-</ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">GRANT</span> <span class="token keyword">ALL</span> <span class="token keyword">PRIVILEGES</span> <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'zhang_aliyun'</span><span class="token variable">@'%'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="4">
-<li>刷新</li>
-</ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="5">
-<li>查看用户权限</li>
-</ol>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">user</span><span class="token punctuation">,</span> host <span class="token keyword">FROM</span> mysql<span class="token punctuation">.</span><span class="token keyword">user</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
