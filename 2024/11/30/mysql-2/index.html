@@ -1,0 +1,2228 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Mysql（2）, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
+    <meta name="description" content="Java开发 | 机器学习">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Mysql（2） | 大貔貅的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="大貔貅的博客" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">大貔貅的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">大貔貅的博客</div>
+        <div class="logo-desc">
+            
+            Java开发 | 机器学习
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220610191829748.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Mysql（2）</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Mysql/">
+                                <span class="chip bg-color">Mysql</span>
+                            </a>
+                        
+                            <a href="/tags/DQL/">
+                                <span class="chip bg-color">DQL</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%A4%9A%E8%A1%A8%E8%AE%BE%E8%AE%A1/">
+                                <span class="chip bg-color">多表设计</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JavaEE/" class="post-category">
+                                JavaEE
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-11-30
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-11-30
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    35 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="数据库开发-MySQL"><a href="#数据库开发-MySQL" class="headerlink" title="数据库开发-MySQL"></a>数据库开发-MySQL</h1><p>在上次学习的内容中，我们讲解了：</p>
+<ul>
+<li>使用DDL语句来操作数据库以及表结构（数据库设计）</li>
+<li>使用DML语句来完成数据库中数据的增、删、改操作（数据库操作）</li>
+</ul>
+<p>我们今天还是继续学习数据库操作方面的内容：查询（DQL语句）。</p>
+<p>查询操作我们分为两部分学习：</p>
+<ul>
+<li>DQL语句-单表操作</li>
+<li>DQL语句-多表操作</li>
+</ul>
+<h2 id="1-数据库操作-DQL"><a href="#1-数据库操作-DQL" class="headerlink" title="1. 数据库操作-DQL"></a>1. 数据库操作-DQL</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241130163811569.png" alt="DQL"></p>
+<h3 id="1-1-介绍"><a href="#1-1-介绍" class="headerlink" title="1.1 介绍"></a>1.1 介绍</h3><p>DQL英文全称是Data Query Language(数据查询语言)，用来查询数据库表中的记录。</p>
+<p>查询关键字：SELECT</p>
+<p>查询操作是所有SQL语句当中最为常见，也是最为重要的操作。在一个正常的业务系统中，查询操作的使用频次是要远高于增删改操作的。当我们打开某个网站或APP所看到的展示信息，都是通过从数据库中查询得到的，而在这个查询过程中，还会涉及到条件、排序、分页等操作。</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220611103943417.png"> </p>
+<h3 id="1-2-语法"><a href="#1-2-语法" class="headerlink" title="1.2 语法"></a>1.2 语法</h3><p>DQL查询语句，语法结构如下：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">SELECT
+	字段列表
+FROM
+	表名列表
+WHERE
+	条件列表
+GROUP  BY
+	分组字段列表
+HAVING
+	分组后条件列表
+ORDER BY
+	排序字段列表
+LIMIT
+	分页参数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们今天会将上面的完整语法拆分为以下几个部分学习：</p>
+<ul>
+<li>基本查询（不带任何条件）</li>
+<li>条件查询（where）</li>
+<li>分组查询（group by）</li>
+<li>排序查询（order by）</li>
+<li>分页查询（limit）</li>
+</ul>
+<p>准备一些测试数据用于查询操作：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">create database db02; -- 创建数据库
+use db02; -- 切换数据库
+-- 员工管理(带约束)
+create table tb_emp (
+    id int unsigned primary key auto_increment comment 'ID',
+    username varchar(20) not null unique comment '用户名',
+    password varchar(32) default '123456' comment '密码',
+    name varchar(10) not null comment '姓名',
+    gender tinyint unsigned not null comment '性别, 说明: 1 男, 2 女',
+    image varchar(300) comment '图像',
+    job tinyint unsigned comment '职位, 说明: 1 班主任,2 讲师, 3 学工主管, 4 教研主管',
+    entrydate date comment '入职时间',
+    create_time datetime not null comment '创建时间',
+    update_time datetime not null comment '修改时间'
+) comment '员工表';
+
+-- 准备测试数据
+INSERT INTO tb_emp (id, username, password, name, gender, image, job, entrydate, create_time, update_time) VALUES
+    (1, 'jinyong', '123456', '金庸', 1, '1.jpg', 4, '2000-01-01', '2022-10-27 16:35:33', '2022-10-27 16:35:35'),
+    (2, 'zhangwuji', '123456', '张无忌', 1, '2.jpg', 2, '2015-01-01', '2022-10-27 16:35:33', '2022-10-27 16:35:37'),
+    (3, 'yangxiao', '123456', '杨逍', 1, '3.jpg', 2, '2008-05-01', '2022-10-27 16:35:33', '2022-10-27 16:35:39'),
+    (4, 'weiyixiao', '123456', '韦一笑', 1, '4.jpg', 2, '2007-01-01', '2022-10-27 16:35:33', '2022-10-27 16:35:41'),
+    (5, 'changyuchun', '123456', '常遇春', 1, '5.jpg', 2, '2012-12-05', '2022-10-27 16:35:33', '2022-10-27 16:35:43'),
+    (6, 'xiaozhao', '123456', '小昭', 2, '6.jpg', 3, '2013-09-05', '2022-10-27 16:35:33', '2022-10-27 16:35:45'),
+    (7, 'jixiaofu', '123456', '纪晓芙', 2, '7.jpg', 1, '2005-08-01', '2022-10-27 16:35:33', '2022-10-27 16:35:47'),
+    (8, 'zhouzhiruo', '123456', '周芷若', 2, '8.jpg', 1, '2014-11-09', '2022-10-27 16:35:33', '2022-10-27 16:35:49'),
+    (9, 'dingminjun', '123456', '丁敏君', 2, '9.jpg', 1, '2011-03-11', '2022-10-27 16:35:33', '2022-10-27 16:35:51'),
+    (10, 'zhaomin', '123456', '赵敏', 2, '10.jpg', 1, '2013-09-05', '2022-10-27 16:35:33', '2022-10-27 16:35:53'),
+    (11, 'luzhangke', '123456', '鹿杖客', 1, '11.jpg', 2, '2007-02-01', '2022-10-27 16:35:33', '2022-10-27 16:35:55'),
+    (12, 'hebiweng', '123456', '鹤笔翁', 1, '12.jpg', 2, '2008-08-18', '2022-10-27 16:35:33', '2022-10-27 16:35:57'),
+    (13, 'fangdongbai', '123456', '方东白', 1, '13.jpg', 1, '2012-11-01', '2022-10-27 16:35:33', '2022-10-27 16:35:59'),
+    (14, 'zhangsanfeng', '123456', '张三丰', 1, '14.jpg', 2, '2002-08-01', '2022-10-27 16:35:33', '2022-10-27 16:36:01'),
+    (15, 'yulianzhou', '123456', '俞莲舟', 1, '15.jpg', 2, '2011-05-01', '2022-10-27 16:35:33', '2022-10-27 16:36:03'),
+    (16, 'songyuanqiao', '123456', '宋远桥', 1, '16.jpg', 2, '2010-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:05'),
+    (17, 'chenyouliang', '12345678', '陈友谅', 1, '17.jpg', null, '2015-03-21', '2022-10-27 16:35:33', '2022-10-27 16:36:07'),
+    (18, 'zhang1', '123456', '张一', 1, '2.jpg', 2, '2015-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:09'),
+    (19, 'zhang2', '123456', '张二', 1, '2.jpg', 2, '2012-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:11'),
+    (20, 'zhang3', '123456', '张三', 1, '2.jpg', 2, '2018-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:13'),
+    (21, 'zhang4', '123456', '张四', 1, '2.jpg', 2, '2015-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:15'),
+    (22, 'zhang5', '123456', '张五', 1, '2.jpg', 2, '2016-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:17'),
+    (23, 'zhang6', '123456', '张六', 1, '2.jpg', 2, '2012-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:19'),
+    (24, 'zhang7', '123456', '张七', 1, '2.jpg', 2, '2006-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:21'),
+    (25, 'zhang8', '123456', '张八', 1, '2.jpg', 2, '2002-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:23'),
+    (26, 'zhang9', '123456', '张九', 1, '2.jpg', 2, '2011-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:25'),
+    (27, 'zhang10', '123456', '张十', 1, '2.jpg', 2, '2004-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:27'),
+    (28, 'zhang11', '123456', '张十一', 1, '2.jpg', 2, '2007-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:29'),
+    (29, 'zhang12', '123456', '张十二', 1, '2.jpg', 2, '2020-01-01', '2022-10-27 16:35:33', '2022-10-27 16:36:31');<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="1-3-基本查询"><a href="#1-3-基本查询" class="headerlink" title="1.3 基本查询"></a>1.3 基本查询</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241130165549144.png" alt="语法"></p>
+<p>在基本查询的DQL语句中，不带任何的查询条件，语法如下：</p>
+<ul>
+<li><p>查询多个字段</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select 字段1, 字段2, 字段3 from  表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>查询所有字段（通配符）</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select *  from  表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>设置别名</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select 字段1 [ as 别名1 ] , 字段2 [ as 别名2 ]  from  表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>去除重复记录</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select distinct 字段列表 from  表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p>案例1：查询指定字段 name，entrydate并返回</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select name,entrydate from tb_emp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206112810199.png"></p>
+<p>案例2：查询返回所有字段</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select * from tb_emp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p><code>*</code>号代表查询所有字段，在实际开发中尽量少用（不直观、影响效率）</p>
+</blockquote>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206113904763.png"></p>
+<p>案例3：查询所有员工的 name,entrydate，并起别名(姓名、入职日期)</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 方式1：
+select name AS 姓名, entrydate AS 入职日期 from tb_emp;
+-- 方式2： 别名中有特殊字符时，使用''或""包含
+select name AS '姓 名', entrydate AS '入职日期' from tb_emp;
+-- 方式3：
+select name AS "姓名", entrydate AS "入职日期" from tb_emp;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206114752149.png"></p>
+<p>案例4：查询已有的员工关联了哪几种职位(不要重复)</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select distinct job from tb_emp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206115440117.png"></p>
+<h3 id="1-4-条件查询"><a href="#1-4-条件查询" class="headerlink" title="1.4 条件查询"></a>1.4 条件查询</h3><p><strong>语法：</strong></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span>  字段列表  <span class="token keyword">from</span>   表名   <span class="token keyword">where</span>   条件列表 <span class="token punctuation">;</span> <span class="token comment">-- 条件列表：意味着可以有多个条件</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>学习条件查询就是学习条件的构建方式，而在SQL语句当中构造条件的运算符分为两类：</p>
+<ul>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+</ul>
+<p>常用的比较运算符如下: </p>
+<table>
+<thead>
+<tr>
+<th><strong>比较运算符</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td>=</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>&lt;&gt; 或 !=</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>between …  and …</td>
+<td>在某个范围之内(含最小、最大值)</td>
+</tr>
+<tr>
+<td>in(…)</td>
+<td>在in之后的列表中的值，多选一</td>
+</tr>
+<tr>
+<td>like 占位符</td>
+<td>模糊匹配(_匹配单个字符, %匹配任意个字符)</td>
+</tr>
+<tr>
+<td>is null</td>
+<td>是null</td>
+</tr>
+</tbody></table>
+<p>常用的逻辑运算符如下:</p>
+<table>
+<thead>
+<tr>
+<th><strong>逻辑运算符</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>and 或 &amp;&amp;</td>
+<td>并且 (多个条件同时成立)</td>
+</tr>
+<tr>
+<td>or 或 ||</td>
+<td>或者 (多个条件任意一个成立)</td>
+</tr>
+<tr>
+<td>not 或 !</td>
+<td>非 , 不是</td>
+</tr>
+</tbody></table>
+<p>案例1：查询 姓名 为 杨逍 的员工</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where name = '杨逍'; -- 字符串使用''或""包含<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206121255784.png"></p>
+<p>案例2：查询 id小于等于5 的员工信息</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where id &lt;=5;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206121523712.png"></p>
+<p>案例3：查询 没有分配职位 的员工信息</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where job is null ;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206121754267.png"></p>
+<blockquote>
+<p>注意：查询为NULL的数据时，不能使用 <code>= null</code></p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206122036970.png"></p>
+</blockquote>
+<p>案例4：查询 有职位 的员工信息</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where job is not null ;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206122454101.png"></p>
+<p>案例5：查询 密码不等于 ‘123456’ 的员工信息</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 方式1：
+select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where password &lt;&gt; '123456';
+-- 方式2：
+select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where password != '123456';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206122712152.png"></p>
+<p>案例6：查询 入职日期 在 ‘2000-01-01’ (包含) 到 ‘2010-01-01’(包含) 之间的员工信息</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 方式1：
+select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where entrydate&gt;='2000-01-01' and entrydate&lt;='2010-01-01';
+
+-- 方式2： between...and
+select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where entrydate between '2000-01-01' and '2010-01-01';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206125100857.png"></p>
+<p>案例7：查询 入职时间 在 ‘2000-01-01’ (包含) 到 ‘2010-01-01’(包含) 之间 且 性别为女 的员工信息</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where entrydate between '2000-01-01' and '2010-01-01'
+      and gender = 2;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206125356737.png"></p>
+<p>案例8：查询 职位是 2 (讲师), 3 (学工主管), 4 (教研主管) 的员工信息</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 方式1：使用or连接多个条件
+select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where job=2 or job=3 or job=4;
+-- 方式2：in关键字
+select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where job in (2,3,4);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206141451342.png"></p>
+<p>案例9：查询 姓名 为两个字的员工信息</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where name like '__';  # 通配符 "_" 代表任意1个字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206141937293.png"></p>
+<p>案例10：查询 姓 ‘张’ 的员工信息</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where name like '张%'; # 通配符 "%" 代表任意个字符（0个 ~ 多个）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206142156154.png"></p>
+<h3 id="1-5-聚合函数"><a href="#1-5-聚合函数" class="headerlink" title="1.5 聚合函数"></a>1.5 聚合函数</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241130192230516.png"></p>
+<p>之前我们做的查询都是横向查询，就是根据条件一行一行的进行判断，而使用聚合函数查询就是纵向查询，它是对一列的值进行计算，然后返回一个结果值。（将一列数据作为一个整体，进行纵向计算）</p>
+<p>语法：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select  聚合函数(字段列表)  from  表名 ;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>注意 : 聚合函数会忽略空值，对NULL值不作为统计。</p>
+</blockquote>
+<p>常用聚合函数：</p>
+<table>
+<thead>
+<tr>
+<th><strong>函数</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>count</td>
+<td>统计数量</td>
+</tr>
+<tr>
+<td>max</td>
+<td>最大值</td>
+</tr>
+<tr>
+<td>min</td>
+<td>最小值</td>
+</tr>
+<tr>
+<td>avg</td>
+<td>平均值</td>
+</tr>
+<tr>
+<td>sum</td>
+<td>求和</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>count ：按照列去统计有多少行数据。</p>
+<ul>
+<li>在根据指定的列统计的时候，如果这一列中有null的行，该行不会被统计在其中。</li>
+</ul>
+<p>sum ：计算指定列的数值和，如果不是数值类型，那么计算结果为0</p>
+<p>max ：计算指定列的最大值</p>
+<p>min ：计算指定列的最小值</p>
+<p>avg ：计算指定列的平均值</p>
+</blockquote>
+<p>案例1：统计该企业员工数量</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql"># count(字段)
+select count(id) from tb_emp;-- 结果：29
+select count(job) from tb_emp;-- 结果：28 （聚合函数对NULL值不做计算）
+
+# count(常量)
+select count(0) from tb_emp;
+select count('A') from tb_emp;
+
+# count(*)  推荐此写法（MySQL底层进行了优化）
+select count(*) from tb_emp;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>案例2：统计该企业最早入职的员工</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select min(entrydate) from tb_emp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206160145339.png"></p>
+<p>案例3：统计该企业最迟入职的员工</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select max(entrydate) from tb_emp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206160307416.png"></p>
+<p>案例4：统计该企业员工 ID 的平均值</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select avg(id) from tb_emp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206160416605.png"></p>
+<p>案例5：统计该企业员工的 ID 之和</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select sum(id) from tb_emp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206160604073.png"></p>
+<h3 id="1-6-分组查询"><a href="#1-6-分组查询" class="headerlink" title="1.6 分组查询"></a>1.6 分组查询</h3><p>分组： 按照某一列或者某几列，把相同的数据进行合并输出。</p>
+<blockquote>
+<p>分组其实就是按列进行分类(指定列下相同的数据归为一类)，然后可以对分类完的数据进行合并计算。</p>
+<p>分组查询通常会使用聚合函数进行计算。</p>
+</blockquote>
+<p>语法：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select  字段列表  from  表名  [where 条件]  group by 分组字段名  [having 分组后过滤条件];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>案例1：根据性别分组 , 统计男性和女性员工的数量</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select gender, count(*)
+from tb_emp
+group by gender; -- 按照gender字段进行分组（gender字段下相同的数据归为一组）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206172615000.png"></p>
+<p>案例2：查询入职时间在 ‘2015-01-01’ (包含) 以前的员工 , 并对结果根据职位分组 , 获取员工数量大于等于2的职位</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select job, count(*)
+from tb_emp
+where entrydate &lt;= '2015-01-01'   -- 分组前条件
+group by job                      -- 按照job字段分组
+having count(*) &gt;= 2;             -- 分组后条件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206172431873.png"></p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241130194159540.png" alt="总结"></p>
+<blockquote>
+<p>注意事项:</p>
+<p>​	• 分组之后，查询的字段一般为聚合函数和分组字段，查询其他字段无任何意义</p>
+<p>​	• 执行顺序：where &gt; 聚合函数 &gt; having </p>
+</blockquote>
+<p><strong>where与having区别（面试题）</strong></p>
+<ul>
+<li>执行时机不同：where是分组之前进行过滤，不满足where条件，不参与分组；而having是分组之后对结果进行过滤。</li>
+<li>判断条件不同：where不能对聚合函数进行判断，而having可以。</li>
+</ul>
+<h3 id="1-7-排序查询"><a href="#1-7-排序查询" class="headerlink" title="1.7 排序查询"></a>1.7 排序查询</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241130194248214.png"></p>
+<p>排序在日常开发中是非常常见的一个操作，有升序排序，也有降序排序。</p>
+<p>语法：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select  字段列表  
+from   表名   
+[where  条件列表] 
+[group by  分组字段 ] 
+order  by  字段1  排序方式1 , 字段2  排序方 式2 … ;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>排序方式：</p>
+<ul>
+<li><p>ASC ：升序（默认值）</p>
+</li>
+<li><p>DESC：降序</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>案例1：根据入职时间, 对员工进行升序排序</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+order by entrydate ASC; -- 按照entrydate字段下的数据进行升序排序
+
+select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+order by  entrydate; -- 默认就是ASC（升序）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206175720337.png"></p>
+<blockquote>
+<p>注意事项：如果是升序, 可以不指定排序方式ASC </p>
+</blockquote>
+<p>案例2：根据入职时间，对员工进行降序排序</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+order by entrydate DESC; -- 按照entrydate字段下的数据进行降序排序<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206180358367.png"></p>
+<p>案例3：根据入职时间对公司的员工进行升序排序，入职时间相同，再按照更新时间进行降序排序</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+order by entrydate ASC , update_time DESC;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206180824583.png"></p>
+<blockquote>
+<p>注意事项：如果是多字段排序，当第一个字段值相同时，才会根据第二个字段进行排序 </p>
+</blockquote>
+<h3 id="1-8-分页查询"><a href="#1-8-分页查询" class="headerlink" title="1.8 分页查询"></a>1.8 分页查询</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241130195816833.png"></p>
+<p>分页操作在业务系统开发时，也是非常常见的一个功能，日常我们在网站中看到的各种各样的分页条，后台也都需要借助于数据库的分页操作。</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206183310586.png"></p>
+<p>分页查询语法：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span>  字段列表  <span class="token keyword">from</span>   表名  <span class="token keyword">limit</span>  起始索引<span class="token punctuation">,</span> 查询记录数 <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>案例1：从起始索引0开始查询员工数据, 每页展示5条记录</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+limit 0 , 5; -- 从索引0开始，向后取5条记录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206185257834.png"></p>
+<p>案例2：查询 第1页 员工数据, 每页展示5条记录</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+limit 5; -- 如果查询的是第1页数据，起始索引可以省略，直接简写为：limit 条数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206184957410.png"></p>
+<p>案例3：查询 第2页 员工数据, 每页展示5条记录</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+limit 5 , 5; -- 从索引5开始，向后取5条记录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206184602569.png"></p>
+<p>案例4：查询 第3页 员工数据, 每页展示5条记录</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+limit 10 , 5; -- 从索引10开始，向后取5条记录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206184414356.png"></p>
+<blockquote>
+<p>注意事项:</p>
+<ol>
+<li><p>起始索引从0开始。        计算公式 ：   起始索引 = （查询页码 - 1）* 每页显示记录数</p>
+</li>
+<li><p>分页查询是数据库的方言，不同的数据库有不同的实现，MySQL中是LIMIT</p>
+</li>
+<li><p>如果查询的是第一页数据，起始索引可以省略，直接简写为 limit  条数</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="1-9-案例"><a href="#1-9-案例" class="headerlink" title="1.9 案例"></a>1.9 案例</h3><p>DQL的基本语法我们学习结束了，接下来我们就运用所掌握的DQL语句的语法来完成两个案例。</p>
+<h4 id="1-9-1-案例一"><a href="#1-9-1-案例一" class="headerlink" title="1.9.1 案例一"></a>1.9.1 案例一</h4><p>案例：根据需求完成员工管理的条件分页查询</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206212240773.png"></p>
+<blockquote>
+<p>分析：根据输入的条件，查询第1页数据</p>
+<ol>
+<li><p>在员工管理的列表上方有一些查询条件：员工姓名、员工性别，员工入职时间(开始时间~结束时间)</p>
+<ul>
+<li>姓名：张</li>
+<li>性别：男</li>
+<li>入职时间：2000-01-01  ~  2015-12-31</li>
+</ul>
+</li>
+<li><p>除了查询条件外，在列表的下面还有一个分页条，这就涉及到了分页查询</p>
+<ul>
+<li>查询第1页数据（每页显示10条数据）</li>
+</ul>
+</li>
+<li><p>基于查询的结果，按照修改时间进行降序排序</p>
+</li>
+</ol>
+<p>结论：条件查询 + 分页查询 + 排序查询</p>
+</blockquote>
+<p>SQL语句代码：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 根据输入条件查询第1页数据（每页展示10条记录）
+-- 输入条件：
+   -- 姓名：张 （模糊查询）
+   -- 性别：男
+   -- 入职时间：2000-01-01 ~ 2015-12-31
+-- 分页： 0 , 10
+-- 排序： 修改时间  DESC
+select id, username, password, name, gender, image, job, entrydate, create_time, update_time
+from tb_emp
+where name like '张%' and gender = 1 and entrydate between '2000-01-01' and '2015-12-31'
+order by update_time desc
+limit 0 , 10;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206213235786.png"></p>
+<h4 id="1-9-2-案例二"><a href="#1-9-2-案例二" class="headerlink" title="1.9.2 案例二"></a>1.9.2 案例二</h4><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241130202141061.png" alt="复杂分类"></p>
+<p>案例：根据需求完成员工信息的统计</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206210536118.png"></p>
+<blockquote>
+<p>分析：以上信息统计在开发中也叫图形报表(将统计好的数据以可视化的形式展示出来)</p>
+<ul>
+<li>员工性别统计：以饼状图的形式展示出企业男性员人数和女性员工人数<ul>
+<li>只要查询出男性员工和女性员工各自有多少人就可以了</li>
+</ul>
+</li>
+<li>员工职位统计：以柱状图的形式展示各职位的在岗人数<ul>
+<li>只要查询出各个职位有多少人就可以了</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>员工性别统计：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- if(条件表达式, true取值 , false取值)
+select if(gender=1,'男性员工','女性员工') AS 性别, count(*) AS 人数
+from tb_emp
+group by gender;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206220908397.png"></p>
+<blockquote>
+<p>if(表达式, tvalue, fvalue) ：当表达式为true时，取值tvalue；当表达式为false时，取值fvalue</p>
+</blockquote>
+<p>员工职位统计：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- case 表达式 when 值1 then 结果1  when 值2  then  结果2 ...  else  result  end
+select (case job
+             when 1 then '班主任'
+             when 2 then '讲师'
+             when 3 then '学工主管'
+             when 4 then '教研主管'
+             else '未分配职位'
+        end) AS 职位 ,
+       count(*) AS 人数
+from tb_emp
+group by job;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206221718731.png"></p>
+<blockquote>
+<p>case   表达式    when   值1   then  结果1   [when 值2  then  结果2 …]     [else result]     end</p>
+</blockquote>
+<h2 id="2-多表设计"><a href="#2-多表设计" class="headerlink" title="2. 多表设计"></a>2. 多表设计</h2><p>关于单表的操作(单表的设计、单表的增删改查)我们就已经学习完了。接下来我们就要来学习多表的操作，首先来学习多表的设计。</p>
+<p>项目开发中，在进行数据库表结构设计时，会根据业务需求及业务模块之间的关系，分析并设计表结构，由于业务之间相互关联，所以各个表结构之间也存在着各种联系，基本上分为三种：</p>
+<ul>
+<li><p>一对多(多对一)</p>
+</li>
+<li><p>多对多</p>
+</li>
+<li><p>一对一</p>
+</li>
+</ul>
+<h3 id="2-1-一对多"><a href="#2-1-一对多" class="headerlink" title="2.1 一对多"></a>2.1 一对多</h3><h4 id="2-1-1-表设计"><a href="#2-1-1-表设计" class="headerlink" title="2.1.1 表设计"></a>2.1.1 表设计</h4><p>需求：根据页面原型及需求文档 ，完成部门及员工的表结构设计</p>
+<ul>
+<li>员工管理页面原型：（前面已完成tb_emp表结构设计）</li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220831195520739.png"></p>
+<ul>
+<li>部门管理页面原型：</li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220831195603106.png"></p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206224149094.png"></p>
+<blockquote>
+<p>经过上述分析，现已明确的部门表结构：</p>
+<ul>
+<li>业务字段 ： 部门名称</li>
+<li>基础字段 ： id(主键)、创建时间、修改时间</li>
+</ul>
+</blockquote>
+<p>部门表 - SQL语句： </p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql"># 建议：创建新的数据库（多表设计存放在新数据库下）
+create database db03;
+use db03;
+
+-- 部门表
+create table tb_dept
+(
+    id int unsigned primary key auto_increment comment '主键ID',
+    name varchar(10) not null unique  comment '部门名称',
+    create_time datetime not null comment '创建时间',
+    update_time datetime not null comment '修改时间'
+) comment '部门表';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>部门表创建好之后，我们还需要再修改下员工表。为什么要修改员工表呢？是因为我们之前设计员工表(单表)的时候，并没有考虑员工的归属部门。</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206224642902.png"></p>
+<p>员工表：添加归属部门字段</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 员工表
+create table tb_emp
+(
+    id          int unsigned primary key auto_increment comment 'ID',
+    username    varchar(20)      not null unique comment '用户名',
+    password    varchar(32) default '123456' comment '密码',
+    name        varchar(10)      not null comment '姓名',
+    gender      tinyint unsigned not null comment '性别, 说明: 1 男, 2 女',
+    image       varchar(300) comment '图像',
+    job         tinyint unsigned comment '职位, 说明: 1 班主任,2 讲师, 3 学工主管, 4 教研主管',
+    entrydate   date comment '入职时间',
+    
+    dept_id     int unsigned comment '部门ID', -- 员工的归属部门
+    
+    create_time datetime         not null comment '创建时间',
+    update_time datetime         not null comment '修改时间'
+) comment '员工表';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>测试数据：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 部门表测试数据
+insert into tb_dept (id, name, create_time, update_time) values
+(1,'学工部',now(),now()),
+(2,'教研部',now(),now()),
+(3,'咨询部',now(),now()),
+(4,'就业部',now(),now()),
+(5,'人事部',now(),now());
+
+-- 员工表测试数据
+INSERT INTO tb_emp
+(id, username, password, name, gender, image, job, entrydate,dept_id, create_time, update_time) VALUES
+(1,'jinyong','123456','金庸',1,'1.jpg',4,'2000-01-01',2,now(),now()),
+(2,'zhangwuji','123456','张无忌',1,'2.jpg',2,'2015-01-01',2,now(),now()),
+(3,'yangxiao','123456','杨逍',1,'3.jpg',2,'2008-05-01',2,now(),now()),
+(4,'weiyixiao','123456','韦一笑',1,'4.jpg',2,'2007-01-01',2,now(),now()),
+(5,'changyuchun','123456','常遇春',1,'5.jpg',2,'2012-12-05',2,now(),now()),
+(6,'xiaozhao','123456','小昭',2,'6.jpg',3,'2013-09-05',1,now(),now()),
+(7,'jixiaofu','123456','纪晓芙',2,'7.jpg',1,'2005-08-01',1,now(),now()),
+(8,'zhouzhiruo','123456','周芷若',2,'8.jpg',1,'2014-11-09',1,now(),now()),
+(9,'dingminjun','123456','丁敏君',2,'9.jpg',1,'2011-03-11',1,now(),now()),
+(10,'zhaomin','123456','赵敏',2,'10.jpg',1,'2013-09-05',1,now(),now()),
+(11,'luzhangke','123456','鹿杖客',1,'11.jpg',1,'2007-02-01',1,now(),now()),
+(12,'hebiweng','123456','鹤笔翁',1,'12.jpg',1,'2008-08-18',1,now(),now()),
+(13,'fangdongbai','123456','方东白',1,'13.jpg',2,'2012-11-01',2,now(),now()),
+(14,'zhangsanfeng','123456','张三丰',1,'14.jpg',2,'2002-08-01',2,now(),now()),
+(15,'yulianzhou','123456','俞莲舟',1,'15.jpg',2,'2011-05-01',2,now(),now()),
+(16,'songyuanqiao','123456','宋远桥',1,'16.jpg',2,'2010-01-01',2,now(),now()),
+(17,'chenyouliang','123456','陈友谅',1,'17.jpg',NULL,'2015-03-21',NULL,now(),now());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>员工表 - 部门表之间的关系：</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206230156403.png"></p>
+<blockquote>
+<p><strong>一对多关系实现：在数据库表中多的一方，添加字段，来关联属于一这方的主键。</strong></p>
+</blockquote>
+<h4 id="2-1-2-外键约束"><a href="#2-1-2-外键约束" class="headerlink" title="2.1.2 外键约束"></a>2.1.2 外键约束</h4><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">alter table 表名
+    add constraint 外键名称 
+        foreign key (外键字段名) references 主表 (字段名);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241130205540565.png" alt="外键约束"></p>
+<ul>
+<li><p>一个部门可以有多名员工，一个员工只可以归属于一个部门。</p>
+</li>
+<li><p>多的一方添加外键，关联主键。</p>
+</li>
+<li><p>员工表关联部门表。</p>
+</li>
+<li><p>在员工表上添加外键 ：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">alter table tb_emp
+    add constraint tb_emp_fk_dept_id
+        foreign key (dept_id) references tb_dept (id);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241130212228183.png" alt="推荐逻辑外键"></p>
+<p><strong>问题</strong></p>
+<ul>
+<li>表结构创建完毕后，我们看到两张表的数据分别为：</li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220831201844375.png"> </p>
+<p>现在员工表中有五个员工都归属于1号部门(学工部)，当删除了1号部门后，数据变为：</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220831202111247.png"> </p>
+<p>1号部门被删除了，但是依然还有5个员工是属于1号部门的。 此时：就出现数据的不完整、不一致了。 </p>
+<p><strong>问题分析</strong></p>
+<p>目前上述的两张表(员工表、部门表)，在数据库层面，并未建立关联，所以是无法保证数据的一致性和完整性的</p>
+<p><strong>问题解决</strong></p>
+<p>想解决上述的问题呢，我们就可以通过数据库中的 <strong>外键约束</strong> 来解决。</p>
+<blockquote>
+<p>外键约束：让两张表的数据建立连接，保证数据的一致性和完整性。  </p>
+<p>对应的关键字：foreign key</p>
+</blockquote>
+<p>外键约束的语法：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 创建表时指定
+create table 表名(
+	字段名    数据类型,
+	...
+	[constraint]   [外键名称]  foreign  key (外键字段名)   references   主表 (主表列名)	
+);
+
+
+-- 建完表后，添加外键
+alter table  表名  add constraint  外键名称  foreign key(外键字段名) references 主表(主表列名);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>那接下来，我们就为员工表的dept_id 建立外键约束，来关联部门表的主键。</p>
+<p>方式1：通过SQL语句操作</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 修改表： 添加外键约束
+alter table tb_emp  
+add  constraint  fk_dept_id  foreign key (dept_id)  references  tb_dept(id);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>方式2：图形化界面操作</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221206232750376.png"> </p>
+<blockquote>
+<p>当我们添加外键约束时，我们得保证当前数据库表中的数据是完整的。 所以，我们需要将之前删除掉的数据再添加回来。</p>
+</blockquote>
+<blockquote>
+<p>当我们添加了外键之后，再删除ID为1的部门，就会发现，此时数据库报错了，不允许删除。</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220831205523647.png"></p>
+<p>外键约束（foreign key）：保证了数据的完整性和一致性。</p>
+</blockquote>
+<p><strong>物理外键和逻辑外键</strong></p>
+<ul>
+<li><p>物理外键</p>
+<ul>
+<li>概念：使用foreign key定义外键关联另外一张表。</li>
+<li>缺点：<ul>
+<li>影响增、删、改的效率（需要检查外键关系）。</li>
+<li>仅用于单节点数据库，不适用与分布式、集群场景。</li>
+<li>容易引发数据库的死锁问题，消耗性能。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>逻辑外键</p>
+<ul>
+<li>概念：在业务层逻辑中，解决外键关联。</li>
+<li>通过逻辑外键，就可以很方便的解决上述问题。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>**在现在的企业开发中，很少会使用物理外键，都是使用逻辑外键。 甚至在一些数据库开发规范中，会明确指出禁止使用物理外键 foreign key **</p>
+</blockquote>
+<h3 id="2-2-一对一"><a href="#2-2-一对一" class="headerlink" title="2.2 一对一"></a>2.2 一对一</h3><p>一对一关系表在实际开发中应用起来比较简单，通常是用来做单表的拆分，也就是将一张大表拆分成两张小表，将大表中的一些基础字段放在一张表当中，将其他的字段放在另外一张表当中，以此来提高数据的操作效率。</p>
+<blockquote>
+<p>一对一的应用场景： 用户表(基本信息+身份信息)</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221207104508080.png"></p>
+<ul>
+<li>基本信息：用户的ID、姓名、性别、手机号、学历</li>
+<li>身份信息：民族、生日、身份证号、身份证签发机关，身份证的有效期(开始时间、结束时间)</li>
+</ul>
+<p>如果在业务系统当中，对用户的基本信息查询频率特别的高，但是对于用户的身份信息查询频率很低，此时出于提高查询效率的考虑，我就可以将这张大表拆分成两张小表，第一张表存放的是用户的基本信息，而第二张表存放的就是用户的身份信息。他们两者之间一对一的关系，一个用户只能对应一个身份证，而一个身份证也只能关联一个用户。</p>
+</blockquote>
+<p>那么在数据库层面怎么去体现上述两者之间是一对一的关系呢？</p>
+<p>其实一对一我们可以看成一种特殊的一对多。一对多我们是怎么设计表关系的？是不是在多的一方添加外键。同样我们也可以通过外键来体现一对一之间的关系，我们只需要在任意一方来添加一个外键就可以了。</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221207105632634.png"></p>
+<blockquote>
+<p>一对一 ：在任意一方加入外键，关联另外一方的主键，并且设置外键为唯一的(UNIQUE)</p>
+</blockquote>
+<p>SQL脚本：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 用户基本信息表
+create table tb_user(
+    id int unsigned  primary key auto_increment comment 'ID',
+    name varchar(10) not null comment '姓名',
+    gender tinyint unsigned not null comment '性别, 1 男  2 女',
+    phone char(11) comment '手机号',
+    degree varchar(10) comment '学历'
+) comment '用户基本信息表';
+-- 测试数据
+insert into tb_user values (1,'白眉鹰王',1,'18812340001','初中'),
+                        (2,'青翼蝠王',1,'18812340002','大专'),
+                        (3,'金毛狮王',1,'18812340003','初中'),
+                        (4,'紫衫龙王',2,'18812340004','硕士');
+
+-- 用户身份信息表
+create table tb_user_card(
+    id int unsigned  primary key auto_increment comment 'ID',
+    nationality varchar(10) not null comment '民族',
+    birthday date not null comment '生日',
+    idcard char(18) not null comment '身份证号',
+    issued varchar(20) not null comment '签发机关',
+    expire_begin date not null comment '有效期限-开始',
+    expire_end date comment '有效期限-结束',
+    user_id int unsigned not null unique comment '用户ID',
+    constraint fk_user_id foreign key (user_id) references tb_user(id)
+) comment '用户身份信息表';
+-- 测试数据
+insert into tb_user_card values (1,'汉','1960-11-06','100000100000100001','朝阳区公安局','2000-06-10',null,1),
+        (2,'汉','1971-11-06','100000100000100002','静安区公安局','2005-06-10','2025-06-10',2),
+        (3,'汉','1963-11-06','100000100000100003','昌平区公安局','2006-06-10',null,3),
+        (4,'回','1980-11-06','100000100000100004','海淀区公安局','2008-06-10','2028-06-10',4);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<h3 id="2-3-多对多"><a href="#2-3-多对多" class="headerlink" title="2.3 多对多"></a>2.3 多对多</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241130213906063.png" alt="学生选修课程-多对多"></p>
+<p>多对多的关系在开发中属于也比较常见的。比如：学生和老师的关系，一个学生可以有多个授课老师，一个授课老师也可以有多个学生。在比如：学生和课程的关系，一个学生可以选修多门课程，一个课程也可以供多个学生选修。</p>
+<p>案例：学生与课程的关系</p>
+<ul>
+<li><p>关系：一个学生可以选修多门课程，一门课程也可以供多个学生选择</p>
+</li>
+<li><p>实现关系：建立第三张中间表，中间表至少包含两个外键，分别关联两方主键</p>
+</li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221207113341028.png"></p>
+<p>SQL脚本：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 学生表
+create table tb_student(
+    id int auto_increment primary key comment '主键ID',
+    name varchar(10) comment '姓名',
+    no varchar(10) comment '学号'
+) comment '学生表';
+-- 学生表测试数据
+insert into tb_student(name, no) values ('黛绮丝', '2000100101'),('谢逊', '2000100102'),('殷天正', '2000100103'),('韦一笑', '2000100104');
+
+-- 课程表
+create table tb_course(
+   id int auto_increment primary key comment '主键ID',
+   name varchar(10) comment '课程名称'
+) comment '课程表';
+-- 课程表测试数据
+insert into tb_course (name) values ('Java'), ('PHP'), ('MySQL') , ('Hadoop');
+
+-- 学生课程表（中间表）
+create table tb_student_course(
+   id int auto_increment comment '主键' primary key,
+   student_id int not null comment '学生ID',
+   course_id  int not null comment '课程ID',
+   constraint fk_courseid foreign key (course_id) references tb_course (id),
+   constraint fk_studentid foreign key (student_id) references tb_student (id)
+)comment '学生课程中间表';
+-- 学生课程表测试数据
+insert into tb_student_course(student_id, course_id) values (1,1),(1,2),(1,3),(2,2),(2,3),(3,4);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<h3 id="2-4-案例"><a href="#2-4-案例" class="headerlink" title="2.4 案例"></a>2.4 案例</h3><p>下面通过一个综合案例加深对于多表关系的理解，并掌握多表设计的流程。</p>
+<p><strong>需求</strong></p>
+<ul>
+<li>根据参考资料中提供的《<a target="_blank" rel="noopener" href="https://app.mockplus.cn/app/share-e928208474edd220b75e9faff1380e4ashare-VaH7dpoIaqRr/preview/BlJ_BHC42AEaa/tKNB7Tamh14B54?allowShare=1&amp;cps=expand&amp;ha=1">苍穹外卖</a><a target="_blank" rel="noopener" href="https://app.mockplus.cn/app/share-e928208474edd220b75e9faff1380e4ashare-VaH7dpoIaqRr/preview/BlJ_BHC42AEaa/tKNB7Tamh14B54?allowShare=1&amp;cps=expand&amp;ha=1">_</a><a target="_blank" rel="noopener" href="https://app.mockplus.cn/app/share-e928208474edd220b75e9faff1380e4ashare-VaH7dpoIaqRr/preview/BlJ_BHC42AEaa/tKNB7Tamh14B54?allowShare=1&amp;cps=expand&amp;ha=1">管理后台</a>》页面原型，设计分类管理、菜品管理、套餐管理模块的表结构。</li>
+</ul>
+<p><strong>步骤</strong></p>
+<ol>
+<li><p>阅读页面原型及需求文档，分析各个模块涉及到的表结构，及表结构之间的关系。</p>
+</li>
+<li><p>根据页面原型及需求文档，分析各个表结构中具体的字段及约束。</p>
+</li>
+</ol>
+<p><strong>分析</strong></p>
+<ul>
+<li>页面原型-分类管理</li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221207114241260.png"></p>
+<blockquote>
+<p>分类的信息：分类名称、分类类型[菜品/套餐]、分类排序、分类状态[禁用/启用]、分类的操作时间(修改时间)。</p>
+</blockquote>
+<ul>
+<li>页面原型-菜品管理</li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221207114300057.png"></p>
+<blockquote>
+<p>菜品的信息：菜品名称、菜品图片、菜品分类、菜品售价、菜品售卖状态、菜品的操作时间(修改时间)。</p>
+</blockquote>
+<blockquote>
+<p>思考：分类与菜品之间是什么关系？</p>
+<ul>
+<li>思考逻辑：一个分类下可以有多个菜品吗？反过来再想一想，一个菜品会对应多个分类吗？</li>
+</ul>
+<p>答案：一对多关系。一个分类下会有多个菜品，而一个菜品只能归属一个分类。</p>
+<p>设计表原则：在多的一方，添加字段，关联属于一这方的主键。</p>
+</blockquote>
+<ul>
+<li>页面原型-套餐管理</li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221207114327139.png"> </p>
+<blockquote>
+<p>套餐的信息：套餐名称、套餐图片、套餐分类、套餐价格、套餐售卖状态、套餐的操作时间。</p>
+</blockquote>
+<blockquote>
+<p>思考：套餐与菜品之间是什么关系？</p>
+<ul>
+<li>思考逻辑：一个套餐下可以有多个菜品吗？反过来再想一想，一个菜品可以出现在多个套餐中吗？</li>
+</ul>
+<p>答案：多对多关系。一个套餐下会有多个菜品，而一个菜品也可以出现在多个套餐中。</p>
+<p>设计表原则：创建第三张中间表，建立两个字段分别关联菜品表的主键和套餐表的主键。</p>
+</blockquote>
+<p>分析页面原型及需求文档后，我们获得：</p>
+<ul>
+<li>分类表<ul>
+<li>业务字段：分类名称、分类类型、分类排序、分类状态</li>
+<li>基础字段：id(主键)、分类的创建时间、分类的修改时间</li>
+</ul>
+</li>
+<li>菜品表<ul>
+<li>业务字段：菜品名称、菜品图片、菜品分类、菜品售价、菜品售卖状态</li>
+<li>基础字段：id(主键)、分类的创建时间、分类的修改时间</li>
+</ul>
+</li>
+<li>套餐表<ul>
+<li>业务字段：套餐名称、套餐图片、套餐分类、套餐价格、套餐售卖状态</li>
+<li>基础字段：id(主键)、分类的创建时间、分类的修改时间</li>
+</ul>
+</li>
+</ul>
+<p>表结构之间的关系：</p>
+<ul>
+<li>分类表 - 菜品表 ： 一对多<ul>
+<li>在菜品表中添加字段(菜品分类)，关联分类表</li>
+</ul>
+</li>
+<li>菜品表 - 套餐表 ： 多对多<ul>
+<li>创建第三张中间表(套餐菜品关联表)，在中间表上添加两个字段(菜品id、套餐id)，分别关联菜品表和分类表</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220831211756004.png"></p>
+<p><strong>表结构</strong></p>
+<p>分类表：category</p>
+<ul>
+<li>业务字段：分类名称、分类类型、分类排序、分类状态</li>
+<li>基础字段：id(主键)、创建时间、修改时间</li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221207143907853.png"></p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 分类表
+create table category
+(
+    id          int unsigned primary key auto_increment comment '主键ID',
+    name        varchar(20)      not null unique comment '分类名称',
+    type        tinyint unsigned not null comment '类型 1 菜品分类 2 套餐分类',
+    sort        tinyint unsigned not null comment '顺序',
+    status      tinyint unsigned not null default 0 comment '状态 0 禁用，1 启用',
+    create_time datetime         not null comment '创建时间',
+    update_time datetime         not null comment '更新时间'
+) comment '菜品及套餐分类';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>菜品表：dish</p>
+<ul>
+<li>业务字段：菜品名称、菜品图片、菜品分类、菜品售价、菜品售卖状态</li>
+<li>基础字段：id(主键)、分类的创建时间、分类的修改时间</li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221207144323100.png"></p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 菜品表
+create table dish
+(
+    id          int unsigned primary key auto_increment comment '主键ID',
+    name        varchar(20)      not null unique comment '菜品名称',
+    category_id int unsigned     not null comment '菜品分类ID',   -- 逻辑外键
+    price       decimal(8, 2)    not null comment '菜品价格',
+    image       varchar(300)     not null comment '菜品图片',
+    description varchar(200) comment '描述信息',
+    status      tinyint unsigned not null default 0 comment '状态, 0 停售 1 起售',
+    create_time datetime         not null comment '创建时间',
+    update_time datetime         not null comment '更新时间'
+) comment '菜品';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>套餐表：setmeal</p>
+<ul>
+<li>业务字段：套餐名称、套餐图片、套餐分类、套餐价格、套餐售卖状态</li>
+<li>基础字段：id(主键)、分类的创建时间、分类的修改时间</li>
+</ul>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221207144723621.png"></p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 套餐表
+create table setmeal
+(
+    id          int unsigned primary key auto_increment comment '主键ID',
+    name        varchar(20)      not null unique comment '套餐名称',
+    category_id int unsigned     not null comment '分类id',       -- 逻辑外键
+    price       decimal(8, 2)    not null comment '套餐价格',
+    image       varchar(300)     not null comment '图片',
+    description varchar(200) comment '描述信息',
+    status      tinyint unsigned not null default 0 comment '状态 0:停用 1:启用',
+    create_time datetime         not null comment '创建时间',
+    update_time datetime         not null comment '更新时间'
+) comment '套餐';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>套餐菜品关联表：setmeal_dish</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221207145016440.png"></p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">-- 套餐菜品关联表
+create table setmeal_dish
+(
+    id         int unsigned primary key auto_increment comment '主键ID',
+    setmeal_id int unsigned     not null comment '套餐id ',    -- 逻辑外键
+    dish_id    int unsigned     not null comment '菜品id',     -- 逻辑外键
+    copies     tinyint unsigned not null comment '份数'
+) comment '套餐菜品关联表';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">ZhangYao</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://zhangyao0329.github.io/2024/11/30/mysql-2/">http://zhangyao0329.github.io/2024/11/30/mysql-2/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">ZhangYao</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Mysql/">
+                                    <span class="chip bg-color">Mysql</span>
+                                </a>
+                            
+                                <a href="/tags/DQL/">
+                                    <span class="chip bg-color">DQL</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%A4%9A%E8%A1%A8%E8%AE%BE%E8%AE%A1/">
+                                    <span class="chip bg-color">多表设计</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTgyNC8zNjI4Ng">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/11/30/mysql-2/">
+                    <div class="card-image">
+                        
+                        <img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220610191829748.png" class="responsive-img" alt="Mysql（2）">
+                        
+                        <span class="card-title">Mysql（2）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Mysql 8
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaEE/" class="post-category">
+                                    JavaEE
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Mysql/">
+                        <span class="chip bg-color">Mysql</span>
+                    </a>
+                    
+                    <a href="/tags/DQL/">
+                        <span class="chip bg-color">DQL</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%9A%E8%A1%A8%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">多表设计</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/11/30/mysql-1/">
+                    <div class="card-image">
+                        
+                        <img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220610191829748.png" class="responsive-img" alt="Mysql（1）">
+                        
+                        <span class="card-title">Mysql（1）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Mysql 8
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaEE/" class="post-category">
+                                    JavaEE
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Mysql/">
+                        <span class="chip bg-color">Mysql</span>
+                    </a>
+                    
+                    <a href="/tags/DDL/">
+                        <span class="chip bg-color">DDL</span>
+                    </a>
+                    
+                    <a href="/tags/DML/">
+                        <span class="chip bg-color">DML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+
+<!--             
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024</span>
+            
+            <span id="year">2024</span>
+            <a href="/about" target="_blank">ZhangYao</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> -->
+
+
+            <!-- 自己添加的 -->
+             <span>Copyright&nbsp;&copy; 2024 by ZhangYao</span>
+            <span>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</span>
+           <img src="https://cdn.jsdelivr.net/gh/blinkfox/blinkfox.github.io/medias/icp.png" style="vertical-align: text-bottom;" />
+            <span><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">豫ICP备2024072925号</a></span>
+
+
+
+            <!-- <br> -->
+
+            
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/zhangyao0329" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="weixin://" class="tooltipped" target="_blank" data-tooltip="添加我的微信 zhang--0329" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1870476411" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1870476411" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="mailto:1870476411@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='1'
+        zIndex="-1" count="333"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+
+</html>
