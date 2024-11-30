@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-11-28T11:27:02.735Z</updated>
+  <updated>2024-11-30T06:46:45.687Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mysql（1）</title>
+    <link href="http://zhangyao0329.github.io/2024/11/30/mysql-1/"/>
+    <id>http://zhangyao0329.github.io/2024/11/30/mysql-1/</id>
+    <published>2024-11-30T06:43:50.000Z</published>
+    <updated>2024-11-30T06:46:45.687Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据库开发-MySQL&quot;&gt;&lt;a href=&quot;#数据库开发-MySQL&quot; class=&quot;headerlink&quot; title=&quot;数据库开发-MySQL&quot;&gt;&lt;/a&gt;数据库开发-MySQL&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
+    
+    
+    <category term="Mysql" scheme="http://zhangyao0329.github.io/tags/Mysql/"/>
+    
+    <category term="DDL" scheme="http://zhangyao0329.github.io/tags/DDL/"/>
+    
+    <category term="DML" scheme="http://zhangyao0329.github.io/tags/DML/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBootWeb请求响应</title>
@@ -390,7 +419,7 @@
     <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
     <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
     <published>2024-09-01T10:40:33.000Z</published>
-    <updated>2024-11-29T06:57:39.074Z</updated>
+    <updated>2024-11-30T06:48:26.689Z</updated>
     
     
       
