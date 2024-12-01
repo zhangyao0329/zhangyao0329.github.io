@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-12-01T15:26:19.384Z</updated>
+  <updated>2024-12-01T15:44:30.109Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mybatis</title>
+    <link href="http://zhangyao0329.github.io/2024/12/01/mybatis/"/>
+    <id>http://zhangyao0329.github.io/2024/12/01/mybatis/</id>
+    <published>2024-12-01T23:39:34.000Z</published>
+    <updated>2024-12-01T15:44:30.109Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据库操作&quot;&gt;&lt;a href=&quot;#数据库操作&quot; class=&quot;headerlink&quot; title=&quot;数据库操作&quot;&gt;&lt;/a&gt;数据库操作&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
+    
+    
+    <category term="Mybatis入门" scheme="http://zhangyao0329.github.io/tags/Mybatis%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="数据库连接池" scheme="http://zhangyao0329.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
+    
+    <category term="lombok" scheme="http://zhangyao0329.github.io/tags/lombok/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Mysql (3)</title>
     <link href="http://zhangyao0329.github.io/2024/12/01/mysql-3/"/>
     <id>http://zhangyao0329.github.io/2024/12/01/mysql-3/</id>
-    <published>2024-12-01T23:17:25.000Z</published>
-    <updated>2024-12-01T15:26:19.384Z</updated>
+    <published>2024-12-01T15:17:25.000Z</published>
+    <updated>2024-12-01T15:25:43.807Z</updated>
     
     
       
@@ -477,7 +506,7 @@
     <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
     <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
     <published>2024-09-01T10:40:33.000Z</published>
-    <updated>2024-12-01T15:26:19.384Z</updated>
+    <updated>2024-12-01T15:44:30.113Z</updated>
     
     
       
@@ -548,37 +577,6 @@
     
     
     <category term="win环境" scheme="http://zhangyao0329.github.io/tags/win%E7%8E%AF%E5%A2%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS7原生安装一些工具</title>
-    <link href="http://zhangyao0329.github.io/2024/05/17/centos7-zhong-yuan-sheng-an-zhuang-yi-xie-gong-ju/"/>
-    <id>http://zhangyao0329.github.io/2024/05/17/centos7-zhong-yuan-sheng-an-zhuang-yi-xie-gong-ju/</id>
-    <published>2024-05-17T13:37:22.000Z</published>
-    <updated>2024-11-29T06:55:20.062Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;CentOS7原生安装一些工具&quot;&gt;&lt;a href=&quot;#CentOS7原生安装一些工具&quot; class=&quot;headerlink&quot; title=&quot;CentOS7原生安装一些工具&quot;&gt;&lt;/a&gt;CentOS7原生安装一些工具&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="http://zhangyao0329.github.io/categories/Linux/"/>
-    
-    
-    <category term="redis" scheme="http://zhangyao0329.github.io/tags/redis/"/>
-    
-    <category term="mysql" scheme="http://zhangyao0329.github.io/tags/mysql/"/>
-    
-    <category term="Nginx" scheme="http://zhangyao0329.github.io/tags/Nginx/"/>
-    
-    <category term="rebbitmq" scheme="http://zhangyao0329.github.io/tags/rebbitmq/"/>
     
   </entry>
   
