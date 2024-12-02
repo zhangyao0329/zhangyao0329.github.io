@@ -434,21 +434,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-12-01
+                    2024-12-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    4.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    18 分
                 </div>
                 
 
@@ -471,7 +471,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h1><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241201234138327.png"></p>
+                <h1 id="Mybatis入门"><a href="#Mybatis入门" class="headerlink" title="Mybatis入门"></a>Mybatis入门</h1><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241201234138327.png"></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在前面我们学习MySQL数据库时，都是利用图形化客户端工具(如：idea、datagrip)，来操作数据库的。</p>
 <blockquote>
 <p>在客户端工具中，编写增删改查的SQL语句，发给MySQL数据库管理系统，由数据库管理系统执行SQL语句并返回执行结果。</p>
@@ -506,7 +506,8 @@
 </li>
 </ul>
 <p>接下来，我们就通过一个入门程序，让大家快速感受一下通过Mybatis如何来操作数据库。</p>
-<h2 id="1-快速入门"><a href="#1-快速入门" class="headerlink" title="1. 快速入门"></a>1. 快速入门</h2><p>需求：使用Mybatis查询所有用户数据。</p>
+<h2 id="1-快速入门"><a href="#1-快速入门" class="headerlink" title="1. 快速入门"></a>1. 快速入门</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241202104414398.png" alt="入门"></p>
+<p>需求：使用Mybatis查询所有用户数据。</p>
 <h3 id="1-1-入门程序分析"><a href="#1-1-入门程序分析" class="headerlink" title="1.1 入门程序分析"></a>1.1 入门程序分析</h3><p>以前我们是在图形化客户端工具中编写SQL查询代码，发送给数据库执行，数据库执行后返回操作结果。</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221209155704203.png"> </p>
 <p>图形化工具会把数据库执行的查询结果，使用表格的形式展现出来</p>
@@ -530,7 +531,16 @@
 <blockquote>
 <p>项目工程创建完成后，自动在pom.xml文件中，导入Mybatis依赖和MySQL驱动依赖</p>
 </blockquote>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- 仅供参考：只粘贴了pom.xml中部分内容 --&gt;</span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">    <span class="token comment">&lt;!-- springboot父工程--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.7.5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>relativePath</span><span class="token punctuation">/&gt;</span></span> <span class="token comment">&lt;!-- lookup parent from repository --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 仅供参考：只粘贴了pom.xml中部分内容 
+springboot2.7.5版本用mysql驱动2.3.0 --&gt;</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">&gt;</span></span>
         <span class="token comment">&lt;!-- mybatis起步依赖 --&gt;</span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
@@ -552,11 +562,16 @@
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.cj.jdbc.Driver
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/db04
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token number">123456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -623,7 +638,7 @@
 <span class="token comment">#连接数据库的用户名</span>
 <span class="token key attr-name">spring.datasource.username</span><span class="token punctuation">=</span><span class="token value attr-value">root</span>
 <span class="token comment">#连接数据库的密码</span>
-<span class="token key attr-name">spring.datasource.password</span><span class="token punctuation">=</span><span class="token value attr-value">1234</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key attr-name">spring.datasource.password</span><span class="token punctuation">=</span><span class="token value attr-value">123456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>上述的配置，可以直接复制过去，不要敲错了。 全部都是 spring.datasource.xxxx 开头。</p>
@@ -838,7 +853,9 @@ User{id=6, name='光明右使', age=48, gender=1, phone='18800000005'}<span aria
     <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">&gt;</span></span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
-<h2 id="3-数据库连接池"><a href="#3-数据库连接池" class="headerlink" title="3. 数据库连接池"></a>3. 数据库连接池</h2><p>在前面我们所讲解的mybatis中，使用了数据库连接池技术，避免频繁的创建连接、销毁连接而带来的资源浪费。</p>
+<h2 id="3-数据库连接池"><a href="#3-数据库连接池" class="headerlink" title="3. 数据库连接池"></a>3. 数据库连接池</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241202210143821.png"></p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241202210401353.png"></p>
+<p>在前面我们所讲解的mybatis中，使用了数据库连接池技术，避免频繁的创建连接、销毁连接而带来的资源浪费。</p>
 <p>下面我们就具体的了解下数据库连接池。</p>
 <h3 id="3-1-介绍"><a href="#3-1-介绍" class="headerlink" title="3.1 介绍"></a>3.1 介绍</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221210160341852.png"></p>
 <blockquote>
@@ -922,13 +939,23 @@ User{id=6, name='光明右使', age=48, gender=1, phone='18800000005'}<span aria
 <pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token key attr-name">spring.datasource.druid.driver-class-name</span><span class="token punctuation">=</span><span class="token value attr-value">com.mysql.cj.jdbc.Driver</span>
 <span class="token key attr-name">spring.datasource.druid.url</span><span class="token punctuation">=</span><span class="token value attr-value">jdbc:mysql://localhost:3306/mybatis</span>
 <span class="token key attr-name">spring.datasource.druid.username</span><span class="token punctuation">=</span><span class="token value attr-value">root</span>
-<span class="token key attr-name">spring.datasource.druid.password</span><span class="token punctuation">=</span><span class="token value attr-value">1234</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key attr-name">spring.datasource.druid.password</span><span class="token punctuation">=</span><span class="token value attr-value">123456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>方式2：</p>
 <pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token key attr-name">spring.datasource.driver-class-name</span><span class="token punctuation">=</span><span class="token value attr-value">com.mysql.cj.jdbc.Driver</span>
 <span class="token key attr-name">spring.datasource.url</span><span class="token punctuation">=</span><span class="token value attr-value">jdbc:mysql://localhost:3306/mybatis</span>
 <span class="token key attr-name">spring.datasource.username</span><span class="token punctuation">=</span><span class="token value attr-value">root</span>
-<span class="token key attr-name">spring.datasource.password</span><span class="token punctuation">=</span><span class="token value attr-value">1234</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key attr-name">spring.datasource.password</span><span class="token punctuation">=</span><span class="token value attr-value">123456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+    <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+        <span class="token key atrule">druid</span><span class="token punctuation">:</span>
+            driver<span class="token punctuation">-</span>class<span class="token punctuation">-</span>name<span class="token punctuation">:</span>com.mysql.cj.jdbc.Driver
+            url<span class="token punctuation">:</span>jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/mybatis
+            username<span class="token punctuation">:</span>root
+            password<span class="token punctuation">:</span><span class="token number">123456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -936,9 +963,8 @@ User{id=6, name='光明右使', age=48, gender=1, phone='18800000005'}<span aria
 
 
 
-
-
-<h2 id="4-lombok"><a href="#4-lombok" class="headerlink" title="4. lombok"></a>4. lombok</h2><h3 id="4-1-介绍"><a href="#4-1-介绍" class="headerlink" title="4.1 介绍"></a>4.1 介绍</h3><p>Lombok是一个实用的Java类库，可以通过简单的注解来简化和消除一些必须有但显得很臃肿的Java代码。</p>
+<h2 id="4-lombok"><a href="#4-lombok" class="headerlink" title="4. lombok"></a>4. lombok</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241202211516763.png"></p>
+<h3 id="4-1-介绍"><a href="#4-1-介绍" class="headerlink" title="4.1 介绍"></a>4.1 介绍</h3><p>Lombok是一个实用的Java类库，可以通过简单的注解来简化和消除一些必须有但显得很臃肿的Java代码。</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221210164641266.png"></p>
 <blockquote>
 <p>通过注解的形式自动生成构造器、getter/setter、equals、hashcode、toString等方法，并可以自动化生成日志变量，简化java开发、提高效率。</p>
