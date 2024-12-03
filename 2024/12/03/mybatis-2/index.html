@@ -471,8 +471,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Mybatis基础操作"><a href="#Mybatis基础操作" class="headerlink" title="Mybatis基础操作"></a>Mybatis基础操作</h1><p>学习完mybatis入门后，我们继续学习mybatis基础操作。</p>
-<h2 id="1-1-需求"><a href="#1-1-需求" class="headerlink" title="1.1 需求"></a>1.1 需求</h2><p>需求说明：</p>
+                <h1 id="Mybatis基础操作"><a href="#Mybatis基础操作" class="headerlink" title="Mybatis基础操作"></a>Mybatis基础操作</h1><h2 id="1、Mybatis"><a href="#1、Mybatis" class="headerlink" title="1、Mybatis"></a>1、Mybatis</h2><p>学习完mybatis入门后，我们继续学习mybatis基础操作。</p>
+<h3 id="1-1-需求"><a href="#1-1-需求" class="headerlink" title="1.1 需求"></a>1.1 需求</h3><p>需求说明：</p>
 <ul>
 <li>根据资料中提供的《tlias智能学习辅助系统》页面原型及需求，完成员工管理的需求开发。</li>
 </ul>
@@ -498,7 +498,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="1-2-准备"><a href="#1-2-准备" class="headerlink" title="1.2 准备"></a>1.2 准备</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241202213942986.png"></p>
+<h3 id="1-2-准备"><a href="#1-2-准备" class="headerlink" title="1.2 准备"></a>1.2 准备</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241202213942986.png"></p>
 <p>实施前的准备工作：</p>
 <ol>
 <li>准备数据库表</li>
@@ -615,7 +615,7 @@ VALUES
 
 <p>完成以上操作后，项目工程结构目录如下：</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221210182500817.png"></p>
-<h2 id="1-3-删除"><a href="#1-3-删除" class="headerlink" title="1.3 删除"></a>1.3 删除</h2><h3 id="1-3-1-功能实现"><a href="#1-3-1-功能实现" class="headerlink" title="1.3.1 功能实现"></a>1.3.1 功能实现</h3><p>页面原型：</p>
+<h3 id="1-3-删除"><a href="#1-3-删除" class="headerlink" title="1.3 删除"></a>1.3 删除</h3><h4 id="1-3-1-功能实现"><a href="#1-3-1-功能实现" class="headerlink" title="1.3.1 功能实现"></a>1.3.1 功能实现</h4><p>页面原型：</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221210183336095.png"></p>
 <blockquote>
 <p>当我们点击后面的”删除”按钮时，前端页面会给服务端传递一个参数，也就是该行数据的ID。 我们接收到ID后，根据ID删除数据即可。</p>
@@ -680,7 +680,7 @@ delete from emp where id = 17;<span aria-hidden="true" class="line-numbers-rows"
 
 
 
-<h3 id="1-3-2-日志输入"><a href="#1-3-2-日志输入" class="headerlink" title="1.3.2 日志输入"></a>1.3.2 日志输入</h3><p>在Mybatis当中我们可以借助日志，查看到sql语句的执行、执行传递的参数以及执行结果。具体操作如下：</p>
+<h4 id="1-3-2-日志输入"><a href="#1-3-2-日志输入" class="headerlink" title="1.3.2 日志输入"></a>1.3.2 日志输入</h4><p>在Mybatis当中我们可以借助日志，查看到sql语句的执行、执行传递的参数以及执行结果。具体操作如下：</p>
 <ol>
 <li><p>打开application.properties文件</p>
 </li>
@@ -695,7 +695,7 @@ delete from emp where id = 17;<span aria-hidden="true" class="line-numbers-rows"
 <blockquote>
 <p>但是我们发现输出的SQL语句：delete from emp where id = ?，我们输入的参数16并没有在后面拼接，id的值是使用?进行占位。那这种SQL语句我们称为预编译SQL。</p>
 </blockquote>
-<h3 id="1-3-3-预编译SQL"><a href="#1-3-3-预编译SQL" class="headerlink" title="1.3.3 预编译SQL"></a>1.3.3 预编译SQL</h3><h4 id="1-3-3-1-介绍"><a href="#1-3-3-1-介绍" class="headerlink" title="1.3.3.1 介绍"></a>1.3.3.1 介绍</h4><p>预编译SQL有两个优势：</p>
+<h4 id="1-3-3-预编译SQL"><a href="#1-3-3-预编译SQL" class="headerlink" title="1.3.3 预编译SQL"></a>1.3.3 预编译SQL</h4><h5 id="1-3-3-1-介绍"><a href="#1-3-3-1-介绍" class="headerlink" title="1.3.3.1 介绍"></a>1.3.3.1 介绍</h5><p>预编译SQL有两个优势：</p>
 <ol>
 <li>性能更高</li>
 <li>更安全(防止SQL注入)</li>
@@ -705,7 +705,7 @@ delete from emp where id = 17;<span aria-hidden="true" class="line-numbers-rows"
 <p>性能更高：预编译SQL，编译一次之后会将编译后的SQL语句缓存起来，后面再次执行这条语句时，不会再次编译。（只是输入的参数不同）</p>
 <p>更安全(防止SQL注入)：将敏感字进行转义，保障SQL的安全性。</p>
 </blockquote>
-<h4 id="1-3-3-2-SQL注入"><a href="#1-3-3-2-SQL注入" class="headerlink" title="1.3.3.2 SQL注入"></a>1.3.3.2 SQL注入</h4><p>SQL注入：是通过操作输入的数据来修改事先定义好的SQL语句，以达到执行代码对服务器进行攻击的方法。</p>
+<h5 id="1-3-3-2-SQL注入"><a href="#1-3-3-2-SQL注入" class="headerlink" title="1.3.3.2 SQL注入"></a>1.3.3.2 SQL注入</h5><p>SQL注入：是通过操作输入的数据来修改事先定义好的SQL语句，以达到执行代码对服务器进行攻击的方法。</p>
 <blockquote>
 <p>由于没有对用户输入进行充分检查，而SQL又是拼接而成，在用户输入参数时，在参数中添加一些SQL关键字，达到改变SQL运行结果的目的，也可以完成恶意攻击。</p>
 </blockquote>
@@ -746,7 +746,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <blockquote>
 <p>把整个<code>' or '1'='1</code>作为一个完整的参数，赋值给第2个问号（<code>' or '1'='1</code>进行了转义，只当做字符串使用）</p>
 </blockquote>
-<h4 id="1-3-3-3-参数占位符"><a href="#1-3-3-3-参数占位符" class="headerlink" title="1.3.3.3 参数占位符"></a>1.3.3.3 参数占位符</h4><p>在Mybatis中提供的参数占位符有两种：${…} 、#{…}</p>
+<h5 id="1-3-3-3-参数占位符"><a href="#1-3-3-3-参数占位符" class="headerlink" title="1.3.3.3 参数占位符"></a>1.3.3.3 参数占位符</h5><p>在Mybatis中提供的参数占位符有两种：${…} 、#{…}</p>
 <ul>
 <li><p>#{…}</p>
 <ul>
@@ -764,9 +764,9 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <blockquote>
 <p>注意事项：在项目开发中，建议使用#{…}，生成预编译SQL，防止SQL注入安全。</p>
 </blockquote>
-<h2 id="1-4-新增"><a href="#1-4-新增" class="headerlink" title="1.4 新增"></a>1.4 新增</h2><p>功能：新增员工信息</p>
+<h3 id="1-4-新增"><a href="#1-4-新增" class="headerlink" title="1.4 新增"></a>1.4 新增</h3><p>功能：新增员工信息</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221211134239610.png"></p>
-<h3 id="1-4-1-基本新增"><a href="#1-4-1-基本新增" class="headerlink" title="1.4.1 基本新增"></a>1.4.1 基本新增</h3><p>员工表结构：</p>
+<h4 id="1-4-1-基本新增"><a href="#1-4-1-基本新增" class="headerlink" title="1.4.1 基本新增"></a>1.4.1 基本新增</h4><p>员工表结构：</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221211134746319.png"></p>
 <p>SQL语句：</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> emp<span class="token punctuation">(</span>username<span class="token punctuation">,</span> name<span class="token punctuation">,</span> gender<span class="token punctuation">,</span> image<span class="token punctuation">,</span> job<span class="token punctuation">,</span> entrydate<span class="token punctuation">,</span> dept_id<span class="token punctuation">,</span> create_time<span class="token punctuation">,</span> update_time<span class="token punctuation">)</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'songyuanqiao'</span><span class="token punctuation">,</span><span class="token string">'宋远桥'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'1.jpg'</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'2012-10-09'</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'2022-10-01 10:00:00'</span><span class="token punctuation">,</span><span class="token string">'2022-10-01 10:00:00'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -820,7 +820,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <p>日志输出：</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221211140222240.png"></p>
 </blockquote>
-<h3 id="1-4-2-主键返回"><a href="#1-4-2-主键返回" class="headerlink" title="1.4.2 主键返回"></a>1.4.2 主键返回</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241203131437017.png"></p>
+<h4 id="1-4-2-主键返回"><a href="#1-4-2-主键返回" class="headerlink" title="1.4.2 主键返回"></a>1.4.2 主键返回</h4><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241203131437017.png"></p>
 <p>概念：在数据添加成功后，需要获取插入数据库数据的主键。</p>
 <blockquote>
 <p>如：添加套餐数据时，还需要维护套餐菜品关系表数据。</p>
@@ -876,7 +876,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 
 
 
-<h2 id="1-5-更新"><a href="#1-5-更新" class="headerlink" title="1.5 更新"></a>1.5 更新</h2><p>功能：修改员工信息</p>
+<h3 id="1-5-更新"><a href="#1-5-更新" class="headerlink" title="1.5 更新"></a>1.5 更新</h3><p>功能：修改员工信息</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221212095605863.png"></p>
 <blockquote>
 <p>点击”编辑”按钮后，会查询所在行记录的员工信息，并把员工信息回显在修改员工的窗体上(下个知识点学习)</p>
@@ -929,7 +929,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 
 
 
-<h2 id="1-6-查询"><a href="#1-6-查询" class="headerlink" title="1.6 查询"></a>1.6 查询</h2><h3 id="1-6-1-根据ID查询"><a href="#1-6-1-根据ID查询" class="headerlink" title="1.6.1 根据ID查询"></a>1.6.1 根据ID查询</h3><p>在员工管理的页面中，当我们进行更新数据时，会点击 “编辑” 按钮，然后此时会发送一个请求到服务端，会根据Id查询该员工信息，并将员工数据回显在页面上。</p>
+<h3 id="1-6-查询"><a href="#1-6-查询" class="headerlink" title="1.6 查询"></a>1.6 查询</h3><h4 id="1-6-1-根据ID查询"><a href="#1-6-1-根据ID查询" class="headerlink" title="1.6.1 根据ID查询"></a>1.6.1 根据ID查询</h4><p>在员工管理的页面中，当我们进行更新数据时，会点击 “编辑” 按钮，然后此时会发送一个请求到服务端，会根据Id查询该员工信息，并将员工数据回显在页面上。</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221212101331292.png"> </p>
 <p>SQL语句：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">select id, username, password, name, gender, image, job, entrydate, dept_id, create_time, update_time from emp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -959,7 +959,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221212103004961.png"></p>
 <p>而在测试的过程中，我们会发现有几个字段(deptId、createTime、updateTime)是没有数据值的</p>
 </blockquote>
-<h3 id="1-6-2-数据封装"><a href="#1-6-2-数据封装" class="headerlink" title="1.6.2 数据封装"></a>1.6.2 数据封装</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241203135529879.png" alt="数据封装"></p>
+<h4 id="1-6-2-数据封装"><a href="#1-6-2-数据封装" class="headerlink" title="1.6.2 数据封装"></a>1.6.2 数据封装</h4><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241203135529879.png" alt="数据封装"></p>
 <p>我们看到查询返回的结果中大部分字段是有值的，但是deptId，createTime，updateTime这几个字段是没有值的，而数据库中是有对应的字段值的，这是为什么呢？</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221212103124490.png"></p>
 <p>原因如下： </p>
@@ -1039,7 +1039,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <blockquote>
 <p>要使用驼峰命名前提是 实体类的属性 与 数据库表中的字段名严格遵守驼峰命名。</p>
 </blockquote>
-<h3 id="1-6-3-条件查询"><a href="#1-6-3-条件查询" class="headerlink" title="1.6.3 条件查询"></a>1.6.3 条件查询</h3><p>在员工管理的列表页面中，我们需要根据条件查询员工信息，查询条件包括：姓名、性别、入职时间。 </p>
+<h4 id="1-6-3-条件查询"><a href="#1-6-3-条件查询" class="headerlink" title="1.6.3 条件查询"></a>1.6.3 条件查询</h4><p>在员工管理的列表页面中，我们需要根据条件查询员工信息，查询条件包括：姓名、性别、入职时间。 </p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221212113422924.png"></p>
 <p>通过页面原型以及需求描述我们要实现的查询：</p>
 <ul>
@@ -1103,7 +1103,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <p>执行结果：生成的SQL都是预编译的SQL语句（性能高、安全）</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221212120006242.png"></p>
 </blockquote>
-<h3 id="1-6-4-参数名说明"><a href="#1-6-4-参数名说明" class="headerlink" title="1.6.4 参数名说明"></a>1.6.4 参数名说明</h3><p>在上面我们所编写的条件查询功能中，我们需要保证接口中方法的形参名和SQL语句中的参数占位符名相同。</p>
+<h4 id="1-6-4-参数名说明"><a href="#1-6-4-参数名说明" class="headerlink" title="1.6.4 参数名说明"></a>1.6.4 参数名说明</h4><p>在上面我们所编写的条件查询功能中，我们需要保证接口中方法的形参名和SQL语句中的参数占位符名相同。</p>
 <blockquote>
 <p>当方法中的形参名和SQL语句中的占位符参数名不相同时，就会出现以下问题：</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221212150611796.png"></p>
@@ -1125,12 +1125,12 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <p>在编译时，生成的字节码文件当中，不会保留Mapper接口中方法的形参名称，而是使用var1、var2、…这样的形参名字，此时要获取参数值时，就要通过@Param注解来指定SQL语句中的参数名</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221212151736274.png"></p>
 </blockquote>
-<h1 id="2-Mybatis的XML配置文件"><a href="#2-Mybatis的XML配置文件" class="headerlink" title="2. Mybatis的XML配置文件"></a>2. Mybatis的XML配置文件</h1><p>Mybatis的开发有两种方式：</p>
+<h2 id="2-、Mybatis的XML配置文件"><a href="#2-、Mybatis的XML配置文件" class="headerlink" title="2.、Mybatis的XML配置文件"></a>2.、Mybatis的XML配置文件</h2><p>Mybatis的开发有两种方式：</p>
 <ol>
 <li>注解</li>
 <li>XML</li>
 </ol>
-<h2 id="2-1-XML配置文件规范"><a href="#2-1-XML配置文件规范" class="headerlink" title="2.1 XML配置文件规范"></a>2.1 XML配置文件规范</h2><p>使用Mybatis的注解方式，主要是来完成一些简单的增删改查功能。如果需要实现复杂的SQL功能，建议使用XML来配置映射语句，也就是将SQL语句写在XML配置文件中。</p>
+<h3 id="2-1-XML配置文件规范"><a href="#2-1-XML配置文件规范" class="headerlink" title="2.1 XML配置文件规范"></a>2.1 XML配置文件规范</h3><p>使用Mybatis的注解方式，主要是来完成一些简单的增删改查功能。如果需要实现复杂的SQL功能，建议使用XML来配置映射语句，也就是将SQL语句写在XML配置文件中。</p>
 <p>在Mybatis中使用XML映射文件方式开发，需要符合一定的规范：</p>
 <ol>
 <li><p>XML映射文件的名称与Mapper接口名称一致，并且将XML映射文件和Mapper接口放置在相同包下（同包同名）</p>
@@ -1147,7 +1147,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <li>resultType属性，指的是查询返回的单条记录所封装的类型。</li>
 </ul>
 </blockquote>
-<h2 id="2-2-XML配置文件实现"><a href="#2-2-XML配置文件实现" class="headerlink" title="2.2 XML配置文件实现"></a>2.2 XML配置文件实现</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241203143206233.png" alt="XML"></p>
+<h3 id="2-2-XML配置文件实现"><a href="#2-2-XML配置文件实现" class="headerlink" title="2.2 XML配置文件实现"></a>2.2 XML配置文件实现</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241203143206233.png" alt="XML"></p>
 <p>第1步：创建XML映射文件</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221212154908306.png"></p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221212155304635.png"></p>
@@ -1200,7 +1200,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <p>运行测试类，执行结果：</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221212163719534.png"></p>
 </blockquote>
-<h2 id="2-3-MybatisX的使用"><a href="#2-3-MybatisX的使用" class="headerlink" title="2.3 MybatisX的使用"></a>2.3 MybatisX的使用</h2><p>MybatisX是一款基于IDEA的快速开发Mybatis的插件，为效率而生。</p>
+<h3 id="2-3-MybatisX的使用"><a href="#2-3-MybatisX的使用" class="headerlink" title="2.3 MybatisX的使用"></a>2.3 MybatisX的使用</h3><p>MybatisX是一款基于IDEA的快速开发Mybatis的插件，为效率而生。</p>
 <p>MybatisX的安装：</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221213120923252.png"></p>
 <p>可以通过MybatisX快速定位：</p>
@@ -1214,7 +1214,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220901173948645.png"> </p>
 </blockquote>
 <p><strong>结论：</strong>使用Mybatis的注解，主要是来完成一些简单的增删改查功能。如果需要实现复杂的SQL功能，建议使用XML来配置映射语句。</p>
-<h1 id="3-Mybatis动态SQL"><a href="#3-Mybatis动态SQL" class="headerlink" title="3. Mybatis动态SQL"></a>3. Mybatis动态SQL</h1><h2 id="3-1-什么是动态SQL"><a href="#3-1-什么是动态SQL" class="headerlink" title="3.1 什么是动态SQL"></a>3.1 什么是动态SQL</h2><p>在页面原型中，列表上方的条件是动态的，是可以不传递的，也可以只传递其中的1个或者2个或者全部。</p>
+<h2 id="3、Mybatis动态SQL"><a href="#3、Mybatis动态SQL" class="headerlink" title="3、Mybatis动态SQL"></a>3、Mybatis动态SQL</h2><h3 id="3-1-什么是动态SQL"><a href="#3-1-什么是动态SQL" class="headerlink" title="3.1 什么是动态SQL"></a>3.1 什么是动态SQL</h3><p>在页面原型中，列表上方的条件是动态的，是可以不传递的，也可以只传递其中的1个或者2个或者全部。</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220901172933012.png"></p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220901173203491.png"></p>
 <p>而在我们刚才编写的SQL语句中，我们会看到，我们将三个条件直接写死了。 如果页面只传递了参数姓名name 字段，其他两个字段 性别 和 入职时间没有传递，那么这两个参数的值就是null。</p>
@@ -1234,13 +1234,13 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <p>SQL语句会随着用户的输入或外部条件的变化而变化，我们称为：<strong>动态SQL</strong>。</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221213122623278.png"></p>
 <p>在Mybatis中提供了很多实现动态SQL的标签，我们学习Mybatis中的动态SQL就是掌握这些动态SQL标签。</p>
-<h2 id="3-2-动态SQL-if"><a href="#3-2-动态SQL-if" class="headerlink" title="3.2 动态SQL-if"></a>3.2 动态SQL-if</h2><p><code>&lt;if&gt;</code>：用于判断条件是否成立。使用test属性进行条件判断，如果条件为true，则拼接SQL。</p>
+<h3 id="3-2-动态SQL-if"><a href="#3-2-动态SQL-if" class="headerlink" title="3.2 动态SQL-if"></a>3.2 动态SQL-if</h3><p><code>&lt;if&gt;</code>：用于判断条件是否成立。使用test属性进行条件判断，如果条件为true，则拼接SQL。</p>
 <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>条件表达式<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
    要拼接的sql语句
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>接下来，我们就通过<code>&lt;if&gt;</code>标签来改造之前条件查询的案例。</p>
-<h3 id="3-2-1-条件查询"><a href="#3-2-1-条件查询" class="headerlink" title="3.2.1 条件查询"></a>3.2.1 条件查询</h3><p>示例：把SQL语句改造为动态SQL方式</p>
+<h4 id="3-2-1-条件查询"><a href="#3-2-1-条件查询" class="headerlink" title="3.2.1 条件查询"></a>3.2.1 条件查询</h4><p>示例：把SQL语句改造为动态SQL方式</p>
 <ul>
 <li>原有的SQL语句</li>
 </ul>
@@ -1348,7 +1348,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <p>执行的SQL语句：</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221213141909455.png"></p>
 </blockquote>
-<h3 id="3-2-2-更新员工"><a href="#3-2-2-更新员工" class="headerlink" title="3.2.2 更新员工"></a>3.2.2 更新员工</h3><p>案例：完善更新员工功能，修改为动态更新员工数据信息</p>
+<h4 id="3-2-2-更新员工"><a href="#3-2-2-更新员工" class="headerlink" title="3.2.2 更新员工"></a>3.2.2 更新员工</h4><p>案例：完善更新员工功能，修改为动态更新员工数据信息</p>
 <ul>
 <li>动态更新员工信息，如果更新时传递有值，则更新；如果更新时没有传递值，则不更新</li>
 <li>解决方案：动态SQL</li>
@@ -1505,7 +1505,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 </ul>
 </li>
 </ul>
-<h2 id="3-3-动态SQL-foreach"><a href="#3-3-动态SQL-foreach" class="headerlink" title="3.3 动态SQL-foreach"></a>3.3 动态SQL-foreach</h2><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241203160244828.png"></p>
+<h3 id="3-3-动态SQL-foreach"><a href="#3-3-动态SQL-foreach" class="headerlink" title="3.3 动态SQL-foreach"></a>3.3 动态SQL-foreach</h3><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241203160244828.png"></p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241203160719224.png"></p>
 <p>案例：员工删除功能（既支持删除单条记录，又支持批量删除）</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20220901181751004.png"> </p>
@@ -1548,7 +1548,7 @@ java <span class="token operator">-</span>jar sql_prepared_demo-0<span class="to
 <p>执行的SQL语句：</p>
 <p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20221213164957636.png"></p>
 </blockquote>
-<h2 id="3-4-动态SQL-sql-include"><a href="#3-4-动态SQL-sql-include" class="headerlink" title="3.4 动态SQL-sql&amp;include"></a>3.4 动态SQL-sql&amp;include</h2><p>问题分析：</p>
+<h3 id="3-4-动态SQL-sql-include"><a href="#3-4-动态SQL-sql-include" class="headerlink" title="3.4 动态SQL-sql&amp;include"></a>3.4 动态SQL-sql&amp;include</h3><p>问题分析：</p>
 <ul>
 <li>在xml映射文件中配置的SQL，有时可能会存在很多重复的片段，此时就会存在很多冗余的代码</li>
 </ul>
