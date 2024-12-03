@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-12-02T13:17:51.249Z</updated>
+  <updated>2024-12-03T08:16:38.477Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Mybatis</title>
-    <link href="http://zhangyao0329.github.io/2024/12/01/mybatis/"/>
-    <id>http://zhangyao0329.github.io/2024/12/01/mybatis/</id>
-    <published>2024-12-01T15:39:34.000Z</published>
-    <updated>2024-12-02T13:17:51.249Z</updated>
+    <title>mybatis（2）</title>
+    <link href="http://zhangyao0329.github.io/2024/12/03/mybatis-2/"/>
+    <id>http://zhangyao0329.github.io/2024/12/03/mybatis-2/</id>
+    <published>2024-12-03T16:13:49.000Z</published>
+    <updated>2024-12-03T08:16:38.477Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Mybatis基础操作&quot;&gt;&lt;a href=&quot;#Mybatis基础操作&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
+    
+    
+    <category term="Mybatis基础操作" scheme="http://zhangyao0329.github.io/tags/Mybatis%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"/>
+    
+    <category term="XML" scheme="http://zhangyao0329.github.io/tags/XML/"/>
+    
+    <category term="动态sql" scheme="http://zhangyao0329.github.io/tags/%E5%8A%A8%E6%80%81sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mybatis（1）</title>
+    <link href="http://zhangyao0329.github.io/2024/12/01/mybatis-1/"/>
+    <id>http://zhangyao0329.github.io/2024/12/01/mybatis-1/</id>
+    <published>2024-12-01T23:39:34.000Z</published>
+    <updated>2024-12-03T08:16:38.473Z</updated>
     
     
       
@@ -506,7 +535,7 @@
     <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
     <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
     <published>2024-09-01T10:40:33.000Z</published>
-    <updated>2024-12-02T13:19:04.110Z</updated>
+    <updated>2024-12-03T08:16:38.477Z</updated>
     
     
       
@@ -552,31 +581,6 @@
     <category term="博客" scheme="http://zhangyao0329.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="图床教程" scheme="http://zhangyao0329.github.io/tags/%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>激活Windows10 专业版</title>
-    <link href="http://zhangyao0329.github.io/2024/06/26/ji-huo-windows10-zhuan-ye-ban/"/>
-    <id>http://zhangyao0329.github.io/2024/06/26/ji-huo-windows10-zhuan-ye-ban/</id>
-    <published>2024-06-26T14:32:35.000Z</published>
-    <updated>2024-11-18T14:43:14.069Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202406262234395.png&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="win10" scheme="http://zhangyao0329.github.io/categories/win10/"/>
-    
-    
-    <category term="win环境" scheme="http://zhangyao0329.github.io/tags/win%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   
