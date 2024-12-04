@@ -441,7 +441,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    18.7k
+                    18.8k
                 </div>
                 
 
@@ -2836,9 +2836,9 @@ order by update_time desc;<span aria-hidden="true" class="line-numbers-rows"><sp
 <li>使用阿里云开发工具包或直接在应用程序中进行RESTful API调用执行基本和高级OSS任务</li>
 </ul>
 <h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">#阿里云<span class="token constant">OSS</span>配置
-aliyun<span class="token punctuation">.</span>oss<span class="token punctuation">.</span>endpoint<span class="token operator">=</span>https<span class="token operator">:</span>
-aliyun<span class="token punctuation">.</span>oss<span class="token punctuation">.</span>accessKeyId<span class="token operator">=</span>
-aliyun<span class="token punctuation">.</span>oss<span class="token punctuation">.</span>accessKeySecret<span class="token operator">=</span>
+aliyun<span class="token punctuation">.</span>oss<span class="token punctuation">.</span>endpoint<span class="token operator">=</span>https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>oss<span class="token operator">-</span>cn<span class="token operator">-</span>hangzhou<span class="token punctuation">.</span>aliyuncs<span class="token punctuation">.</span>com
+aliyun<span class="token punctuation">.</span>oss<span class="token punctuation">.</span>accessKeyId<span class="token operator">=</span><span class="token class-name">LTAI4GCH1vX6DKqJWxd6nEuW</span>
+aliyun<span class="token punctuation">.</span>oss<span class="token punctuation">.</span>accessKeySecret<span class="token operator">=</span>yBshYweHOpqDuhCArrVHwIiBKpyqSL
 aliyun<span class="token punctuation">.</span>oss<span class="token punctuation">.</span>bucketName<span class="token operator">=</span>web<span class="token operator">-</span>tlias<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
@@ -2946,10 +2946,10 @@ aliyun<span class="token punctuation">.</span>oss<span class="token punctuation"
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AliOSSUtils</span> <span class="token punctuation">{</span>
 
-    <span class="token keyword">private</span> <span class="token class-name">String</span> endpoint <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> accessKeyId <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> accessKeySecret <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> bucketName <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> endpoint <span class="token operator">=</span> <span class="token string">"https://oss-cn-hangzhou.aliyuncs.com"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> accessKeyId <span class="token operator">=</span> <span class="token string">"LTAI4GCH1vX6DKqJWxd6nEuW"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> accessKeySecret <span class="token operator">=</span> <span class="token string">"yBshYweHOpqDuhCArrVHwIiBKpyqSL"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> bucketName <span class="token operator">=</span> <span class="token string">"web-tlias"</span><span class="token punctuation">;</span>
 
     <span class="token comment">/**
      * 实现上传图片到OSS
@@ -3010,8 +3010,8 @@ aliyun<span class="token punctuation">.</span>oss<span class="token punctuation"
         <span class="token class-name">String</span> endpoint <span class="token operator">=</span> <span class="token string">"oss-cn-shanghai.aliyuncs.com"</span><span class="token punctuation">;</span>
         
         <span class="token comment">// 阿里云账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM用户进行API访问或日常运维，请登录RAM控制台创建RAM用户。</span>
-        <span class="token class-name">String</span> accessKeyId <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-        <span class="token class-name">String</span> accessKeySecret <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> accessKeyId <span class="token operator">=</span> <span class="token string">"LTAI5t9MZK8iq5T2Av5GLDxX"</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> accessKeySecret <span class="token operator">=</span> <span class="token string">"C0IrHzKZGKqU8S7YQcevcotD3Zd5Tc"</span><span class="token punctuation">;</span>
         
         <span class="token comment">// 填写Bucket名称，例如examplebucket。</span>
         <span class="token class-name">String</span> bucketName <span class="token operator">=</span> <span class="token string">"web-framework01"</span><span class="token punctuation">;</span>
@@ -3162,10 +3162,10 @@ aliyun<span class="token punctuation">.</span>oss<span class="token punctuation"
 
 <span class="token annotation punctuation">@Component</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AliOSSUtils</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> endpoint <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> accessKeyId <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> accessKeySecret <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> bucketName <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> endpoint <span class="token operator">=</span> <span class="token string">"https://oss-cn-shanghai.aliyuncs.com"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> accessKeyId <span class="token operator">=</span> <span class="token string">"LTAI5t9MZK8iq5T2Av5GLDxX"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> accessKeySecret <span class="token operator">=</span> <span class="token string">"C0IrHzKZGKqU8S7YQcevcotD3Zd5Tc"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> bucketName <span class="token operator">=</span> <span class="token string">"web-framework01"</span><span class="token punctuation">;</span>
 
     <span class="token comment">/**
      * 实现上传图片到OSS
@@ -3720,10 +3720,10 @@ aliyun<span class="token punctuation">.</span>oss<span class="token punctuation"
 </ol>
 <p>为了解决以上分析的问题，我们可以将参数配置在配置文件中。如下：</p>
 <pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token comment">#自定义的阿里云OSS配置信息</span>
-<span class="token key attr-name">aliyun.oss.endpoint</span><span class="token punctuation">=</span>
-<span class="token key attr-name">aliyun.oss.accessKeyId</span><span class="token punctuation">=</span>
-<span class="token key attr-name">aliyun.oss.accessKeySecret</span><span class="token punctuation">=</span>
-<span class="token key attr-name">aliyun.oss.bucketName</span><span class="token punctuation">=</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key attr-name">aliyun.oss.endpoint</span><span class="token punctuation">=</span><span class="token value attr-value">https://oss-cn-hangzhou.aliyuncs.com</span>
+<span class="token key attr-name">aliyun.oss.accessKeyId</span><span class="token punctuation">=</span><span class="token value attr-value">LTAI4GCH1vX6DKqJWxd6nEuW</span>
+<span class="token key attr-name">aliyun.oss.accessKeySecret</span><span class="token punctuation">=</span><span class="token value attr-value">yBshYweHOpqDuhCArrVHwIiBKpyqSL</span>
+<span class="token key attr-name">aliyun.oss.bucketName</span><span class="token punctuation">=</span><span class="token value attr-value">web-tlias</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -3849,10 +3849,10 @@ aliyun<span class="token punctuation">.</span>oss<span class="token punctuation"
 	
 <span class="token key atrule">aliyun</span><span class="token punctuation">:</span>
   <span class="token key atrule">oss</span><span class="token punctuation">:</span>
-    <span class="token key atrule">endpoint</span><span class="token punctuation">:</span> 
-    <span class="token key atrule">accessKeyId</span><span class="token punctuation">:</span> 
-    <span class="token key atrule">accessKeySecret</span><span class="token punctuation">:</span> 
-    <span class="token key atrule">bucketName</span><span class="token punctuation">:</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token key atrule">endpoint</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//oss<span class="token punctuation">-</span>cn<span class="token punctuation">-</span>hangzhou.aliyuncs.com
+    <span class="token key atrule">accessKeyId</span><span class="token punctuation">:</span> LTAI4GCH1vX6DKqJWxd6nEuW
+    <span class="token key atrule">accessKeySecret</span><span class="token punctuation">:</span> yBshYweHOpqDuhCArrVHwIiBKpyqSL
+    <span class="token key atrule">bucketName</span><span class="token punctuation">:</span> web<span class="token punctuation">-</span><span class="token number">397</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
