@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-12-03T08:42:04.923Z</updated>
+  <updated>2024-12-04T14:49:27.584Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SpringBoot案例（1）</title>
+    <link href="http://zhangyao0329.github.io/2024/12/04/springboot-an-li-1/"/>
+    <id>http://zhangyao0329.github.io/2024/12/04/springboot-an-li-1/</id>
+    <published>2024-12-04T22:27:28.000Z</published>
+    <updated>2024-12-04T14:49:27.584Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;SpringBootWeb案例&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/image-20241203184510006.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
+    
+    
+    <category term="PageHelper" scheme="http://zhangyao0329.github.io/tags/PageHelper/"/>
+    
+    <category term="文件上传" scheme="http://zhangyao0329.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
+    
+    <category term="对象存储" scheme="http://zhangyao0329.github.io/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mybatis（2）</title>
     <link href="http://zhangyao0329.github.io/2024/12/03/mybatis-2/"/>
     <id>http://zhangyao0329.github.io/2024/12/03/mybatis-2/</id>
-    <published>2024-12-03T16:13:49.000Z</published>
-    <updated>2024-12-03T08:42:04.923Z</updated>
+    <published>2024-12-03T08:13:49.000Z</published>
+    <updated>2024-12-03T08:41:31.408Z</updated>
     
     
       
@@ -49,8 +79,8 @@
     <title>Mybatis（1）</title>
     <link href="http://zhangyao0329.github.io/2024/12/01/mybatis-1/"/>
     <id>http://zhangyao0329.github.io/2024/12/01/mybatis-1/</id>
-    <published>2024-12-01T23:39:34.000Z</published>
-    <updated>2024-12-03T08:42:04.923Z</updated>
+    <published>2024-12-01T15:39:34.000Z</published>
+    <updated>2024-12-03T08:14:33.253Z</updated>
     
     
       
@@ -535,7 +565,7 @@
     <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
     <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
     <published>2024-09-01T10:40:33.000Z</published>
-    <updated>2024-12-03T08:42:04.923Z</updated>
+    <updated>2024-12-04T14:49:27.584Z</updated>
     
     
       
@@ -554,33 +584,6 @@
     <category term="博客" scheme="http://zhangyao0329.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="初衷" scheme="http://zhangyao0329.github.io/tags/%E5%88%9D%E8%A1%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搭建一个图床</title>
-    <link href="http://zhangyao0329.github.io/2024/09/01/da-jian-yi-ge-tu-chuang/"/>
-    <id>http://zhangyao0329.github.io/2024/09/01/da-jian-yi-ge-tu-chuang/</id>
-    <published>2024-09-01T02:47:46.000Z</published>
-    <updated>2024-11-18T11:57:05.233Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;GitHub-PicGo-JsDelivr-打造高效免费图床详细教程&quot;&gt;&lt;a href=&quot;#GitHub-PicGo-JsDelivr-打造高效免费图床详细教程&quot; class=&quot;headerlink&quot; title=&quot;GitHub+PicGo+JsDelivr</summary>
-        
-      
-    
-    
-    
-    <category term="图床搭建搭建" scheme="http://zhangyao0329.github.io/categories/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="博客" scheme="http://zhangyao0329.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="图床教程" scheme="http://zhangyao0329.github.io/tags/%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
