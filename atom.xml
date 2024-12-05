@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-12-04T14:35:44.137Z</updated>
+  <updated>2024-12-05T13:23:44.477Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SpringBoot案例（2）</title>
+    <link href="http://zhangyao0329.github.io/2024/12/05/springboot-an-li-2/"/>
+    <id>http://zhangyao0329.github.io/2024/12/05/springboot-an-li-2/</id>
+    <published>2024-12-05T13:21:35.000Z</published>
+    <updated>2024-12-05T13:23:44.477Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;案例-登录认证&quot;&gt;&lt;a href=&quot;#案例-登录认证&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
+    
+    
+    <category term="Filter" scheme="http://zhangyao0329.github.io/tags/Filter/"/>
+    
+    <category term="Interceptor" scheme="http://zhangyao0329.github.io/tags/Interceptor/"/>
+    
+    <category term="全局异常处理" scheme="http://zhangyao0329.github.io/tags/%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SpringBoot案例（1）</title>
     <link href="http://zhangyao0329.github.io/2024/12/04/springboot-an-li-1/"/>
     <id>http://zhangyao0329.github.io/2024/12/04/springboot-an-li-1/</id>
     <published>2024-12-04T14:27:28.000Z</published>
-    <updated>2024-12-04T14:35:44.137Z</updated>
+    <updated>2024-12-04T14:53:59.765Z</updated>
     
     
       
@@ -557,33 +586,6 @@
     <category term="Docker" scheme="http://zhangyao0329.github.io/tags/Docker/"/>
     
     <category term="工具" scheme="http://zhangyao0329.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于此博客平台</title>
-    <link href="http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/"/>
-    <id>http://zhangyao0329.github.io/2024/09/01/guan-yu-ci-bo-ke-ping-tai/</id>
-    <published>2024-09-01T10:40:33.000Z</published>
-    <updated>2024-12-04T14:54:39.046Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1、关于&quot;&gt;&lt;a href=&quot;#1、关于&quot; class=&quot;headerlink&quot; title=&quot;1、关于&quot;&gt;&lt;/a&gt;1、关于&lt;/h2&gt;&lt;p&gt;现在个人博客已经非常常见了，知乎， csdn，</summary>
-        
-      
-    
-    
-    
-    <category term="博客搭建" scheme="http://zhangyao0329.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="博客" scheme="http://zhangyao0329.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="初衷" scheme="http://zhangyao0329.github.io/tags/%E5%88%9D%E8%A1%B7/"/>
     
   </entry>
   
