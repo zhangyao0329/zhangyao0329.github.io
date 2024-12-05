@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-12-05T13:23:44.477Z</updated>
+  <updated>2024-12-05T15:09:15.015Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot案例（3）</title>
+    <link href="http://zhangyao0329.github.io/2024/12/05/springboot-an-li-3/"/>
+    <id>http://zhangyao0329.github.io/2024/12/05/springboot-an-li-3/</id>
+    <published>2024-12-05T23:06:10.000Z</published>
+    <updated>2024-12-05T15:09:15.015Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;事务-AOP&quot;&gt;&lt;a href=&quot;#事务-AOP&quot; class=&quot;headerlink&quot; title=&quot;事务&amp;amp;AOP&quot;&gt;&lt;/a&gt;事务&amp;amp;AOP&lt;/h1&gt;&lt;h2 id=&quot;1-事务管理&quot;&gt;&lt;a href=&quot;#1-事务管理&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
+    
+    
+    <category term="事务" scheme="http://zhangyao0329.github.io/tags/%E4%BA%8B%E5%8A%A1/"/>
+    
+    <category term="AOP" scheme="http://zhangyao0329.github.io/tags/AOP/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot案例（2）</title>
@@ -559,33 +586,6 @@
     <category term="日期操作" scheme="http://zhangyao0329.github.io/tags/%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C/"/>
     
     <category term="集合操作" scheme="http://zhangyao0329.github.io/tags/%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker镜像</title>
-    <link href="http://zhangyao0329.github.io/2024/10/08/docker-jing-xiang/"/>
-    <id>http://zhangyao0329.github.io/2024/10/08/docker-jing-xiang/</id>
-    <published>2024-10-08T07:01:31.000Z</published>
-    <updated>2024-11-16T06:52:01.268Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;1、配置镜像源&quot;&gt;&lt;a href=&quot;#1、配置镜像源&quot; class=&quot;headerlink&quot; title=&quot;1、配置镜像源&quot;&gt;&lt;/a&gt;1、配置镜像源&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="镜像源" scheme="http://zhangyao0329.github.io/categories/%E9%95%9C%E5%83%8F%E6%BA%90/"/>
-    
-    
-    <category term="Docker" scheme="http://zhangyao0329.github.io/tags/Docker/"/>
-    
-    <category term="工具" scheme="http://zhangyao0329.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
