@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>qwe</title>
-      <link href="/2024/12/08/qwe/"/>
-      <url>/2024/12/08/qwe/</url>
-      
-        <content type="html"><![CDATA[<pre class="line-numbers language-none"><code class="language-none">title: {{title}}date: {{data}}author: 作者名字img: /source/images/xxx.jpg "文章特征图,路径在source中"top: true "推荐文章"cover: true "表示该文章是否需要加入到首页轮播封面中"coverImg: /images/1.jpg "轮播图中的封面,访问的是"source"下的"images""password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92toc: false "是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项"mathjax: false "是否开启数学公式支持,本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行"summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要categories: Markdowntags:  - Typora  - Markdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>SpringBoot案例（3）</title>
       <link href="/2024/12/05/springboot-an-li-3/"/>
       <url>/2024/12/05/springboot-an-li-3/</url>
