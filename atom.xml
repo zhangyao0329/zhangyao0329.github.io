@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2024-12-10T12:01:09.489Z</updated>
+  <updated>2024-12-11T13:35:07.501Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Maven高级</title>
+    <link href="http://zhangyao0329.github.io/2024/12/11/maven-gao-ji/"/>
+    <id>http://zhangyao0329.github.io/2024/12/11/maven-gao-ji/</id>
+    <published>2024-12-11T13:20:30.000Z</published>
+    <updated>2024-12-11T13:35:07.501Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Maven高级&quot;&gt;&lt;a href=&quot;#Maven高级&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
+    
+    
+    <category term="Maven" scheme="http://zhangyao0329.github.io/tags/Maven/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot原理</title>
@@ -281,7 +306,7 @@
     <link href="http://zhangyao0329.github.io/2024/11/28/maven/"/>
     <id>http://zhangyao0329.github.io/2024/11/28/maven/</id>
     <published>2024-11-28T12:55:10.000Z</published>
-    <updated>2024-12-11T12:54:22.312Z</updated>
+    <updated>2024-12-11T13:42:08.281Z</updated>
     
     
       
@@ -559,33 +584,6 @@
     <category term="Stream流" scheme="http://zhangyao0329.github.io/tags/Stream%E6%B5%81/"/>
     
     <category term="IO流" scheme="http://zhangyao0329.github.io/tags/IO%E6%B5%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Video Download</title>
-    <link href="http://zhangyao0329.github.io/2024/11/15/video-download/"/>
-    <id>http://zhangyao0329.github.io/2024/11/15/video-download/</id>
-    <published>2024-11-15T03:02:44.000Z</published>
-    <updated>2024-12-08T12:00:07.504Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;逛GitHub的时候看到一款视频下载工具，挺好用的，记录下使用过程。&quot;&gt;&lt;a href=&quot;#逛GitHub的时候看到一款视频下载工具，挺好用的，记录下使用过程。&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Video" scheme="http://zhangyao0329.github.io/categories/Video/"/>
-    
-    
-    <category term="Youtube Video" scheme="http://zhangyao0329.github.io/tags/Youtube-Video/"/>
-    
-    <category term="Bilibili" scheme="http://zhangyao0329.github.io/tags/Bilibili/"/>
     
   </entry>
   
