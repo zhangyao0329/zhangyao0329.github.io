@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>新idea如何创建java8项目</title>
+      <link href="/2024/12/17/xin-idea-ru-he-chuang-jian-java8-xiang-mu/"/>
+      <url>/2024/12/17/xin-idea-ru-he-chuang-jian-java8-xiang-mu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="解决idea至少创建jdk17项目"><a href="#解决idea至少创建jdk17项目" class="headerlink" title="解决idea至少创建jdk17项目"></a>解决idea至少创建jdk17项目</h1><h2 id="1、问题描述"><a href="#1、问题描述" class="headerlink" title="1、问题描述"></a>1、问题描述</h2><p>具体一点，应该是使用 IDEA 内置的 Spring Initializr 创建 Spring Boot 新项目时，只剩下了 &gt;= 17 的版本</p><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202412172127002.png" alt="在这里插入图片描述"></p><p>去网上搜了一圈，原来这是因为 Spring Boot 官方不再支持 Spring Boot 的 2.x 版本了，之后全力维护 3.x；而 Spring Boot 3.x 对 JDK 版本的最低要求是 17！<br><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202412172127470.png" alt="在这里插入图片描述"><br>那就是不要用官方提供的 Spring Initializr 来初始化项目了，我们可以使用阿里云提供的<a href="https://so.csdn.net/so/search?q=%E8%84%9A%E6%89%8B%E6%9E%B6&amp;spm=1001.2101.3001.7020">脚手架</a>镜像（<a href="https://start.aliyun.com/%EF%BC%89%EF%BC%8C%E4%B8%80%E6%A0%B7%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8">https://start.aliyun.com/），一样愉快地使用</a> Java 8~</p><h2 id="2、-问题解决"><a href="#2、-问题解决" class="headerlink" title="2、 问题解决"></a>2、 问题解决</h2><p>在 IDEA 里更改 Server URL 即可：<code>https://start.aliyun.com/</code><br><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202412172127765.png" alt="在这里插入图片描述"></p><h2 id="3、初始化文件"><a href="#3、初始化文件" class="headerlink" title="3、初始化文件"></a>3、初始化文件</h2><p>原来的url: <code>https://start.spring.io</code></p><p>修改后URL: <code>https://start.aliyun.com/</code></p><p>github: <code>https://github.com/zhangyao0329/InitializrJ2ee.git</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaEE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IDEA </tag>
+            
+            <tag> 脚手架 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Maven高级-私服</title>
       <link href="/2024/12/14/maven-gao-ji-si-fu/"/>
       <url>/2024/12/14/maven-gao-ji-si-fu/</url>
