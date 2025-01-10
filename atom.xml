@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2025-01-04T11:57:08.111Z</updated>
+  <updated>2025-01-10T07:23:35.600Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>公共字段的自动填充</title>
+    <link href="http://zhangyao0329.github.io/2025/01/10/gong-gong-zi-duan-de-zi-dong-tian-chong/"/>
+    <id>http://zhangyao0329.github.io/2025/01/10/gong-gong-zi-duan-de-zi-dong-tian-chong/</id>
+    <published>2025-01-10T14:38:29.000Z</published>
+    <updated>2025-01-10T07:23:35.600Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;公共字段的填充&quot;&gt;&lt;a href=&quot;#公共字段的填充&quot; class=&quot;headerlink&quot; title=&quot;公共字段的填充&quot;&gt;&lt;/a&gt;公共字段的填充&lt;/h1&gt;&lt;h1 id=&quot;采用AOP增强实现公共字段的填充&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE高级" scheme="http://zhangyao0329.github.io/categories/JavaEE%E9%AB%98%E7%BA%A7/"/>
+    
+    
+    <category term="AOP" scheme="http://zhangyao0329.github.io/tags/AOP/"/>
+    
+    <category term="ThreadLocal" scheme="http://zhangyao0329.github.io/tags/ThreadLocal/"/>
+    
+    <category term="注解、反射" scheme="http://zhangyao0329.github.io/tags/%E6%B3%A8%E8%A7%A3%E3%80%81%E5%8F%8D%E5%B0%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Github无法上传和拉取</title>
     <link href="http://zhangyao0329.github.io/2025/01/04/github-wu-fa-shang-chuan-he-la-qu/"/>
     <id>http://zhangyao0329.github.io/2025/01/04/github-wu-fa-shang-chuan-he-la-qu/</id>
-    <published>2025-01-04T19:53:47.000Z</published>
-    <updated>2025-01-04T11:57:08.111Z</updated>
+    <published>2025-01-04T11:53:47.000Z</published>
+    <updated>2025-01-10T06:37:24.893Z</updated>
     
     
       
@@ -383,7 +412,7 @@
     <link href="http://zhangyao0329.github.io/2024/11/28/maven/"/>
     <id>http://zhangyao0329.github.io/2024/11/28/maven/</id>
     <published>2024-11-28T12:55:10.000Z</published>
-    <updated>2025-01-04T11:57:08.114Z</updated>
+    <updated>2025-01-10T07:23:35.599Z</updated>
     
     
       
@@ -545,33 +574,6 @@
     <category term="UDP和TCP" scheme="http://zhangyao0329.github.io/tags/UDP%E5%92%8CTCP/"/>
     
     <category term="BS和CS架构" scheme="http://zhangyao0329.github.io/tags/BS%E5%92%8CCS%E6%9E%B6%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多线程</title>
-    <link href="http://zhangyao0329.github.io/2024/11/24/duo-xian-cheng/"/>
-    <id>http://zhangyao0329.github.io/2024/11/24/duo-xian-cheng/</id>
-    <published>2024-11-24T04:12:46.000Z</published>
-    <updated>2024-12-08T12:05:46.259Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;线程&quot;&gt;&lt;a href=&quot;#线程&quot; class=&quot;headerlink&quot; title=&quot;线程&quot;&gt;&lt;/a&gt;线程&lt;/h1&gt;&lt;h2 id=&quot;1、什么是多线程？&quot;&gt;&lt;a href=&quot;#1、什么是多线程？&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="JavaSE" scheme="http://zhangyao0329.github.io/categories/JavaSE/"/>
-    
-    
-    <category term="基础知识" scheme="http://zhangyao0329.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    <category term="多线程" scheme="http://zhangyao0329.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
