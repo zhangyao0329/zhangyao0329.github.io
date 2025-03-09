@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2025-01-10T07:19:28.148Z</updated>
+  <updated>2025-03-09T08:39:05.419Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文件上传</title>
+    <link href="http://zhangyao0329.github.io/2025/03/09/wen-jian-shang-chuan/"/>
+    <id>http://zhangyao0329.github.io/2025/03/09/wen-jian-shang-chuan/</id>
+    <published>2025-03-09T16:00:19.000Z</published>
+    <updated>2025-03-09T08:39:05.419Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;文件上传&quot;&gt;&lt;a href=&quot;#文件上传&quot; class=&quot;headerlink&quot; title=&quot;文件上传&quot;&gt;&lt;/a&gt;文件上传&lt;/h1&gt;&lt;h2 id=&quot;CommonController&quot;&gt;&lt;a href=&quot;#CommonController&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="项目功能代码" scheme="http://zhangyao0329.github.io/categories/%E9%A1%B9%E7%9B%AE%E5%8A%9F%E8%83%BD%E4%BB%A3%E7%A0%81/"/>
+    
+    
+    <category term="文件上传" scheme="http://zhangyao0329.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
+    
+    <category term="对象存储" scheme="http://zhangyao0329.github.io/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>公共字段的自动填充</title>
@@ -412,7 +439,7 @@
     <link href="http://zhangyao0329.github.io/2024/11/28/maven/"/>
     <id>http://zhangyao0329.github.io/2024/11/28/maven/</id>
     <published>2024-11-28T12:55:10.000Z</published>
-    <updated>2025-03-02T11:27:15.397Z</updated>
+    <updated>2025-03-09T08:39:05.418Z</updated>
     
     
       
@@ -545,35 +572,6 @@
     <category term="反射" scheme="http://zhangyao0329.github.io/tags/%E5%8F%8D%E5%B0%84/"/>
     
     <category term="junit测试" scheme="http://zhangyao0329.github.io/tags/junit%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网络通信</title>
-    <link href="http://zhangyao0329.github.io/2024/11/26/wang-luo-tong-xin/"/>
-    <id>http://zhangyao0329.github.io/2024/11/26/wang-luo-tong-xin/</id>
-    <published>2024-11-26T11:05:20.000Z</published>
-    <updated>2024-12-08T12:17:21.917Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;网络通信&quot;&gt;&lt;a href=&quot;#网络通信&quot; class=&quot;headerlink&quot; title=&quot;网络通信&quot;&gt;&lt;/a&gt;网络通信&lt;/h1&gt;&lt;h2 id=&quot;1、三要素&quot;&gt;&lt;a href=&quot;#1、三要素&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="JavaSE" scheme="http://zhangyao0329.github.io/categories/JavaSE/"/>
-    
-    
-    <category term="基础知识" scheme="http://zhangyao0329.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    <category term="UDP和TCP" scheme="http://zhangyao0329.github.io/tags/UDP%E5%92%8CTCP/"/>
-    
-    <category term="BS和CS架构" scheme="http://zhangyao0329.github.io/tags/BS%E5%92%8CCS%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
