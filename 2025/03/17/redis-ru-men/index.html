@@ -1,0 +1,1912 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Redis入门, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
+    <meta name="description" content="Java开发 | 机器学习">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Redis入门 | 大貔貅的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="大貔貅的博客" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">大貔貅的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">大貔貅的博客</div>
+        <div class="logo-desc">
+            
+            Java开发 | 机器学习
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202503180121407.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Redis入门</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
+                            <a href="/tags/Redis/">
+                                <span class="chip bg-color">Redis</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JavaEE/" class="post-category">
+                                JavaEE
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-03-17
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2025-03-17
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="课程内容"><a href="#课程内容" class="headerlink" title="课程内容"></a>课程内容</h2><ul>
+<li>Redis入门</li>
+<li>Redis数据类型</li>
+<li>Redis常用命令</li>
+<li>在Java中操作Redis</li>
+<li>店铺营业状态设置</li>
+</ul>
+<h2 id="1-Redis入门"><a href="#1-Redis入门" class="headerlink" title="1. Redis入门"></a>1. Redis入门</h2><h3 id="1-1-Redis简介"><a href="#1-1-Redis简介" class="headerlink" title="1.1 Redis简介"></a>1.1 Redis简介</h3><p>Redis是一个基于<strong>内存</strong>的key-value结构数据库。Redis 是互联网技术领域使用最为广泛的<strong>存储中间件</strong>。</p>
+<p><strong>官网：</strong><a target="_blank" rel="noopener" href="https://redis.io/">https://redis.io</a><br><strong>中文网：</strong><a target="_blank" rel="noopener" href="https://www.redis.net.cn/">https://www.redis.net.cn/</a></p>
+<p><strong>key-value结构存储：</strong></p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-52d776d91b80fe51b7fcebdee2da51c8-image-20221130173459174.png"> </p>
+<p><strong>主要特点：</strong></p>
+<ul>
+<li>基于内存存储，读写性能高  </li>
+<li>适合存储热点数据（热点商品、资讯、新闻）</li>
+<li>企业应用广泛</li>
+</ul>
+<p>Redis是用C语言开发的一个开源的高性能键值对(key-value)数据库，官方提供的数据是可以达到100000+的QPS（每秒内查询次数）。它存储的value类型比较丰富，也被称为结构化的NoSql数据库。</p>
+<p>NoSql（Not Only SQL），不仅仅是SQL，泛指<strong>非关系型数据库</strong>。NoSql数据库并不是要取代关系型数据库，而是关系型数据库的补充。</p>
+<p><strong>关系型数据库(RDBMS)：</strong></p>
+<ul>
+<li>Mysql</li>
+<li>Oracle</li>
+<li>DB2</li>
+<li>SQLServer</li>
+</ul>
+<p><strong>非关系型数据库(NoSql)：</strong></p>
+<ul>
+<li>Redis</li>
+<li>Mongo db</li>
+<li>MemCached</li>
+</ul>
+<h3 id="1-2-Redis下载与安装"><a href="#1-2-Redis下载与安装" class="headerlink" title="1.2 Redis下载与安装"></a>1.2 Redis下载与安装</h3><h4 id="1-2-1-Redis下载"><a href="#1-2-1-Redis下载" class="headerlink" title="1.2.1 Redis下载"></a>1.2.1 Redis下载</h4><p>Redis安装包分为windows版和Linux版：</p>
+<ul>
+<li>Windows版下载地址：<a target="_blank" rel="noopener" href="https://github.com/microsoftarchive/redis/releases">https://github.com/microsoftarchive/redis/releases</a></li>
+<li>Linux版下载地址： <a target="_blank" rel="noopener" href="https://download.redis.io/releases/">https://download.redis.io/releases/</a></li>
+</ul>
+<p>资料中已提供好的安装包：</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-e97b2ee70e38f971b075b2741c551926-image-20210927092053283.png"> </p>
+<p>通过网盘分享的文件：Redis<br>       链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1dtkee2dKBbJ2opa8ohp8uw?pwd=6666">https://pan.baidu.com/s/1dtkee2dKBbJ2opa8ohp8uw?pwd=6666</a> 提取码: 6666</p>
+<h4 id="1-2-2-Redis安装"><a href="#1-2-2-Redis安装" class="headerlink" title="1.2.2 Redis安装"></a>1.2.2 Redis安装</h4><p><strong>1）在Windows中安装Redis(项目中使用)</strong></p>
+<p>Redis的Windows版属于绿色软件，直接解压即可使用，解压后目录结构如下：</p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-8f91d50d8480ab4a5c089b5e0a143fdf-image-20221130180657152.png" alt="image-20221130180657152" style="zoom:50%;"> 
+
+
+
+<p><strong>2）在Linux中安装Redis(简单了解)</strong></p>
+<p>在Linux系统安装Redis步骤：</p>
+<ol>
+<li>将Redis安装包上传到Linux</li>
+<li>解压安装包，命令：tar -zxvf redis-4.0.0.tar.gz -C /usr/local</li>
+<li>安装Redis的依赖环境gcc，命令：yum install gcc-c++</li>
+<li>进入/usr/local/redis-4.0.0，进行编译，命令：make</li>
+<li>进入redis的src目录进行安装，命令：make install</li>
+</ol>
+<p>安装后重点文件说明：</p>
+<ul>
+<li>/usr/local/redis-4.0.0/src/redis-server：Redis服务启动脚本</li>
+<li>/usr/local/redis-4.0.0/src/redis-cli：Redis客户端脚本</li>
+<li>/usr/local/redis-4.0.0/redis.conf：Redis配置文件</li>
+</ul>
+<h3 id="1-3-Redis服务启动与停止"><a href="#1-3-Redis服务启动与停止" class="headerlink" title="1.3 Redis服务启动与停止"></a>1.3 Redis服务启动与停止</h3><p>以window版Redis进行演示：</p>
+<h4 id="1-3-1-服务启动命令"><a href="#1-3-1-服务启动命令" class="headerlink" title="1.3.1 服务启动命令"></a>1.3.1 服务启动命令</h4><p><strong>redis-server.exe redis.windows.conf</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-39036a8dca15d626b5afd761a9b72c4f-image-20221130181950351.png" alt="image-20221130181950351" style="zoom:50%;"> 
+
+<p>Redis服务默认端口号为 <strong>6379</strong> ，通过快捷键<strong>Ctrl + C</strong> 即可停止Redis服务</p>
+<p>当Redis服务启动成功后，可通过客户端进行连接。</p>
+<h4 id="1-3-2-客户端连接命令"><a href="#1-3-2-客户端连接命令" class="headerlink" title="1.3.2 客户端连接命令"></a>1.3.2 客户端连接命令</h4><p><strong>redis-cli.exe</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-9ca8e4249871b404186b5e4ae22ddf0d-image-20221130182207020.png" alt="image-20221130182207020" style="zoom:50%;"> 
+
+<p>通过redis-cli.exe命令默认连接的是本地的redis服务，并且使用默认6379端口。也可以通过指定如下参数连接：</p>
+<ul>
+<li>-h ip地址</li>
+<li>-p 端口号</li>
+<li>-a 密码（如果需要）</li>
+</ul>
+<h4 id="1-3-3-修改Redis配置文件"><a href="#1-3-3-修改Redis配置文件" class="headerlink" title="1.3.3 修改Redis配置文件"></a>1.3.3 修改Redis配置文件</h4><p>设置Redis服务密码，修改redis.windows.conf</p>
+<pre class="line-numbers language-none"><code class="language-none">requirepass 123456<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>注意：</strong></p>
+<ul>
+<li>修改密码后需要重启Redis服务才能生效</li>
+<li>Redis配置文件中 # 表示注释</li>
+</ul>
+<p>重启Redis后，再次连接Redis时，需加上密码，否则连接失败。</p>
+<pre class="line-numbers language-none"><code class="language-none">redis-cli.exe -h localhost -p 6379 -a 123456<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-cf36c83193fc15c6e5710dfeccbf1023-image-20221130183253539.png" alt="image-20221130183253539" style="zoom:50%;"> 
+
+<p>此时，-h 和 -p 参数可省略不写。</p>
+<h4 id="1-3-4-Redis客户端图形工具"><a href="#1-3-4-Redis客户端图形工具" class="headerlink" title="1.3.4 Redis客户端图形工具"></a>1.3.4 Redis客户端图形工具</h4><p>默认提供的客户端连接工具界面不太友好，同时操作也较为麻烦，接下来，引入一个Redis客户端图形工具。</p>
+<p>在当天资料中已提供安装包，直接安装即可。</p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-6c28905cf369735039292a6c58375b71-image-20221130183746355.png" alt="image-20221130183746355" style="zoom:50%;"> 
+
+<p>安装完毕后，直接双击启动</p>
+<p><strong>新建连接</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-db7e814f8589afc27dab6265c0fae7b5-image-20221130192210418.png" alt="image-20221130192210418" style="zoom: 33%;">  
+
+<p><strong>连接成功</strong> </p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-98e28aed57b5614a197ad667d5ef0854-image-20221130192310916.png" alt="image-20221130192310916" style="zoom: 33%;">  
+
+
+
+
+
+<h2 id="2-Redis数据类型"><a href="#2-Redis数据类型" class="headerlink" title="2. Redis数据类型"></a>2. Redis数据类型</h2><h3 id="2-1-五种常用数据类型介绍"><a href="#2-1-五种常用数据类型介绍" class="headerlink" title="2.1 五种常用数据类型介绍"></a>2.1 五种常用数据类型介绍</h3><p>Redis存储的是key-value结构的数据，其中key是字符串类型，value有5种常用的数据类型：</p>
+<ul>
+<li>字符串 string</li>
+<li>哈希 hash</li>
+<li>列表 list</li>
+<li>集合 set</li>
+<li>有序集合 sorted set / zset</li>
+</ul>
+<h3 id="2-2-各种数据类型特点"><a href="#2-2-各种数据类型特点" class="headerlink" title="2.2 各种数据类型特点"></a>2.2 各种数据类型特点</h3><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-2fa38f28d32145bbc01951b1d1193638-image-20221130190150749.png" alt="image-20221130190150749" style="zoom:50%;"> 
+
+<p><strong>解释说明：</strong></p>
+<ul>
+<li>字符串(string)：普通字符串，Redis中最简单的数据类型</li>
+<li>哈希(hash)：也叫散列，类似于Java中的HashMap结构</li>
+<li>列表(list)：按照插入顺序排序，可以有重复元素，类似于Java中的LinkedList</li>
+<li>集合(set)：无序集合，没有重复元素，类似于Java中的HashSet</li>
+<li>有序集合(sorted set/zset)：集合中每个元素关联一个分数(score)，根据分数升序排序，没有重复元素</li>
+</ul>
+<h2 id="3-Redis常用命令"><a href="#3-Redis常用命令" class="headerlink" title="3. Redis常用命令"></a>3. Redis常用命令</h2><h3 id="3-1-字符串操作命令"><a href="#3-1-字符串操作命令" class="headerlink" title="3.1 字符串操作命令"></a>3.1 字符串操作命令</h3><p>Redis 中字符串类型常用命令：</p>
+<ul>
+<li><strong>SET</strong> key value 					         设置指定key的值</li>
+<li><strong>GET</strong> key                                        获取指定key的值</li>
+<li><strong>SETEX</strong> key seconds value         设置指定key的值，并将 key 的过期时间设为 seconds 秒</li>
+<li><strong>SETNX</strong> key value                        只有在 key    不存在时设置 key 的值</li>
+</ul>
+<p>更多命令可以参考Redis中文网：<a target="_blank" rel="noopener" href="https://www.redis.net.cn/">https://www.redis.net.cn</a></p>
+<h3 id="3-2-哈希操作命令"><a href="#3-2-哈希操作命令" class="headerlink" title="3.2 哈希操作命令"></a>3.2 哈希操作命令</h3><p>Redis hash 是一个string类型的 field 和 value 的映射表，hash特别适合用于存储对象，常用命令：</p>
+<ul>
+<li><strong>HSET</strong> key field value             将哈希表 key 中的字段 field 的值设为 value</li>
+<li><strong>HGET</strong> key field                       获取存储在哈希表中指定字段的值</li>
+<li><strong>HDEL</strong> key field                       删除存储在哈希表中的指定字段</li>
+<li><strong>HKEYS</strong> key                              获取哈希表中所有字段</li>
+<li><strong>HVALS</strong> key                              获取哈希表中所有值</li>
+</ul>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-ea8e89f28869b2d10f641080a9aaae48-image-20221130193121969.png" alt="image-20221130193121969" style="zoom: 67%;"> 
+
+
+
+<h3 id="3-3-列表操作命令"><a href="#3-3-列表操作命令" class="headerlink" title="3.3 列表操作命令"></a>3.3 列表操作命令</h3><p>Redis 列表是简单的字符串列表，按照插入顺序排序，常用命令：</p>
+<ul>
+<li><strong>LPUSH</strong> key value1 [value2]         将一个或多个值插入到列表头部</li>
+<li><strong>LRANGE</strong> key start stop                获取列表指定范围内的元素</li>
+<li><strong>RPOP</strong> key                                       移除并获取列表最后一个元素</li>
+<li><strong>LLEN</strong> key                                        获取列表长度</li>
+<li><strong>BRPOP</strong> key1 [key2 ] timeout       移出并获取列表的最后一个元素， 如果列表没有元素会阻塞列表直到等待超    时或发现可弹出元素为止</li>
+</ul>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-d7150d6d14fe735160bc994a3a71c27d-image-20221130193332666.png" alt="image-20221130193332666" style="zoom: 67%;"> 
+
+
+
+<h3 id="3-4-集合操作命令"><a href="#3-4-集合操作命令" class="headerlink" title="3.4 集合操作命令"></a>3.4 集合操作命令</h3><p>Redis set 是string类型的无序集合。集合成员是唯一的，这就意味着集合中不能出现重复的数据，常用命令：</p>
+<ul>
+<li><strong>SADD</strong> key member1 [member2]            向集合添加一个或多个成员</li>
+<li><strong>SMEMBERS</strong> key                                         返回集合中的所有成员</li>
+<li><strong>SCARD</strong> key                                                  获取集合的成员数</li>
+<li><strong>SINTER</strong> key1 [key2]                                   返回给定所有集合的交集</li>
+<li><strong>SUNION</strong> key1 [key2]                                 返回所有给定集合的并集</li>
+<li><strong>SREM</strong> key member1 [member2]            移除集合中一个或多个成员</li>
+</ul>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-f26e5f9a4a33803939ecd10ed3c82132-image-20221130193532735.png" alt="image-20221130193532735" style="zoom: 67%;"> 
+
+
+
+<h3 id="3-5-有序集合操作命令"><a href="#3-5-有序集合操作命令" class="headerlink" title="3.5 有序集合操作命令"></a>3.5 有序集合操作命令</h3><p>Redis有序集合是string类型元素的集合，且不允许有重复成员。每个元素都会关联一个double类型的分数。常用命令：</p>
+<p>常用命令：</p>
+<ul>
+<li><strong>ZADD</strong> key score1 member1 [score2 member2]     向有序集合添加一个或多个成员</li>
+<li><strong>ZRANGE</strong> key start stop [WITHSCORES]                     通过索引区间返回有序集合中指定区间内的成员</li>
+<li><strong>ZINCRBY</strong> key increment member                              有序集合中对指定成员的分数加上增量 increment</li>
+<li><strong>ZREM</strong> key member [member …]                                移除有序集合中的一个或多个成员</li>
+</ul>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-49c9ae350f032421a0067fc89653199b-image-20221130193951036.png" alt="image-20221130193951036" style="zoom: 67%;"> 
+
+
+
+<h3 id="3-6-通用命令"><a href="#3-6-通用命令" class="headerlink" title="3.6 通用命令"></a>3.6 通用命令</h3><p>Redis的通用命令是不分数据类型的，都可以使用的命令：</p>
+<ul>
+<li>KEYS pattern 		查找所有符合给定模式( pattern)的 key </li>
+<li>EXISTS key 		检查给定 key 是否存在</li>
+<li>TYPE key 		返回 key 所储存的值的类型</li>
+<li>DEL key 		该命令用于在 key 存在是删除 key</li>
+</ul>
+<h2 id="4-在Java中操作Redis"><a href="#4-在Java中操作Redis" class="headerlink" title="4.在Java中操作Redis"></a>4.在Java中操作Redis</h2><h3 id="4-1-Redis的Java客户端"><a href="#4-1-Redis的Java客户端" class="headerlink" title="4.1 Redis的Java客户端"></a>4.1 Redis的Java客户端</h3><p>前面我们讲解了Redis的常用命令，这些命令是我们操作Redis的基础，那么我们在java程序中应该如何操作Redis呢？这就需要使用Redis的Java客户端，就如同我们使用JDBC操作MySQL数据库一样。</p>
+<p>Redis 的 Java 客户端很多，常用的几种：</p>
+<ul>
+<li>Jedis</li>
+<li>Lettuce</li>
+<li>Spring Data Redis</li>
+</ul>
+<p>Spring 对 Redis 客户端进行了整合，提供了 Spring Data Redis，在Spring Boot项目中还提供了对应的Starter，即 spring-boot-starter-data-redis。</p>
+<p>我们重点学习<strong>Spring Data Redis</strong>。</p>
+<h3 id="4-2-Spring-Data-Redis使用方式"><a href="#4-2-Spring-Data-Redis使用方式" class="headerlink" title="4.2 Spring Data Redis使用方式"></a>4.2 Spring Data Redis使用方式</h3><h4 id="4-2-1-介绍"><a href="#4-2-1-介绍" class="headerlink" title="4.2.1 介绍"></a>4.2.1 介绍</h4><p>Spring Data Redis 是 Spring 的一部分，提供了在 Spring 应用中通过简单的配置就可以访问 Redis 服务，对 Redis 底层开发包进行了高度封装。在 Spring 项目中，可以使用Spring Data Redis来简化 Redis 操作。</p>
+<p>网址：<a target="_blank" rel="noopener" href="https://spring.io/projects/spring-data-redis">https://spring.io/projects/spring-data-redis</a></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-d53a53516f459d0d7fc7367e165d8c44-image-20210927143741458.png" alt="image-20210927143741458" style="zoom: 33%;"> 
+
+<p>Spring Boot提供了对应的Starter，maven坐标：</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Spring Data Redis中提供了一个高度封装的类：<strong>RedisTemplate</strong>，对相关api进行了归类封装,将同一类型操作封装为operation接口，具体分类如下：</p>
+<ul>
+<li>ValueOperations：string数据操作</li>
+<li>SetOperations：set类型数据操作</li>
+<li>ZSetOperations：zset类型数据操作</li>
+<li>HashOperations：hash类型的数据操作</li>
+<li>ListOperations：list类型的数据操作</li>
+</ul>
+<h4 id="4-2-2-环境搭建"><a href="#4-2-2-环境搭建" class="headerlink" title="4.2.2 环境搭建"></a>4.2.2 环境搭建</h4><p>进入到sky-server模块</p>
+<p><strong>1). 导入Spring Data Redis的maven坐标(已完成)</strong></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>2). 配置Redis数据源</strong></p>
+<p>在application-dev.yml中添加</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">sky</span><span class="token punctuation">:</span>
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">6379</span>
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token number">123456</span>
+    <span class="token key atrule">database</span><span class="token punctuation">:</span> <span class="token number">10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>解释说明：</strong></p>
+<p>database:指定使用Redis的哪个数据库，Redis服务启动后默认有16个数据库，编号分别是从0到15。</p>
+<p>可以通过修改Redis配置文件来指定数据库的数量。</p>
+<p>在application.yml中添加读取application-dev.yml中的相关Redis配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">profiles</span><span class="token punctuation">:</span>
+    <span class="token key atrule">active</span><span class="token punctuation">:</span> dev
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>sky.redis.host<span class="token punctuation">}</span>
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>sky.redis.port<span class="token punctuation">}</span>
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>sky.redis.password<span class="token punctuation">}</span>
+    <span class="token key atrule">database</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>sky.redis.database<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>3). 编写配置类，创建RedisTemplate对象</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>sky<span class="token punctuation">.</span>config</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span></span><span class="token class-name">Slf4j</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>connection<span class="token punctuation">.</span></span><span class="token class-name">RedisConnectionFactory</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">RedisTemplate</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>serializer<span class="token punctuation">.</span></span><span class="token class-name">StringRedisSerializer</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisConfiguration</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">RedisTemplate</span> <span class="token function">redisTemplate</span><span class="token punctuation">(</span><span class="token class-name">RedisConnectionFactory</span> redisConnectionFactory<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"开始创建redis模板对象..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">RedisTemplate</span> redisTemplate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RedisTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//设置redis的连接工厂对象</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">setConnectionFactory</span><span class="token punctuation">(</span>redisConnectionFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//设置redis key的序列化器</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">setKeySerializer</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">StringRedisSerializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> redisTemplate<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>解释说明：</strong></p>
+<p>当前配置类不是必须的，因为 Spring Boot 框架会自动装配 RedisTemplate 对象，但是默认的key序列化器为</p>
+<p>JdkSerializationRedisSerializer，导致我们存到Redis中后的数据和原始数据有差别，故设置为</p>
+<p>StringRedisSerializer序列化器。</p>
+<p><strong>4). 通过RedisTemplate对象操作Redis</strong></p>
+<p>在test下新建测试类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>sky<span class="token punctuation">.</span>test</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>junit<span class="token punctuation">.</span>jupiter<span class="token punctuation">.</span>api<span class="token punctuation">.</span></span><span class="token class-name">Test</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Autowired</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>test<span class="token punctuation">.</span>context<span class="token punctuation">.</span></span><span class="token class-name">SpringBootTest</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@SpringBootTest</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringDataRedisTest</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">RedisTemplate</span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testRedisTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>redisTemplate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//string数据操作</span>
+        <span class="token class-name">ValueOperations</span> valueOperations <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//hash类型的数据操作</span>
+        <span class="token class-name">HashOperations</span> hashOperations <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//list类型的数据操作</span>
+        <span class="token class-name">ListOperations</span> listOperations <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//set类型数据操作</span>
+        <span class="token class-name">SetOperations</span> setOperations <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//zset类型数据操作</span>
+        <span class="token class-name">ZSetOperations</span> zSetOperations <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>测试：</p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-20096e3cb9c7eb6f57e6ec7e9b7d50d8-image-20221130205351403.png" alt="image-20221130205351403" style="zoom:50%;"> 
+
+<p>说明RedisTemplate对象注入成功，并且通过该RedisTemplate对象获取操作5种数据类型相关对象。</p>
+<p>上述环境搭建完毕后，接下来，我们就来具体对常见5种数据类型进行操作。</p>
+<h4 id="4-2-3-操作常见类型数据"><a href="#4-2-3-操作常见类型数据" class="headerlink" title="4.2.3 操作常见类型数据"></a>4.2.3 操作常见类型数据</h4><p><strong>1). 操作字符串类型数据</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+    * 操作字符串类型的数据
+    */</span>
+   <span class="token annotation punctuation">@Test</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment">// set get setex setnx</span>
+       redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span><span class="token string">"小明"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">String</span> city <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>city<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"code"</span><span class="token punctuation">,</span><span class="token string">"1234"</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span><span class="token constant">MINUTES</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setIfAbsent</span><span class="token punctuation">(</span><span class="token string">"lock"</span><span class="token punctuation">,</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setIfAbsent</span><span class="token punctuation">(</span><span class="token string">"lock"</span><span class="token punctuation">,</span><span class="token string">"2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>2). 操作哈希类型数据</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+    * 操作哈希类型的数据
+    */</span>
+   <span class="token annotation punctuation">@Test</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment">//hset hget hdel hkeys hvals</span>
+       <span class="token class-name">HashOperations</span> hashOperations <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       hashOperations<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"100"</span><span class="token punctuation">,</span><span class="token string">"name"</span><span class="token punctuation">,</span><span class="token string">"tom"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       hashOperations<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"100"</span><span class="token punctuation">,</span><span class="token string">"age"</span><span class="token punctuation">,</span><span class="token string">"20"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">String</span> name <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span> hashOperations<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"100"</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">Set</span> keys <span class="token operator">=</span> hashOperations<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token string">"100"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>keys<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">List</span> values <span class="token operator">=</span> hashOperations<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token string">"100"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       hashOperations<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"100"</span><span class="token punctuation">,</span><span class="token string">"age"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>3). 操作列表类型数据</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+    * 操作列表类型的数据
+    */</span>
+   <span class="token annotation punctuation">@Test</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment">//lpush lrange rpop llen</span>
+       <span class="token class-name">ListOperations</span> listOperations <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       listOperations<span class="token punctuation">.</span><span class="token function">leftPushAll</span><span class="token punctuation">(</span><span class="token string">"mylist"</span><span class="token punctuation">,</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       listOperations<span class="token punctuation">.</span><span class="token function">leftPush</span><span class="token punctuation">(</span><span class="token string">"mylist"</span><span class="token punctuation">,</span><span class="token string">"d"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">List</span> mylist <span class="token operator">=</span> listOperations<span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span><span class="token string">"mylist"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>mylist<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       listOperations<span class="token punctuation">.</span><span class="token function">rightPop</span><span class="token punctuation">(</span><span class="token string">"mylist"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">Long</span> size <span class="token operator">=</span> listOperations<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token string">"mylist"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>4). 操作集合类型数据</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+    * 操作集合类型的数据
+    */</span>
+   <span class="token annotation punctuation">@Test</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment">//sadd smembers scard sinter sunion srem</span>
+       <span class="token class-name">SetOperations</span> setOperations <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       setOperations<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"set1"</span><span class="token punctuation">,</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token string">"c"</span><span class="token punctuation">,</span><span class="token string">"d"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       setOperations<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"set2"</span><span class="token punctuation">,</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token string">"x"</span><span class="token punctuation">,</span><span class="token string">"y"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">Set</span> members <span class="token operator">=</span> setOperations<span class="token punctuation">.</span><span class="token function">members</span><span class="token punctuation">(</span><span class="token string">"set1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>members<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">Long</span> size <span class="token operator">=</span> setOperations<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token string">"set1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">Set</span> intersect <span class="token operator">=</span> setOperations<span class="token punctuation">.</span><span class="token function">intersect</span><span class="token punctuation">(</span><span class="token string">"set1"</span><span class="token punctuation">,</span> <span class="token string">"set2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>intersect<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">Set</span> union <span class="token operator">=</span> setOperations<span class="token punctuation">.</span><span class="token function">union</span><span class="token punctuation">(</span><span class="token string">"set1"</span><span class="token punctuation">,</span> <span class="token string">"set2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>union<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       setOperations<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"set1"</span><span class="token punctuation">,</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>5). 操作有序集合类型数据</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+    * 操作有序集合类型的数据
+    */</span>
+   <span class="token annotation punctuation">@Test</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testZset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment">//zadd zrange zincrby zrem</span>
+       <span class="token class-name">ZSetOperations</span> zSetOperations <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       zSetOperations<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"zset1"</span><span class="token punctuation">,</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       zSetOperations<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"zset1"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       zSetOperations<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"zset1"</span><span class="token punctuation">,</span><span class="token string">"c"</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">Set</span> zset1 <span class="token operator">=</span> zSetOperations<span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span><span class="token string">"zset1"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>zset1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       zSetOperations<span class="token punctuation">.</span><span class="token function">incrementScore</span><span class="token punctuation">(</span><span class="token string">"zset1"</span><span class="token punctuation">,</span><span class="token string">"c"</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       zSetOperations<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"zset1"</span><span class="token punctuation">,</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>6). 通用命令操作</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+    * 通用命令操作
+    */</span>
+   <span class="token annotation punctuation">@Test</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testCommon</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment">//keys exists type del</span>
+       <span class="token class-name">Set</span> keys <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>keys<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">Boolean</span> name <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">hasKey</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">Boolean</span> set1 <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">hasKey</span><span class="token punctuation">(</span><span class="token string">"set1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Object</span> key <span class="token operator">:</span> keys<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token class-name">DataType</span> type <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>type<span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+
+       redisTemplate<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"mylist"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="5-店铺营业状态设置"><a href="#5-店铺营业状态设置" class="headerlink" title="5. 店铺营业状态设置"></a>5. 店铺营业状态设置</h2><h3 id="5-1-需求分析和设计"><a href="#5-1-需求分析和设计" class="headerlink" title="5.1 需求分析和设计"></a>5.1 需求分析和设计</h3><h4 id="5-1-1-产品原型"><a href="#5-1-1-产品原型" class="headerlink" title="5.1.1 产品原型"></a>5.1.1 产品原型</h4><p>进到苍穹外卖后台，显示餐厅的营业状态，营业状态分为<strong>营业中</strong>和<strong>打烊中</strong>，若当前餐厅处于营业状态，自动接收任何订单，客户可在小程序进行下单操作；若当前餐厅处于打烊状态，不接受任何订单，客户便无法在小程序进行下单操作。</p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-4d09628456f7f95bd609f6dde9411ed8-image-20221130212134915.png" alt="image-20221130212134915" style="zoom:50%;"> 
+
+<p>点击<strong>营业状态</strong>按钮时，弹出更改营业状态</p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-2bcc0dd1d62fb4ab7002aa9626079966-image-20221130213550300.png" alt="image-20221130213550300" style="zoom:50%;"> 
+
+<p>选择营业，设置餐厅为<strong>营业中</strong>状态</p>
+<p>选择打烊，设置餐厅为<strong>打烊中</strong>状态</p>
+<p><strong>状态说明：</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-3f73d44c846cd3266ecd39b3823e15f6-image-20221130213947179.png" alt="image-20221130213947179" style="zoom: 67%;"> 
+
+
+
+<h4 id="5-1-2-接口设计"><a href="#5-1-2-接口设计" class="headerlink" title="5.1.2 接口设计"></a>5.1.2 接口设计</h4><p>根据上述原型图设计接口，共包含3个接口。</p>
+<p><strong>接口设计：</strong></p>
+<ul>
+<li>设置营业状态</li>
+<li>管理端查询营业状态</li>
+<li>用户端查询营业状态</li>
+</ul>
+<p><strong>注：</strong>从技术层面分析，其实管理端和用户端查询营业状态时，可通过一个接口去实现即可。因为营业状态是一致的。但是，本项目约定：</p>
+<ul>
+<li><strong>管理端</strong>发出的请求，统一使用/admin作为前缀。</li>
+<li><strong>用户端</strong>发出的请求，统一使用/user作为前缀。</li>
+</ul>
+<p>因为访问路径不一致，故分为两个接口实现。</p>
+<p><strong>1). 设置营业状态</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-b7541aea20c45f1b0bccd7ac5a5e47b8-image-20221130215725802.png" alt="image-20221130215725802" style="zoom:50%;"> 
+
+
+
+<p><strong>2). 管理端营业状态</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-d561e1e15d0b161eb4c01b7c7324525f-image-20221130215814021.png" alt="image-20221130215814021" style="zoom:50%;"> 
+
+
+
+<p><strong>3). 用户端营业状态</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-aaf790ffc398beb2e1c3771d951b39df-image-20221130215836785.png" alt="image-20221130215836785" style="zoom:50%;"> 
+
+
+
+<h4 id="5-1-3-营业状态存储方式"><a href="#5-1-3-营业状态存储方式" class="headerlink" title="5.1.3 营业状态存储方式"></a>5.1.3 营业状态存储方式</h4><p>虽然，可以通过一张表来存储营业状态数据，但整个表中只有一个字段，所以意义不大。</p>
+<p>营业状态数据存储方式：基于Redis的字符串来进行存储</p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-cfefc6252ace17503280ca80cfdc0f13-image-20221130220037713.png" alt="image-20221130220037713" style="zoom:50%;"> 
+
+<p><strong>约定：</strong>1表示营业 0表示打烊</p>
+<h3 id="5-2-代码开发"><a href="#5-2-代码开发" class="headerlink" title="5.2 代码开发"></a>5.2 代码开发</h3><h4 id="5-2-1-设置营业状态"><a href="#5-2-1-设置营业状态" class="headerlink" title="5.2.1 设置营业状态"></a>5.2.1 设置营业状态</h4><p>在sky-server模块中，创建ShopController.java</p>
+<p><strong>根据接口定义创建ShopController的setStatus设置营业状态方法：</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>sky<span class="token punctuation">.</span>controller<span class="token punctuation">.</span>admin</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>sky<span class="token punctuation">.</span>result<span class="token punctuation">.</span></span><span class="token class-name">Result</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">io<span class="token punctuation">.</span>swagger<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span></span><span class="token class-name">Api</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">io<span class="token punctuation">.</span>swagger<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span></span><span class="token class-name">ApiOperation</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span></span><span class="token class-name">Slf4j</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Autowired</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">RedisTemplate</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">PathVariable</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">PutMapping</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RequestMapping</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RestController</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@RestController</span><span class="token punctuation">(</span><span class="token string">"adminShopController"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/admin/shop"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Api</span><span class="token punctuation">(</span>tags <span class="token operator">=</span> <span class="token string">"店铺相关接口"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShopController</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">KEY</span> <span class="token operator">=</span> <span class="token string">"SHOP_STATUS"</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">RedisTemplate</span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * 设置店铺的营业状态
+     * @param status
+     * @return
+     */</span>
+    <span class="token annotation punctuation">@PutMapping</span><span class="token punctuation">(</span><span class="token string">"/{status}"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span><span class="token string">"设置店铺的营业状态"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Result</span> <span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> <span class="token class-name">Integer</span> status<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"设置店铺的营业状态为：{}"</span><span class="token punctuation">,</span>status <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token string">"营业中"</span> <span class="token operator">:</span> <span class="token string">"打烊中"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token constant">KEY</span><span class="token punctuation">,</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">Result</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="5-2-2-管理端查询营业状态"><a href="#5-2-2-管理端查询营业状态" class="headerlink" title="5.2.2 管理端查询营业状态"></a>5.2.2 管理端查询营业状态</h4><p><strong>根据接口定义创建ShopController的getStatus查询营业状态方法：</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+    * 获取店铺的营业状态
+    * @return
+    */</span>
+   <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/status"</span><span class="token punctuation">)</span>
+   <span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span><span class="token string">"获取店铺的营业状态"</span><span class="token punctuation">)</span>
+   <span class="token keyword">public</span> <span class="token class-name">Result</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> <span class="token function">getStatus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token class-name">Integer</span> status <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">)</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token constant">KEY</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"获取到店铺的营业状态为：{}"</span><span class="token punctuation">,</span>status <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token string">"营业中"</span> <span class="token operator">:</span> <span class="token string">"打烊中"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">return</span> <span class="token class-name">Result</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="5-2-3-用户端查询营业状态"><a href="#5-2-3-用户端查询营业状态" class="headerlink" title="5.2.3 用户端查询营业状态"></a>5.2.3 用户端查询营业状态</h4><p>创建com.sky.controller.user包，在该包下创建ShopController.java</p>
+<p><strong>根据接口定义创建ShopController的getStatus查询营业状态方法：</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>sky<span class="token punctuation">.</span>controller<span class="token punctuation">.</span>user</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>sky<span class="token punctuation">.</span>result<span class="token punctuation">.</span></span><span class="token class-name">Result</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">io<span class="token punctuation">.</span>swagger<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span></span><span class="token class-name">Api</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">io<span class="token punctuation">.</span>swagger<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span></span><span class="token class-name">ApiOperation</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span></span><span class="token class-name">Slf4j</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Autowired</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">RedisTemplate</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token operator">*</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@RestController</span><span class="token punctuation">(</span><span class="token string">"userShopController"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/user/shop"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Api</span><span class="token punctuation">(</span>tags <span class="token operator">=</span> <span class="token string">"店铺相关接口"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShopController</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">KEY</span> <span class="token operator">=</span> <span class="token string">"SHOP_STATUS"</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">RedisTemplate</span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * 获取店铺的营业状态
+     * @return
+     */</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/status"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span><span class="token string">"获取店铺的营业状态"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Result</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> <span class="token function">getStatus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Integer</span> status <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">)</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token constant">KEY</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"获取到店铺的营业状态为：{}"</span><span class="token punctuation">,</span>status <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token string">"营业中"</span> <span class="token operator">:</span> <span class="token string">"打烊中"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">Result</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="5-3-功能测试"><a href="#5-3-功能测试" class="headerlink" title="5.3 功能测试"></a>5.3 功能测试</h3><h4 id="5-3-1-接口文档测试"><a href="#5-3-1-接口文档测试" class="headerlink" title="5.3.1 接口文档测试"></a>5.3.1 接口文档测试</h4><p><strong>启动服务：</strong>访问<a target="_blank" rel="noopener" href="http://localhost:8080/doc.html%EF%BC%8C%E6%89%93%E5%BC%80%E5%BA%97%E9%93%BA%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3">http://localhost:8080/doc.html，打开店铺相关接口</a></p>
+<p><strong>注意：</strong>使用admin用户登录重新获取token，防止token失效。</p>
+<p><strong>设置营业状态：</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-b3423e1048e1a35657be3b2b8a98b44f-image-20221201175251351.png" alt="image-20221201175251351" style="zoom:50%;"> 
+
+<p>点击发送</p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-7e2268fc604f60266181e0010d24ea3c-image-20221201175428279.png" alt="image-20221201175428279" style="zoom:50%;"> 
+
+<p>查看Idea控制台日志</p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-07c25c54a85e69702193992272522b94-image-20221201175511626.png" alt="image-20221201175511626" style="zoom:50%;"> 
+
+<p>查看Redis中数据</p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-2239267f789a0f021b7c8e4b70e115b4-image-20221201175634896.png" alt="image-20221201175634896" style="zoom:50%;"> 
+
+
+
+<p><strong>管理端查询营业状态：</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-73dc465c378e39541a64922ec4d0a132-image-20221201175807978.png" alt="image-20221201175807978" style="zoom:50%;"> 
+
+
+
+<p><strong>用户端查询营业状态：</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-085f540e6d6b33d7b6906a9c757a855c-image-20221201175917397.png" alt="image-20221201175917397" style="zoom:50%;"> 
+
+
+
+<h4 id="5-3-2-接口分组展示"><a href="#5-3-2-接口分组展示" class="headerlink" title="5.3.2 接口分组展示"></a>5.3.2 接口分组展示</h4><p>在上述接口文档测试中，管理端和用户端的接口放在一起，不方便区分。</p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-62995f1ea624935842c9698bdb307fd0-image-20221201181927458.png" alt="image-20221201181927458" style="zoom:50%;"> 
+
+<p>接下来，我们要实现管理端和用户端接口进行区分。</p>
+<p>在WebMvcConfiguration.java中，分别扫描”com.sky.controller.admin”和”com.sky.controller.user”这两个包。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
+   <span class="token keyword">public</span> <span class="token class-name">Docket</span> <span class="token function">docket1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"准备生成接口文档..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">ApiInfo</span> apiInfo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ApiInfoBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">"苍穹外卖项目接口文档"</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">version</span><span class="token punctuation">(</span><span class="token string">"2.0"</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">description</span><span class="token punctuation">(</span><span class="token string">"苍穹外卖项目接口文档"</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">Docket</span> docket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Docket</span><span class="token punctuation">(</span><span class="token class-name">DocumentationType</span><span class="token punctuation">.</span><span class="token constant">SWAGGER_2</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">groupName</span><span class="token punctuation">(</span><span class="token string">"管理端接口"</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">apiInfo</span><span class="token punctuation">(</span>apiInfo<span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+               <span class="token comment">//指定生成接口需要扫描的包</span>
+               <span class="token punctuation">.</span><span class="token function">apis</span><span class="token punctuation">(</span><span class="token class-name">RequestHandlerSelectors</span><span class="token punctuation">.</span><span class="token function">basePackage</span><span class="token punctuation">(</span><span class="token string">"com.sky.controller.admin"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">paths</span><span class="token punctuation">(</span><span class="token class-name">PathSelectors</span><span class="token punctuation">.</span><span class="token function">any</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token keyword">return</span> docket<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token annotation punctuation">@Bean</span>
+   <span class="token keyword">public</span> <span class="token class-name">Docket</span> <span class="token function">docket2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"准备生成接口文档..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">ApiInfo</span> apiInfo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ApiInfoBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token string">"苍穹外卖项目接口文档"</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">version</span><span class="token punctuation">(</span><span class="token string">"2.0"</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">description</span><span class="token punctuation">(</span><span class="token string">"苍穹外卖项目接口文档"</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token class-name">Docket</span> docket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Docket</span><span class="token punctuation">(</span><span class="token class-name">DocumentationType</span><span class="token punctuation">.</span><span class="token constant">SWAGGER_2</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">groupName</span><span class="token punctuation">(</span><span class="token string">"用户端接口"</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">apiInfo</span><span class="token punctuation">(</span>apiInfo<span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+               <span class="token comment">//指定生成接口需要扫描的包</span>
+               <span class="token punctuation">.</span><span class="token function">apis</span><span class="token punctuation">(</span><span class="token class-name">RequestHandlerSelectors</span><span class="token punctuation">.</span><span class="token function">basePackage</span><span class="token punctuation">(</span><span class="token string">"com.sky.controller.user"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">paths</span><span class="token punctuation">(</span><span class="token class-name">PathSelectors</span><span class="token punctuation">.</span><span class="token function">any</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+               <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token keyword">return</span> docket<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>重启服务器，再次访问接口文档，可进行选择<strong>用户端接口</strong>或者<strong>管理端接口</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-cb2a0d04503636b43f84ed03f1290946-image-20221201182658244.png" alt="image-20221201182658244" style="zoom:50%;"> 
+
+
+
+<h4 id="5-3-3-前后端联调测试"><a href="#5-3-3-前后端联调测试" class="headerlink" title="5.3.3 前后端联调测试"></a>5.3.3 前后端联调测试</h4><p>启动nginx,访问 <a target="_blank" rel="noopener" href="http://localhost/">http://localhost</a></p>
+<p>进入后台，状态为<strong>营业中</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-b2f1bc426333697ed4b1c5dd4e562087-image-20221201180353062.png" alt="image-20221201180353062" style="zoom:50%;"> 
+
+<p>点击<strong>营业状态设置</strong>，修改状态为<strong>打烊中</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-9e879d5d5041305b63175a75f69abb1d-image-20221201180529842.png" alt="image-20221201180529842" style="zoom:50%;"> 
+
+<p>再次查看状态，状态已为<strong>打烊中</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-49a59d6764d2126944a864b0e75c36c3-image-20221201180639063.png" alt="image-20221201180639063" style="zoom:50%;"> 
+
+
+
+<h3 id="5-4-代码提交"><a href="#5-4-代码提交" class="headerlink" title="5.4 代码提交"></a>5.4 代码提交</h3><p><strong>点击提交：</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-16f50d54920ec3650c3a623eee166d65-image-20221201183950557.png" alt="image-20221201183950557" style="zoom:50%;"> 
+
+<p><strong>提交过程中</strong>，出现提示：</p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-624c55d221f4622104fc438495122d37-image-20221201190245361.png" alt="image-20221201190245361" style="zoom:50%;">  
+
+<p><strong>继续push:</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-e4b9feb96fe5c72d8598a6499dc7c6b0-image-20221201190329431.png" alt="image-20221201190329431" style="zoom:50%;"> 
+
+<p><strong>推送成功：</strong></p>
+<img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/03/18-e481163efb377a7cce634e9b85659773-image-20221201190404588.png" alt="image-20221201190404588" style="zoom: 67%;"> 
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">ZhangYao</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://zhangyao0329.github.io/2025/03/17/redis-ru-men/">http://zhangyao0329.github.io/2025/03/17/redis-ru-men/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">ZhangYao</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
+                                </a>
+                            
+                                <a href="/tags/Redis/">
+                                    <span class="chip bg-color">Redis</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="wechat,twitter,qq" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+    
+        <div class="card" data-aos="fade-up">
+    <div id="utteranc-container" class="card-content">
+        <script src="https://utteranc.es/client.js" repo="zhangyao0329/zhangyao0329.github.io" issue-term="title"
+            label="Comment" theme="github-light" crossorigin="anonymous" async>
+            </script>
+    </div>
+</div>
+
+            
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2025/03/17/redis-ru-men/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202503180121407.jpg" class="responsive-img" alt="Redis入门">
+                        
+                        <span class="card-title">Redis入门</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            内存数据库
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaEE/" class="post-category">
+                                    JavaEE
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                    <a href="/tags/Redis/">
+                        <span class="chip bg-color">Redis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/03/13/zi-wo/">
+                    <div class="card-image">
+                        
+                        <img src="https://w.wallhaven.cc/full/1p/wallhaven-1p9z61.jpg" class="responsive-img" alt="自我">
+                        
+                        <span class="card-title">自我</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            独立思考与自由意志的平台
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
+                                    博客搭建
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%87%AA%E6%88%91/">
+                        <span class="chip bg-color">自我</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A1%BF%E6%82%9F/">
+                        <span class="chip bg-color">顿悟</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+                <div class="container row center-align"
+                    style="margin-bottom: 0px !important;">
+                    <div class="col s12 m8 l8 copy-right">
+
+                        <!--             
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024-2025</span>
+            
+            <span id="year">2024</span>
+            <a href="/about" target="_blank">ZhangYao</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> -->
+
+
+                        <!-- 自己添加的 -->
+                        <span>Copyright&nbsp;&copy; 2024 by ZhangYao</span>
+                        <span>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                            &nbsp; </span>
+                        <img src="https://cdn.jsdelivr.net/gh/blinkfox/blinkfox.github.io/medias/icp.png"
+                            style="vertical-align: text-bottom;" />
+                        <span><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"
+                                style="color: #d4cbd6;">豫ICP备2024072925号</a></span>
+
+
+
+                        <!-- <br> -->
+
+
+                                
+                                    
+                                                
+                                                            
+                                                                    <br>
+                                                                    
+                                                                            <br>
+                                                                            
+                                                                                </div>
+                    <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/zhangyao0329" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+<!-- 
+    <a href="weixin://" class="tooltipped" target="_blank" data-tooltip="添加我的微信: ZY18211848011" data-position="top"
+        data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+ -->
+
+    <a href="https://zhangyao0329.github.io/medias/images/wechat.jpg" class="tooltipped" target="_blank"
+        data-tooltip="添加我的微信: ZY18211848011" data-position="top"
+        data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+    
+    
+        <a href="https://zhangyao0329.github.io/medias/images/qq.jpg" class="tooltipped" target="_blank"
+            data-tooltip="添加我的QQ: 1870476411" data-position="top" data-delay="50">
+            <i class="fab fa-qq"></i>
+        </a>
+        
+        
+            <!-- 
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1870476411" class="tooltipped"
+        target="_blank" data-tooltip="添加我的QQ: 1870476411" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+ -->
+
+
+    <a href="mailto:1870476411@qq.com" class="tooltipped" target="_blank"
+        data-tooltip="添加我的邮箱: 1870476411@qq.com" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://x.com/zhangyao1287546" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://x.com/zhangyao1287546" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+                    </div>
+                    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='1'
+        zIndex="-1" count="333"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
