@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2025-03-17T17:32:47.754Z</updated>
+  <updated>2025-03-22T10:51:04.838Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HttpCliet与微信小程序</title>
+    <link href="http://zhangyao0329.github.io/2025/03/22/httpcliet-yu-wei-xin-xiao-cheng-xu/"/>
+    <id>http://zhangyao0329.github.io/2025/03/22/httpcliet-yu-wei-xin-xiao-cheng-xu/</id>
+    <published>2025-03-22T18:38:28.000Z</published>
+    <updated>2025-03-22T10:51:04.838Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;课程内容&quot;&gt;&lt;a href=&quot;#课程内容&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
+    
+    
+    <category term="HttpClient" scheme="http://zhangyao0329.github.io/tags/HttpClient/"/>
+    
+    <category term="微信小程序" scheme="http://zhangyao0329.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="微信登录" scheme="http://zhangyao0329.github.io/tags/%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Redis入门</title>
@@ -493,7 +522,7 @@
     <link href="http://zhangyao0329.github.io/2024/11/28/maven/"/>
     <id>http://zhangyao0329.github.io/2024/11/28/maven/</id>
     <published>2024-11-28T12:55:10.000Z</published>
-    <updated>2025-03-20T12:17:15.892Z</updated>
+    <updated>2025-03-22T10:51:04.842Z</updated>
     
     
       
@@ -539,35 +568,6 @@
     <category term="请求和响应" scheme="http://zhangyao0329.github.io/tags/%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94/"/>
     
     <category term="解耦" scheme="http://zhangyao0329.github.io/tags/%E8%A7%A3%E8%80%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBootWeb入门</title>
-    <link href="http://zhangyao0329.github.io/2024/11/28/springbootweb-ru-men/"/>
-    <id>http://zhangyao0329.github.io/2024/11/28/springbootweb-ru-men/</id>
-    <published>2024-11-28T08:19:08.000Z</published>
-    <updated>2024-12-08T12:00:19.423Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;SpringBoot基础&quot;&gt;&lt;a href=&quot;#SpringBoot基础&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot基础&quot;&gt;&lt;/a&gt;SpringBoot基础&lt;/h1&gt;&lt;h2 id=&quot;课程内容&quot;&gt;&lt;a href=&quot;#课程内容&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
-    
-    
-    <category term="SpringBoot入门" scheme="http://zhangyao0329.github.io/tags/SpringBoot%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="Http协议" scheme="http://zhangyao0329.github.io/tags/Http%E5%8D%8F%E8%AE%AE/"/>
-    
-    <category term="Tomcat" scheme="http://zhangyao0329.github.io/tags/Tomcat/"/>
     
   </entry>
   
