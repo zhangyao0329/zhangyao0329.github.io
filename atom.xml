@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2025-03-22T10:51:04.838Z</updated>
+  <updated>2025-03-26T16:12:58.845Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>缓存SpringCatch</title>
+    <link href="http://zhangyao0329.github.io/2025/03/26/huan-cun-springcatch/"/>
+    <id>http://zhangyao0329.github.io/2025/03/26/huan-cun-springcatch/</id>
+    <published>2025-03-26T16:09:25.000Z</published>
+    <updated>2025-03-26T16:12:58.845Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;缓存SpringCatch&quot;&gt;&lt;a href=&quot;#缓存SpringCatch&quot; class=&quot;headerlink&quot; title=&quot;缓存SpringCatch&quot;&gt;&lt;/a&gt;缓存SpringCatch&lt;/h1&gt;&lt;h2 id=&quot;2-1-Spring-Cache&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
+    
+    
+    <category term="SpringCatch" scheme="http://zhangyao0329.github.io/tags/SpringCatch/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HttpCliet与微信小程序</title>
     <link href="http://zhangyao0329.github.io/2025/03/22/httpcliet-yu-wei-xin-xiao-cheng-xu/"/>
     <id>http://zhangyao0329.github.io/2025/03/22/httpcliet-yu-wei-xin-xiao-cheng-xu/</id>
-    <published>2025-03-22T18:38:28.000Z</published>
-    <updated>2025-03-22T10:51:04.838Z</updated>
+    <published>2025-03-22T10:38:28.000Z</published>
+    <updated>2025-03-22T10:49:52.617Z</updated>
     
     
       
@@ -522,7 +547,7 @@
     <link href="http://zhangyao0329.github.io/2024/11/28/maven/"/>
     <id>http://zhangyao0329.github.io/2024/11/28/maven/</id>
     <published>2024-11-28T12:55:10.000Z</published>
-    <updated>2025-03-22T10:51:04.842Z</updated>
+    <updated>2025-03-26T16:15:27.117Z</updated>
     
     
       
@@ -539,35 +564,6 @@
     
     
     <category term="Maven" scheme="http://zhangyao0329.github.io/tags/Maven/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBootWeb请求响应</title>
-    <link href="http://zhangyao0329.github.io/2024/11/28/springbootweb-qing-qiu-xiang-ying/"/>
-    <id>http://zhangyao0329.github.io/2024/11/28/springbootweb-qing-qiu-xiang-ying/</id>
-    <published>2024-11-28T09:33:05.000Z</published>
-    <updated>2024-12-08T12:00:25.739Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;SpringBootWeb请求响应&quot;&gt;&lt;a href=&quot;#SpringBootWeb请求响应&quot; class=&quot;headerlink&quot; title=&quot;SpringBootWeb请求响应&quot;&gt;&lt;/a&gt;SpringBootWeb请求响应&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
-    
-    
-    <category term="Postman" scheme="http://zhangyao0329.github.io/tags/Postman/"/>
-    
-    <category term="请求和响应" scheme="http://zhangyao0329.github.io/tags/%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94/"/>
-    
-    <category term="解耦" scheme="http://zhangyao0329.github.io/tags/%E8%A7%A3%E8%80%A6/"/>
     
   </entry>
   
