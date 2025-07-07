@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2025-03-26T16:12:58.845Z</updated>
+  <updated>2025-07-07T14:53:18.641Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jmeter快速入门</title>
+    <link href="http://zhangyao0329.github.io/2025/07/07/jmeter-kuai-su-ru-men/"/>
+    <id>http://zhangyao0329.github.io/2025/07/07/jmeter-kuai-su-ru-men/</id>
+    <published>2025-07-07T22:45:57.000Z</published>
+    <updated>2025-07-07T14:53:18.641Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Jmeter快速入门&quot;&gt;&lt;a href=&quot;#Jmeter快速入门&quot; class=&quot;headerlink&quot; title=&quot;Jmeter快速入门&quot;&gt;&lt;/a&gt;Jmeter快速入门&lt;/h1&gt;&lt;h2 id=&quot;1-安装Jmeter&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="压测" scheme="http://zhangyao0329.github.io/tags/%E5%8E%8B%E6%B5%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>缓存SpringCatch</title>
@@ -101,8 +124,8 @@
     <title>自我</title>
     <link href="http://zhangyao0329.github.io/2025/03/13/zi-wo/"/>
     <id>http://zhangyao0329.github.io/2025/03/13/zi-wo/</id>
-    <published>2025-03-13T19:29:47.000Z</published>
-    <updated>2025-07-01T13:24:03.687Z</updated>
+    <published>2025-03-13T11:29:47.000Z</published>
+    <updated>2025-07-01T12:55:42.255Z</updated>
     
     
       
@@ -539,31 +562,6 @@
     <category term="DDL" scheme="http://zhangyao0329.github.io/tags/DDL/"/>
     
     <category term="DML" scheme="http://zhangyao0329.github.io/tags/DML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Maven</title>
-    <link href="http://zhangyao0329.github.io/2024/11/28/maven/"/>
-    <id>http://zhangyao0329.github.io/2024/11/28/maven/</id>
-    <published>2024-11-28T12:55:10.000Z</published>
-    <updated>2025-07-01T13:24:03.685Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Maven&quot;&gt;&lt;a href=&quot;#Maven&quot; class=&quot;headerlink&quot; title=&quot;Maven&quot;&gt;&lt;/a&gt;Maven&lt;/h1&gt;&lt;h2 id=&quot;课程内容&quot;&gt;&lt;a href=&quot;#课程内容&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="JavaSE" scheme="http://zhangyao0329.github.io/categories/JavaSE/"/>
-    
-    
-    <category term="Maven" scheme="http://zhangyao0329.github.io/tags/Maven/"/>
     
   </entry>
   
