@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ffmpeg合并视频和音频</title>
+      <link href="/2025/07/08/ffmpeg-he-bing-shi-pin-he-yin-pin/"/>
+      <url>/2025/07/08/ffmpeg-he-bing-shi-pin-he-yin-pin/</url>
+      
+        <content type="html"><![CDATA[<h1 id="使用ffmpeg合并视频和音频"><a href="#使用ffmpeg合并视频和音频" class="headerlink" title="使用ffmpeg合并视频和音频"></a><strong>使用ffmpeg合并视频和音频</strong></h1><h2 id="1、安装工具并配置环境"><a href="#1、安装工具并配置环境" class="headerlink" title="1、安装工具并配置环境"></a>1、安装工具并配置环境</h2><p>FFmpeg是一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源计算机程序。采用LGPL或GPL许可证。它提供了录制、转换以及流化音视频的完整解决方案。它包含了非常先进的音频/视频编解码库libavcodec，为了保证高可移植性和编解码质量，libavcodec里很多code都是从头开发的。——摘自百度百科：ffmpeg</p><h3 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a><strong>安装ffmpeg</strong></h3><p>打开ffmpeg的官网 <a href="https://ffmpeg.org/">https://ffmpeg.org/</a> ，点击Download跳转到下载页</p><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-73f1ad5a4d1d6d7ed04fa099b2fe89bb-ebf9619725e439f5e85ab9c66f0f74e236849048.png"></p><p>选择Windows并点击Windows builds by BtbN 跳转到Github</p><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-9e4d72650a08736a0eb4f49b44af7f2f-78bbeff9c5b7b8a68c30d593f9429f8136849048.png"></p><p>在GitHub页面点击ffmpeg-master-latest-win64-gpl-shared.zip 开始下载。</p><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-ec9fbc4c7dbe1f15f6c4f407278968e2-32f98292a7a2e1d33328826596b192b736849048.png"></p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a><strong>安装</strong></h3><p>将下载的压缩包解压到文件夹中，此处以D:\ffmpeg为例。</p><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-d6a3561369e437fd06bcd9d294591b03-228ef93c76ba6380b3c1d49db31773e136849048.png"></p><h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><p>在弹出的页面里依次点击环境变量→系统变量/Path→新建，在新建项中填入D:\ffmpeg\bin （此处为上文中放置ffmpeg文件的位置），然后依次点击确认以保存修改。</p><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-135fe0d548fac63adb22e23abbccd1d0-fd23b5f15775bb4cac3ef49631a6c66536849048.png"></p><h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>按下Win键+R并输入cmd，调出命令行窗口</p><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-206ea86c1d1de3733fa365a6df324a7e-553f7f2e4f5cdb5bc252e4d7d7b2c76736849048.png-804w.webp"></p><p>输入 ffmpeg -version，如果显示如下界面表示安装成功。</p><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-1695f61cc1cd493f0b5e2b9112cbcd9a-a46dc5849e5897a05a53c90cb197265236849048.png-1192w.webp"></p><p>显示如下内容则为安装失败。请重启cmd或检查上述步骤是否全部正确进行。</p><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-3bcb42cb662b906485562c5a366ba8aa-86abba4ab8c6f8281d90181a88574a5d36849048.png-1192w.webp"></p><h2 id="2、合并"><a href="#2、合并" class="headerlink" title="2、合并"></a>2、合并</h2><p>将需要合并的音视频文件放入同一个文件夹中，并重命名为1.mp4和2.mp4（1为视频，2为音频）</p><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-f034d4387044a2d4d29590d73c246772-9a563bdf10e625b81631ea99beaaaa2836849048.png-1192w.webp"></p><p>在文件夹中新建bat文件，并输入以下内容：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">@echo offffmpeg <span class="token parameter variable">-i</span> <span class="token number">1</span>.mp4 <span class="token parameter variable">-i</span> <span class="token number">2</span>.mp4  <span class="token parameter variable">-vcodec</span> copy <span class="token parameter variable">-acodec</span> copy output.mp4pause <span class="token operator">&amp;</span> <span class="token builtin class-name">exit</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="开始处理"><a href="#开始处理" class="headerlink" title="开始处理"></a><strong>开始处理</strong></h3><p>双击运行.bat文件，将弹出命令行窗口并自动合并音视频文件。待处理完成后将生成名为output.mp4的文件</p><p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-afff57315e1c325b35d732d923770bbf-b035c815ffec0fbc49debc088a84108936849048.png-1192w.webp"></p><h2 id="3、网盘下载"><a href="#3、网盘下载" class="headerlink" title="3、网盘下载"></a><strong>3、网盘下载</strong></h2><p>通过网盘分享的文件：ffmpeg-master-latest-win64-gpl-shared.zip<br>链接: <a href="https://pan.baidu.com/s/1J8MbsHps8emeua0oF1B3pw?pwd=6666">https://pan.baidu.com/s/1J8MbsHps8emeua0oF1B3pw?pwd=6666</a> 提取码: 6666</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ffmpeg </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Jmeter快速入门</title>
       <link href="/2025/07/07/jmeter-kuai-su-ru-men/"/>
       <url>/2025/07/07/jmeter-kuai-su-ru-men/</url>

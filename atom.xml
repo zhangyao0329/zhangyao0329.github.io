@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2025-07-07T15:03:41.781Z</updated>
+  <updated>2025-07-07T16:17:23.272Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ffmpeg合并视频和音频</title>
+    <link href="http://zhangyao0329.github.io/2025/07/08/ffmpeg-he-bing-shi-pin-he-yin-pin/"/>
+    <id>http://zhangyao0329.github.io/2025/07/08/ffmpeg-he-bing-shi-pin-he-yin-pin/</id>
+    <published>2025-07-08T00:12:22.000Z</published>
+    <updated>2025-07-07T16:17:23.272Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;使用ffmpeg合并视频和音频&quot;&gt;&lt;a href=&quot;#使用ffmpeg合并视频和音频&quot; class=&quot;headerlink&quot; title=&quot;使用ffmpeg合并视频和音频&quot;&gt;&lt;/a&gt;&lt;strong&gt;使用ffmpeg合并视频和音频&lt;/strong&gt;&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="ffmpeg" scheme="http://zhangyao0329.github.io/tags/ffmpeg/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Jmeter快速入门</title>
     <link href="http://zhangyao0329.github.io/2025/07/07/jmeter-kuai-su-ru-men/"/>
     <id>http://zhangyao0329.github.io/2025/07/07/jmeter-kuai-su-ru-men/</id>
-    <published>2025-07-07T22:45:57.000Z</published>
-    <updated>2025-07-07T15:03:41.781Z</updated>
+    <published>2025-07-07T14:45:57.000Z</published>
+    <updated>2025-07-07T14:59:46.272Z</updated>
     
     
       
@@ -533,35 +556,6 @@
     <category term="DQL" scheme="http://zhangyao0329.github.io/tags/DQL/"/>
     
     <category term="多表设计" scheme="http://zhangyao0329.github.io/tags/%E5%A4%9A%E8%A1%A8%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql（1）</title>
-    <link href="http://zhangyao0329.github.io/2024/11/30/mysql-1/"/>
-    <id>http://zhangyao0329.github.io/2024/11/30/mysql-1/</id>
-    <published>2024-11-30T06:43:50.000Z</published>
-    <updated>2024-12-08T12:02:55.250Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;数据库开发-MySQL&quot;&gt;&lt;a href=&quot;#数据库开发-MySQL&quot; class=&quot;headerlink&quot; title=&quot;数据库开发-MySQL&quot;&gt;&lt;/a&gt;数据库开发-MySQL&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
-    
-    
-    <category term="Mysql" scheme="http://zhangyao0329.github.io/tags/Mysql/"/>
-    
-    <category term="DDL" scheme="http://zhangyao0329.github.io/tags/DDL/"/>
-    
-    <category term="DML" scheme="http://zhangyao0329.github.io/tags/DML/"/>
     
   </entry>
   

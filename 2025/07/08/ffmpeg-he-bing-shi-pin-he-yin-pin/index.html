@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Jmeter快速入门, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
+    <meta name="keywords" content="ffmpeg合并视频和音频, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
     <meta name="description" content="Java开发 | 机器学习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Jmeter快速入门 | 大貔貅的博客</title>
+    <title>ffmpeg合并视频和音频 | 大貔貅的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -273,12 +273,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/img/202507072248496.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-63c2b62944c8e9ffe07568824c651772-image-20250708001530316.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Jmeter快速入门</h1>
+                    <h1 class="description center-align post-title">ffmpeg合并视频和音频</h1>
                 </div>
             </div>
         </div>
@@ -394,8 +394,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8E%8B%E6%B5%8B/">
-                                <span class="chip bg-color">压测</span>
+                            <a href="/tags/ffmpeg/">
+                                <span class="chip bg-color">ffmpeg</span>
                             </a>
                         
                     </div>
@@ -410,7 +410,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-07-07
+                    2025-07-08
                 </div>
                 
 
@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    384
+                    491
                 </div>
                 
 
@@ -454,51 +454,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Jmeter快速入门"><a href="#Jmeter快速入门" class="headerlink" title="Jmeter快速入门"></a>Jmeter快速入门</h1><h2 id="1-安装Jmeter"><a href="#1-安装Jmeter" class="headerlink" title="1.安装Jmeter"></a>1.安装Jmeter</h2><p>Jmeter依赖于JDK，所以必须确保当前计算机上已经安装了JDK，并且配置了环境变量。</p>
-<h3 id="1-1-下载"><a href="#1-1-下载" class="headerlink" title="1.1.下载"></a>1.1.下载</h3><p>可以Apache Jmeter官网下载，地址：<a target="_blank" rel="noopener" href="http://jmeter.apache.org/download_jmeter.cgi">http://jmeter.apache.org/download_jmeter.cgi</a></p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-522e6b0f1907d8b356461fd038e4b820-image-20210715193149837.png"></p>
-<p>安装包：<br>通过网盘分享的文件：apache-jmeter-5.4.1.zip<br>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1pMDDR-dEGTa6l3oDTkNiug?pwd=6666">https://pan.baidu.com/s/1pMDDR-dEGTa6l3oDTkNiug?pwd=6666</a> 提取码: 6666</p>
-<h3 id="1-2-解压"><a href="#1-2-解压" class="headerlink" title="1.2.解压"></a>1.2.解压</h3><p>因为下载的是zip包，解压缩即可使用，目录结构如下：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-2162365c43750fbf9f6d03ebc205379e-image-20210715193334367.png"></p>
-<p>其中的bin目录就是执行的脚本，其中包含启动脚本：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-b0ff6e5ae43b539e3c3bd8276b78da14-image-20210715193414601.png"></p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-3e5c49067b2d651e1786d7e21fb035a0-image-20250707224200368.png"></p>
-<h3 id="1-3-运行"><a href="#1-3-运行" class="headerlink" title="1.3.运行"></a>1.3.运行</h3><p>双击即可运行，但是有两点注意：</p>
-<ul>
-<li>启动速度比较慢，要耐心等待</li>
-<li>启动后黑窗口不能关闭，否则Jmeter也跟着关闭了</li>
-</ul>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-fdd5c16512a598723ddd483914cfffec-image-20210715193730096.png"></p>
-<h2 id="2-快速入门"><a href="#2-快速入门" class="headerlink" title="2.快速入门"></a>2.快速入门</h2><h3 id="2-1-设置中文语言"><a href="#2-1-设置中文语言" class="headerlink" title="2.1.设置中文语言"></a>2.1.设置中文语言</h3><p>默认Jmeter的语言是英文，需要设置：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-eeb336668e13843084326a5d6686fa89-image-20210715193838719.png"></p>
-<p>效果：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-7bded5c35f5cce85ffdc8c8ed5e4dab4-image-20210715193914039.png"></p>
-<blockquote>
-<p><strong>注意</strong>：上面的配置只能保证本次运行是中文，如果要永久中文，需要修改Jmeter的配置文件</p>
-</blockquote>
-<p>打开jmeter文件夹，在bin目录中找到 <strong>jmeter.properties</strong>，添加下面配置：</p>
-<pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token key attr-name">language</span><span class="token punctuation">=</span><span class="token value attr-value">zh_CN</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="使用ffmpeg合并视频和音频"><a href="#使用ffmpeg合并视频和音频" class="headerlink" title="使用ffmpeg合并视频和音频"></a><strong>使用ffmpeg合并视频和音频</strong></h1><h2 id="1、安装工具并配置环境"><a href="#1、安装工具并配置环境" class="headerlink" title="1、安装工具并配置环境"></a>1、安装工具并配置环境</h2><p>FFmpeg是一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源计算机程序。采用LGPL或GPL许可证。它提供了录制、转换以及流化音视频的完整解决方案。它包含了非常先进的音频/视频编解码库libavcodec，为了保证高可移植性和编解码质量，libavcodec里很多code都是从头开发的。——摘自百度百科：ffmpeg</p>
+<h3 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a><strong>安装ffmpeg</strong></h3><p>打开ffmpeg的官网 <a target="_blank" rel="noopener" href="https://ffmpeg.org/">https://ffmpeg.org/</a> ，点击Download跳转到下载页</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-73f1ad5a4d1d6d7ed04fa099b2fe89bb-ebf9619725e439f5e85ab9c66f0f74e236849048.png"></p>
+<p>选择Windows并点击Windows builds by BtbN 跳转到Github</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-9e4d72650a08736a0eb4f49b44af7f2f-78bbeff9c5b7b8a68c30d593f9429f8136849048.png"></p>
+<p>在GitHub页面点击ffmpeg-master-latest-win64-gpl-shared.zip 开始下载。</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-ec9fbc4c7dbe1f15f6c4f407278968e2-32f98292a7a2e1d33328826596b192b736849048.png"></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a><strong>安装</strong></h3><p>将下载的压缩包解压到文件夹中，此处以D:\ffmpeg为例。</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-d6a3561369e437fd06bcd9d294591b03-228ef93c76ba6380b3c1d49db31773e136849048.png"></p>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><p>在弹出的页面里依次点击环境变量→系统变量/Path→新建，在新建项中填入D:\ffmpeg\bin （此处为上文中放置ffmpeg文件的位置），然后依次点击确认以保存修改。</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-135fe0d548fac63adb22e23abbccd1d0-fd23b5f15775bb4cac3ef49631a6c66536849048.png"></p>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>按下Win键+R并输入cmd，调出命令行窗口</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-206ea86c1d1de3733fa365a6df324a7e-553f7f2e4f5cdb5bc252e4d7d7b2c76736849048.png-804w.webp"></p>
+<p>输入 ffmpeg -version，如果显示如下界面表示安装成功。</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-1695f61cc1cd493f0b5e2b9112cbcd9a-a46dc5849e5897a05a53c90cb197265236849048.png-1192w.webp"></p>
+<p>显示如下内容则为安装失败。请重启cmd或检查上述步骤是否全部正确进行。</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-3bcb42cb662b906485562c5a366ba8aa-86abba4ab8c6f8281d90181a88574a5d36849048.png-1192w.webp"></p>
+<h2 id="2、合并"><a href="#2、合并" class="headerlink" title="2、合并"></a>2、合并</h2><p>将需要合并的音视频文件放入同一个文件夹中，并重命名为1.mp4和2.mp4（1为视频，2为音频）</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-f034d4387044a2d4d29590d73c246772-9a563bdf10e625b81631ea99beaaaa2836849048.png-1192w.webp"></p>
+<p>在文件夹中新建bat文件，并输入以下内容：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">@echo off
+ffmpeg <span class="token parameter variable">-i</span> <span class="token number">1</span>.mp4 <span class="token parameter variable">-i</span> <span class="token number">2</span>.mp4  <span class="token parameter variable">-vcodec</span> copy <span class="token parameter variable">-acodec</span> copy output.mp4
+pause <span class="token operator">&amp;</span> <span class="token builtin class-name">exit</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-f0653c641c8e646d7ee738f6fb2c64f0-image-20210715194137982.png"></p>
-<blockquote>
-<p>注意：前面不要出现#，#代表注释，另外这里是下划线，不是中划线</p>
-</blockquote>
-<h3 id="2-2-基本用法"><a href="#2-2-基本用法" class="headerlink" title="2.2.基本用法"></a>2.2.基本用法</h3><p>在测试计划上点鼠标右键，选择添加 &gt; 线程（用户） &gt; 线程组：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-185db03012b7760ddc3ac74d90295867-image-20210715194413178.png"></p>
-<p>在新增的线程组中，填写线程信息：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-a2ebbc031f5311bfd568d29027cb9864-image-20210715195053807.png"></p>
-<p>给线程组点鼠标右键，添加http取样器：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-1d44c1629856cc80256892f4515d8944-image-20210715195144130.png"></p>
-<p>编写取样器内容：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-02ff244758204928dd1b242bb8eaad91-image-20210715195410764.png"></p>
-<p>添加监听报告：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-bdddd1b3f741d095c33156ce493724fc-image-20210715195844978.png"></p>
-<p>添加监听结果树：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-4402009c7857a0e6c0ce374fea624368-image-20210715200155537.png"></p>
-<p>汇总报告结果：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-bbd51dc0b633c78b98122676b70e2a51-image-20210715200243194.png"></p>
-<p>结果树：</p>
-<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/07-e0d9335381825edf88301d051f5b1e2b-image-20210715200336526.png"></p>
+
+
+<h3 id="开始处理"><a href="#开始处理" class="headerlink" title="开始处理"></a><strong>开始处理</strong></h3><p>双击运行.bat文件，将弹出命令行窗口并自动合并音视频文件。待处理完成后将生成名为output.mp4的文件</p>
+<p><img src="https://github.com/zhangyao0329/tuchuang-blog/raw/main/tuchuang-blog/2025/07/08-afff57315e1c325b35d732d923770bbf-b035c815ffec0fbc49debc088a84108936849048.png-1192w.webp"></p>
+<h2 id="3、网盘下载"><a href="#3、网盘下载" class="headerlink" title="3、网盘下载"></a><strong>3、网盘下载</strong></h2><p>通过网盘分享的文件：ffmpeg-master-latest-win64-gpl-shared.zip<br>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1J8MbsHps8emeua0oF1B3pw?pwd=6666">https://pan.baidu.com/s/1J8MbsHps8emeua0oF1B3pw?pwd=6666</a> 提取码: 6666</p>
 
                 
             </div>
@@ -525,7 +509,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhangyao0329.github.io/2025/07/07/jmeter-kuai-su-ru-men/">http://zhangyao0329.github.io/2025/07/07/jmeter-kuai-su-ru-men/</a>
+                    <a href="http://zhangyao0329.github.io/2025/07/08/ffmpeg-he-bing-shi-pin-he-yin-pin/">http://zhangyao0329.github.io/2025/07/08/ffmpeg-he-bing-shi-pin-he-yin-pin/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -563,8 +547,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8E%8B%E6%B5%8B/">
-                                    <span class="chip bg-color">压测</span>
+                                <a href="/tags/ffmpeg/">
+                                    <span class="chip bg-color">ffmpeg</span>
                                 </a>
                             
                         </div>
@@ -744,9 +728,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2025/07/08/ffmpeg-he-bing-shi-pin-he-yin-pin/">
                     <div class="card-image">
@@ -763,9 +748,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-07-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-07-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -774,6 +759,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -792,32 +778,28 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2025/03/26/huan-cun-springcatch/">
+                <a href="/2025/07/07/jmeter-kuai-su-ru-men/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/202503270011890.png" class="responsive-img" alt="缓存SpringCatch">
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/img/202507072248496.png" class="responsive-img" alt="Jmeter快速入门">
                         
-                        <span class="card-title">缓存SpringCatch</span>
+                        <span class="card-title">Jmeter快速入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一个注解，就能实现缓存功能
+                            接口压力测试工具使用方法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-07-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JavaEE/" class="post-category">
-                                    JavaEE
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            ZhangYao
                             
                         </span>
                     </div>
@@ -825,8 +807,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SpringCatch/">
-                        <span class="chip bg-color">SpringCatch</span>
+                    <a href="/tags/%E5%8E%8B%E6%B5%8B/">
+                        <span class="chip bg-color">压测</span>
                     </a>
                     
                 </div>
