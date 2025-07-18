@@ -6,7 +6,7 @@
   <link href="http://zhangyao0329.github.io/atom.xml" rel="self"/>
   
   <link href="http://zhangyao0329.github.io/"/>
-  <updated>2025-07-13T10:12:51.354Z</updated>
+  <updated>2025-07-18T10:39:42.628Z</updated>
   <id>http://zhangyao0329.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>面试八股</title>
+    <link href="http://zhangyao0329.github.io/2025/07/18/mian-shi-ba-gu/"/>
+    <id>http://zhangyao0329.github.io/2025/07/18/mian-shi-ba-gu/</id>
+    <published>2025-07-18T18:17:47.000Z</published>
+    <updated>2025-07-18T10:39:42.628Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Redis&quot;&gt;&lt;a href=&quot;#Redis&quot; class=&quot;headerlink&quot; title=&quot;Redis&quot;&gt;&lt;/a&gt;Redis&lt;/h1&gt;&lt;h2 id=&quot;什么是缓存穿透？怎么解决？&quot;&gt;&lt;a href=&quot;#什么是缓存穿透？怎么解决？&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="面试" scheme="http://zhangyao0329.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+    <category term="redis" scheme="http://zhangyao0329.github.io/tags/redis/"/>
+    
+    <category term="mysql" scheme="http://zhangyao0329.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ffmpeg合并视频和音频</title>
     <link href="http://zhangyao0329.github.io/2025/07/08/ffmpeg-he-bing-shi-pin-he-yin-pin/"/>
     <id>http://zhangyao0329.github.io/2025/07/08/ffmpeg-he-bing-shi-pin-he-yin-pin/</id>
     <published>2025-07-08T00:12:22.000Z</published>
-    <updated>2025-07-13T10:12:51.354Z</updated>
+    <updated>2025-07-18T10:39:42.626Z</updated>
     
     
       
@@ -43,8 +70,8 @@
     <title>Jmeter快速入门</title>
     <link href="http://zhangyao0329.github.io/2025/07/07/jmeter-kuai-su-ru-men/"/>
     <id>http://zhangyao0329.github.io/2025/07/07/jmeter-kuai-su-ru-men/</id>
-    <published>2025-07-07T14:45:57.000Z</published>
-    <updated>2025-07-07T14:59:46.272Z</updated>
+    <published>2025-07-07T22:45:57.000Z</published>
+    <updated>2025-07-18T10:39:42.623Z</updated>
     
     
       
@@ -64,10 +91,10 @@
   
   <entry>
     <title>缓存SpringCatch</title>
-    <link href="http://zhangyao0329.github.io/2025/03/26/huan-cun-springcatch/"/>
-    <id>http://zhangyao0329.github.io/2025/03/26/huan-cun-springcatch/</id>
-    <published>2025-03-26T16:09:25.000Z</published>
-    <updated>2025-03-26T16:12:58.845Z</updated>
+    <link href="http://zhangyao0329.github.io/2025/03/27/huan-cun-springcatch/"/>
+    <id>http://zhangyao0329.github.io/2025/03/27/huan-cun-springcatch/</id>
+    <published>2025-03-27T00:09:25.000Z</published>
+    <updated>2025-07-18T10:39:42.627Z</updated>
     
     
       
@@ -91,8 +118,8 @@
     <title>HttpCliet与微信小程序</title>
     <link href="http://zhangyao0329.github.io/2025/03/22/httpcliet-yu-wei-xin-xiao-cheng-xu/"/>
     <id>http://zhangyao0329.github.io/2025/03/22/httpcliet-yu-wei-xin-xiao-cheng-xu/</id>
-    <published>2025-03-22T10:38:28.000Z</published>
-    <updated>2025-03-22T10:49:52.617Z</updated>
+    <published>2025-03-22T18:38:28.000Z</published>
+    <updated>2025-07-18T10:39:42.622Z</updated>
     
     
       
@@ -118,10 +145,10 @@
   
   <entry>
     <title>Redis入门</title>
-    <link href="http://zhangyao0329.github.io/2025/03/17/redis-ru-men/"/>
-    <id>http://zhangyao0329.github.io/2025/03/17/redis-ru-men/</id>
-    <published>2025-03-17T17:11:16.000Z</published>
-    <updated>2025-03-17T17:32:47.754Z</updated>
+    <link href="http://zhangyao0329.github.io/2025/03/18/redis-ru-men/"/>
+    <id>http://zhangyao0329.github.io/2025/03/18/redis-ru-men/</id>
+    <published>2025-03-18T01:11:16.000Z</published>
+    <updated>2025-07-18T10:39:42.624Z</updated>
     
     
       
@@ -147,8 +174,8 @@
     <title>自我</title>
     <link href="http://zhangyao0329.github.io/2025/03/13/zi-wo/"/>
     <id>http://zhangyao0329.github.io/2025/03/13/zi-wo/</id>
-    <published>2025-03-13T11:29:47.000Z</published>
-    <updated>2025-07-01T12:55:42.255Z</updated>
+    <published>2025-03-13T19:29:47.000Z</published>
+    <updated>2025-07-18T10:39:42.627Z</updated>
     
     
       
@@ -174,8 +201,8 @@
     <title>文件上传</title>
     <link href="http://zhangyao0329.github.io/2025/03/09/wen-jian-shang-chuan/"/>
     <id>http://zhangyao0329.github.io/2025/03/09/wen-jian-shang-chuan/</id>
-    <published>2025-03-09T08:00:19.000Z</published>
-    <updated>2025-03-09T08:05:46.430Z</updated>
+    <published>2025-03-09T16:00:19.000Z</published>
+    <updated>2025-07-18T10:39:42.627Z</updated>
     
     
       
@@ -201,8 +228,8 @@
     <title>公共字段的自动填充</title>
     <link href="http://zhangyao0329.github.io/2025/01/10/gong-gong-zi-duan-de-zi-dong-tian-chong/"/>
     <id>http://zhangyao0329.github.io/2025/01/10/gong-gong-zi-duan-de-zi-dong-tian-chong/</id>
-    <published>2025-01-10T06:38:29.000Z</published>
-    <updated>2025-01-10T07:19:28.148Z</updated>
+    <published>2025-01-10T14:38:29.000Z</published>
+    <updated>2025-07-18T10:39:42.627Z</updated>
     
     
       
@@ -230,8 +257,8 @@
     <title>Github无法上传和拉取</title>
     <link href="http://zhangyao0329.github.io/2025/01/04/github-wu-fa-shang-chuan-he-la-qu/"/>
     <id>http://zhangyao0329.github.io/2025/01/04/github-wu-fa-shang-chuan-he-la-qu/</id>
-    <published>2025-01-04T11:53:47.000Z</published>
-    <updated>2025-01-10T06:37:24.893Z</updated>
+    <published>2025-01-04T19:53:47.000Z</published>
+    <updated>2025-07-18T10:39:42.622Z</updated>
     
     
       
@@ -255,8 +282,8 @@
     <title>新idea如何创建java8项目</title>
     <link href="http://zhangyao0329.github.io/2024/12/17/xin-idea-ru-he-chuang-jian-java8-xiang-mu/"/>
     <id>http://zhangyao0329.github.io/2024/12/17/xin-idea-ru-he-chuang-jian-java8-xiang-mu/</id>
-    <published>2024-12-17T13:57:14.000Z</published>
-    <updated>2024-12-17T14:45:36.739Z</updated>
+    <published>2024-12-17T21:57:14.000Z</published>
+    <updated>2025-07-18T10:39:42.627Z</updated>
     
     
       
@@ -282,8 +309,8 @@
     <title>Maven高级-私服</title>
     <link href="http://zhangyao0329.github.io/2024/12/14/maven-gao-ji-si-fu/"/>
     <id>http://zhangyao0329.github.io/2024/12/14/maven-gao-ji-si-fu/</id>
-    <published>2024-12-14T13:18:26.000Z</published>
-    <updated>2024-12-14T13:20:55.176Z</updated>
+    <published>2024-12-14T21:18:26.000Z</published>
+    <updated>2025-07-18T10:39:42.623Z</updated>
     
     
       
@@ -307,8 +334,8 @@
     <title>Maven高级</title>
     <link href="http://zhangyao0329.github.io/2024/12/11/maven-gao-ji/"/>
     <id>http://zhangyao0329.github.io/2024/12/11/maven-gao-ji/</id>
-    <published>2024-12-11T13:20:30.000Z</published>
-    <updated>2024-12-11T13:35:07.501Z</updated>
+    <published>2024-12-11T21:20:30.000Z</published>
+    <updated>2025-07-18T10:39:42.623Z</updated>
     
     
       
@@ -332,8 +359,8 @@
     <title>SpringBoot原理</title>
     <link href="http://zhangyao0329.github.io/2024/12/10/springboot-yuan-li/"/>
     <id>http://zhangyao0329.github.io/2024/12/10/springboot-yuan-li/</id>
-    <published>2024-12-10T11:58:36.000Z</published>
-    <updated>2024-12-10T12:01:09.489Z</updated>
+    <published>2024-12-10T19:58:36.000Z</published>
+    <updated>2025-07-18T10:39:42.625Z</updated>
     
     
       
@@ -361,8 +388,8 @@
     <title>SpringBoot案例（3）</title>
     <link href="http://zhangyao0329.github.io/2024/12/05/springboot-an-li-3/"/>
     <id>http://zhangyao0329.github.io/2024/12/05/springboot-an-li-3/</id>
-    <published>2024-12-05T15:06:10.000Z</published>
-    <updated>2024-12-09T14:19:57.981Z</updated>
+    <published>2024-12-05T23:06:10.000Z</published>
+    <updated>2025-07-18T10:39:42.626Z</updated>
     
     
       
@@ -388,8 +415,8 @@
     <title>SpringBoot案例（2）</title>
     <link href="http://zhangyao0329.github.io/2024/12/05/springboot-an-li-2/"/>
     <id>http://zhangyao0329.github.io/2024/12/05/springboot-an-li-2/</id>
-    <published>2024-12-05T13:21:35.000Z</published>
-    <updated>2024-12-08T12:02:07.147Z</updated>
+    <published>2024-12-05T21:21:35.000Z</published>
+    <updated>2025-07-18T10:39:42.626Z</updated>
     
     
       
@@ -417,8 +444,8 @@
     <title>SpringBoot案例（1）</title>
     <link href="http://zhangyao0329.github.io/2024/12/04/springboot-an-li-1/"/>
     <id>http://zhangyao0329.github.io/2024/12/04/springboot-an-li-1/</id>
-    <published>2024-12-04T14:27:28.000Z</published>
-    <updated>2025-01-17T08:39:30.168Z</updated>
+    <published>2024-12-04T22:27:28.000Z</published>
+    <updated>2025-07-18T10:39:42.625Z</updated>
     
     
       
@@ -447,8 +474,8 @@
     <title>mybatis（2）</title>
     <link href="http://zhangyao0329.github.io/2024/12/03/mybatis-2/"/>
     <id>http://zhangyao0329.github.io/2024/12/03/mybatis-2/</id>
-    <published>2024-12-03T08:13:49.000Z</published>
-    <updated>2024-12-08T12:03:03.768Z</updated>
+    <published>2024-12-03T16:13:49.000Z</published>
+    <updated>2025-07-18T10:39:42.626Z</updated>
     
     
       
@@ -476,8 +503,8 @@
     <title>Mybatis（1）</title>
     <link href="http://zhangyao0329.github.io/2024/12/01/mybatis-1/"/>
     <id>http://zhangyao0329.github.io/2024/12/01/mybatis-1/</id>
-    <published>2024-12-01T15:39:34.000Z</published>
-    <updated>2024-12-08T12:03:14.343Z</updated>
+    <published>2024-12-01T23:39:34.000Z</published>
+    <updated>2025-07-18T10:39:42.623Z</updated>
     
     
       
@@ -505,8 +532,8 @@
     <title>Mysql (3)</title>
     <link href="http://zhangyao0329.github.io/2024/12/01/mysql-3/"/>
     <id>http://zhangyao0329.github.io/2024/12/01/mysql-3/</id>
-    <published>2024-12-01T15:17:25.000Z</published>
-    <updated>2024-12-08T12:02:39.861Z</updated>
+    <published>2024-12-01T23:17:25.000Z</published>
+    <updated>2025-07-18T10:39:42.624Z</updated>
     
     
       
@@ -527,35 +554,6 @@
     <category term="事务" scheme="http://zhangyao0329.github.io/tags/%E4%BA%8B%E5%8A%A1/"/>
     
     <category term="索引" scheme="http://zhangyao0329.github.io/tags/%E7%B4%A2%E5%BC%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql（2）</title>
-    <link href="http://zhangyao0329.github.io/2024/11/30/mysql-2/"/>
-    <id>http://zhangyao0329.github.io/2024/11/30/mysql-2/</id>
-    <published>2024-11-30T14:03:50.000Z</published>
-    <updated>2024-12-08T12:02:49.726Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;数据库开发-MySQL&quot;&gt;&lt;a href=&quot;#数据库开发-MySQL&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="JavaEE" scheme="http://zhangyao0329.github.io/categories/JavaEE/"/>
-    
-    
-    <category term="Mysql" scheme="http://zhangyao0329.github.io/tags/Mysql/"/>
-    
-    <category term="DQL" scheme="http://zhangyao0329.github.io/tags/DQL/"/>
-    
-    <category term="多表设计" scheme="http://zhangyao0329.github.io/tags/%E5%A4%9A%E8%A1%A8%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
