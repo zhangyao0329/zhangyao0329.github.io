@@ -1,0 +1,1808 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="python大模型demo1, 大貔貅 springboot vue 深度学习 scikit-learn DeepLearning">
+    <meta name="description" content="Java开发 | 机器学习">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>python大模型demo1 | 大貔貅的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="大貔貅的博客" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">大貔貅的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">大貔貅的博客</div>
+        <div class="logo-desc">
+            
+            Java开发 | 机器学习
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251112181240633.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">python大模型demo1</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python%E5%A4%A7%E6%A8%A1%E5%9E%8B/">
+                                <span class="chip bg-color">python大模型</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-category">
+                                环境配置
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2025-11-13
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2025-11-13
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    10 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="大模型调用"><a href="#大模型调用" class="headerlink" title="大模型调用"></a>大模型调用</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="anaconda环境配置"><a href="#anaconda环境配置" class="headerlink" title="anaconda环境配置"></a>anaconda环境配置</h3><p>应用虚拟环境</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看所有环境</span>
+conda <span class="token function">env</span> list
+<span class="token comment"># 或</span>
+conda info <span class="token parameter variable">--envs</span>
+
+<span class="token comment"># 查看当前所在环境</span>
+conda info
+
+conda activate heimaAI
+
+conda deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>jupyter汉化</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> jupyterlab-language-pack-zh-CN<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>jupyter联想</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda <span class="token function">install</span> <span class="token parameter variable">-c</span> conda-forge jupyter_nbextensions_configurator<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><a target="_blank" rel="noopener" href="http://localhost:8888/tree">http://localhost:8888/tree</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251109135155467.png"></p>
+<h2 id="WSL-Ubuntu安装Ollama完整教程"><a href="#WSL-Ubuntu安装Ollama完整教程" class="headerlink" title="WSL Ubuntu安装Ollama完整教程"></a>WSL Ubuntu安装Ollama完整教程</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251111135423665.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251111135540037.png"></p>
+<p>勾选之后会重启。然后在windows的系统商店中安装Ubuntu和windows terminal</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251111135753340.png"><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251111135924457.png"></p>
+<p>设置用户名：zhangyao 密码：123456<img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251111140019565.png"></p>
+<p>控制台设置默认系统Ubuntu<img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251111140535277.png"></p>
+<p>检查wsl版本，确定为wsl2</p>
+<pre class="line-numbers language-none"><code class="language-none">wsl --list --verbose<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果不为2版本，则修改为wsl2</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl --set-version Ubuntu <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>更新内核包</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl <span class="token parameter variable">--update</span> --web-download<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安装完毕之后，再执行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl --set-version Ubuntu <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>验证：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl <span class="token parameter variable">--list</span> <span class="token parameter variable">--verbose</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251111164640032.png"></p>
+<p>wsl配置：</p>
+<pre class="line-numbers language-ini" data-language="ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">wsl2</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">memory</span><span class="token punctuation">=</span><span class="token value attr-value">8GB</span>
+<span class="token key attr-name">processors</span><span class="token punctuation">=</span><span class="token value attr-value">4</span>
+
+<span class="token comment"># 增加交换空间</span>
+<span class="token key attr-name">swap</span><span class="token punctuation">=</span><span class="token value attr-value">4GB</span>  
+
+<span class="token key attr-name">localhostForwarding</span><span class="token punctuation">=</span><span class="token value attr-value">true</span>
+
+<span class="token comment"># 添加这些优化设置</span>
+<span class="token key attr-name">kernelCommandLine</span> <span class="token punctuation">=</span> <span class="token value attr-value">sysctl.vm.swappiness=10</span>
+
+<span class="token comment"># 确保磁盘空间充足</span>
+<span class="token key attr-name">diskSpace</span><span class="token punctuation">=</span><span class="token value attr-value">40GB</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>wsl关机：</p>
+<pre class="line-numbers language-ini" data-language="ini"><code class="language-ini">wsl --shutdown<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>下载ollama:</p>
+<p>curl -fsSL <a target="_blank" rel="noopener" href="https://ollama.com/install.sh">https://ollama.com/install.sh</a> | sh</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251111140722184.png"></p>
+<p>直接下载网速很慢，建议手动下载。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.ollama.com/linux">https://docs.ollama.com/linux</a></p>
+<p><a target="_blank" rel="noopener" href="https://ollama.com/download/ollama-linux-amd64-rocm.tgz">https://ollama.com/download/ollama-linux-amd64-rocm.tgz</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251111141910199.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">tar</span> <span class="token parameter variable">-xvf</span> ollama-linux-amd64.tgz <span class="token parameter variable">-C</span> /usr<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="Start-Ollama"><a href="#Start-Ollama" class="headerlink" title="Start Ollama"></a>Start Ollama</h3><p>无法使用systemd，我们可以直接运行Ollama：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 后台运行</span>
+<span class="token function">nohup</span> /usr/bin/ollama serve <span class="token operator">&gt;</span> /tmp/ollama.log <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span>
+
+<span class="token comment"># 查看进程</span>
+<span class="token function">ps</span> aux <span class="token operator">|</span> <span class="token function">grep</span> ollama
+
+<span class="token comment"># 查看日志</span>
+<span class="token function">tail</span> <span class="token parameter variable">-f</span> /tmp/ollama.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这会启动Ollama服务，但会占用当前终端。如果要后台运行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 后台运行</span>
+<span class="token function">nohup</span> /usr/bin/ollama serve <span class="token operator">&gt;</span> /tmp/ollama.log <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span>
+
+<span class="token comment"># 查看进程</span>
+<span class="token function">ps</span> aux <span class="token operator">|</span> <span class="token function">grep</span> ollama
+
+<span class="token comment"># 查看日志</span>
+<span class="token function">tail</span> <span class="token parameter variable">-f</span> /tmp/ollama.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="使用WSL的替代服务管理-推荐"><a href="#使用WSL的替代服务管理-推荐" class="headerlink" title="使用WSL的替代服务管理(推荐)"></a>使用WSL的替代服务管理(推荐)</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建启动脚本</span>
+<span class="token function">sudo</span> <span class="token function">vi</span> /etc/init.d/ollama<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>在文件中添加：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token keyword">case</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token keyword">in</span>
+    start<span class="token punctuation">)</span>
+        <span class="token function">nohup</span> /usr/bin/ollama serve <span class="token operator">&gt;</span> /tmp/ollama.log <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span>
+        <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    stop<span class="token punctuation">)</span>
+        <span class="token function">pkill</span> <span class="token parameter variable">-f</span> <span class="token string">"ollama serve"</span>
+        <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    status<span class="token punctuation">)</span>
+        pgrep <span class="token parameter variable">-f</span> <span class="token string">"ollama serve"</span> <span class="token operator">&gt;</span> /dev/null <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token string">"Running"</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> <span class="token string">"Stopped"</span>
+        <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    *<span class="token punctuation">)</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">"Usage: <span class="token variable">$0</span> {start|stop|status}"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+        <span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然后：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 给脚本执行权限</span>
+<span class="token function">sudo</span> <span class="token function">chmod</span> +x /etc/init.d/ollama
+
+<span class="token comment"># 使用方式</span>
+<span class="token function">sudo</span> /etc/init.d/ollama start
+
+<span class="token function">sudo</span> /etc/init.d/ollama status
+
+<span class="token function">sudo</span> /etc/init.d/ollama stop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Adding-Ollama-as-a-startup-service-推荐"><a href="#Adding-Ollama-as-a-startup-service-推荐" class="headerlink" title="Adding Ollama as a startup service (推荐)"></a>Adding Ollama as a startup service (推荐)</h3><p>（wsl1版本无法使用，会有下图bug）:<img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251112142430029.png"></p>
+<p>Create a user and group for Ollama:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">useradd</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">-s</span> /bin/false <span class="token parameter variable">-U</span> <span class="token parameter variable">-m</span> <span class="token parameter variable">-d</span> /usr/share/ollama ollama
+<span class="token function">sudo</span> <span class="token function">usermod</span> <span class="token parameter variable">-a</span> <span class="token parameter variable">-G</span> ollama <span class="token variable"><span class="token variable">$(</span><span class="token function">whoami</span><span class="token variable">)</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>Create a service file in <code>/etc/systemd/system/ollama.service</code>:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">vi</span> /etc/systemd/system/ollama.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>Ollama Service
+<span class="token assign-left variable">After</span><span class="token operator">=</span>network-online.target
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/usr/bin/ollama serve
+<span class="token assign-left variable">User</span><span class="token operator">=</span>ollama
+<span class="token assign-left variable">Group</span><span class="token operator">=</span>ollama
+<span class="token assign-left variable">Restart</span><span class="token operator">=</span>always
+<span class="token assign-left variable">RestartSec</span><span class="token operator">=</span><span class="token number">3</span>
+<span class="token assign-left variable">Environment</span><span class="token operator">=</span><span class="token string">"PATH=<span class="token environment constant">$PATH</span>"</span>
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Then start the service:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> systemctl daemon-reload
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> ollama<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 重新加载systemd配置</span>
+<span class="token function">sudo</span> systemctl daemon-reload
+
+<span class="token comment"># 开启开机自启</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> ollama
+
+<span class="token comment"># 启动ollama服务</span>
+<span class="token function">sudo</span> systemctl start ollama
+
+<span class="token comment"># 查看运行状态</span>
+<span class="token function">sudo</span> systemctl status ollama<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 启动服务</span>
+<span class="token function">sudo</span> systemctl start ollama
+
+<span class="token comment"># 停止服务</span>
+<span class="token function">sudo</span> systemctl stop ollama
+
+<span class="token comment"># 查看状态</span>
+<span class="token function">sudo</span> systemctl status ollama
+
+<span class="token comment"># 开启/关闭开机自启</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> ollama
+<span class="token function">sudo</span> systemctl disable ollama<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 下载模型（首次运行会自动下载）</span>
+ollama pull deepseek-r1:1.5b
+
+<span class="token comment"># 运行模型</span>
+ollama run deepseek-r1:1.5b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="Install-CUDA-drivers-optional"><a href="#Install-CUDA-drivers-optional" class="headerlink" title="Install CUDA drivers (optional)"></a>Install CUDA drivers (optional)</h3><p><a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-downloads">Download and install</a> CUDA.Verify that the drivers are installed by running the following command, which should print details about your GPU:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvidia-smi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="Install-AMD-ROCm-drivers-optional"><a href="#Install-AMD-ROCm-drivers-optional" class="headerlink" title="Install AMD ROCm drivers (optional)"></a>Install AMD ROCm drivers (optional)</h3><p><a target="_blank" rel="noopener" href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/tutorial/quick-start.html">Download and Install</a> ROCm v6.</p>
+<h2 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h2><p>新版本的Ubuntu（特别是22.04+）默认阻止直接使用<code>pip</code>安装系统级的Python包，以防止破坏系统依赖。</p>
+<h3 id="使用虚拟环境（推荐）"><a href="#使用虚拟环境（推荐）" class="headerlink" title="使用虚拟环境（推荐）"></a>使用虚拟环境（推荐）</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装venv模块</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> python3-venv <span class="token parameter variable">-y</span>
+
+<span class="token comment"># 创建虚拟环境</span>
+python3 <span class="token parameter variable">-m</span> venv ollama-env
+
+<span class="token comment"># 激活虚拟环境</span>
+<span class="token builtin class-name">source</span> ollama-env/bin/activate
+
+<span class="token comment"># 在虚拟环境中安装ollama</span>
+pip <span class="token function">install</span> ollama
+
+<span class="token comment"># 使用ollama</span>
+python3 <span class="token parameter variable">-c</span> <span class="token string">"import ollama; print('安装成功\!')"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="配置清华镜像源"><a href="#配置清华镜像源" class="headerlink" title="配置清华镜像源"></a>配置清华镜像源</h2><h3 id="方法1：临时使用镜像源"><a href="#方法1：临时使用镜像源" class="headerlink" title="方法1：临时使用镜像源"></a>方法1：临时使用镜像源</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 在安装时直接指定清华镜像源</span>
+pip <span class="token function">install</span> ollama <span class="token parameter variable">-i</span> https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="方法2：配置为默认镜像源"><a href="#方法2：配置为默认镜像源" class="headerlink" title="方法2：配置为默认镜像源"></a>方法2：配置为默认镜像源</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建pip配置文件</span>
+<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> ~/.pip
+
+<span class="token comment"># 编辑pip配置文件：</span>
+<span class="token function">vi</span> ~/.pip/pip.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-ini" data-language="ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">global</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">index-url</span> <span class="token punctuation">=</span> <span class="token value attr-value">https://pypi.tuna.tsinghua.edu.cn/simple</span>
+<span class="token key attr-name">trusted-host</span> <span class="token punctuation">=</span> <span class="token value attr-value">pypi.tuna.tsinghua.edu.cn</span>
+<span class="token key attr-name">timeout</span> <span class="token punctuation">=</span> <span class="token value attr-value">120</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="方法3：在当前虚拟环境中配置（推荐）"><a href="#方法3：在当前虚拟环境中配置（推荐）" class="headerlink" title="方法3：在当前虚拟环境中配置（推荐）"></a>方法3：在当前虚拟环境中配置（推荐）</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 激活虚拟环境</span>
+<span class="token builtin class-name">source</span> ollama-env/bin/activate
+
+<span class="token comment"># 在虚拟环境中创建pip配置文件</span>
+<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> ollama-env/pip
+<span class="token function">vi</span> ollama-env/pip/pip.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>添加同样的内容：</p>
+<pre class="line-numbers language-ini" data-language="ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">global</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">index-url</span> <span class="token punctuation">=</span> <span class="token value attr-value">https://pypi.tuna.tsinghua.edu.cn/simple</span>
+<span class="token key attr-name">trusted-host</span> <span class="token punctuation">=</span> <span class="token value attr-value">pypi.tuna.tsinghua.edu.cn</span>
+<span class="token key attr-name">timeout</span> <span class="token punctuation">=</span> <span class="token value attr-value">120</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="使用虚拟环境"><a href="#使用虚拟环境" class="headerlink" title="使用虚拟环境"></a>使用虚拟环境</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip freeze <span class="token operator">&gt;</span> requirements.txt
+
+<span class="token builtin class-name">source</span> ollama-env/bin/activate
+
+pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none"># wsl2子系统Ubuntu虚拟环境 ollama-env 配置解释路径
+/home/zhangyao/python_code/ollama-env/bin/python3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251112073426576.png"></p>
+<h1 id="ollama和stramlit"><a href="#ollama和stramlit" class="headerlink" title="ollama和stramlit"></a>ollama和stramlit</h1><h2 id="main-py"><a href="#main-py" class="headerlink" title="main.py"></a>main.py</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> ollama
+
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    client <span class="token operator">=</span> ollama<span class="token punctuation">.</span>Client<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token comment"># 列出可用模型</span>
+        models <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"可用模型:"</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> model <span class="token keyword">in</span> models<span class="token punctuation">.</span>models<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"  - </span><span class="token interpolation"><span class="token punctuation">{</span>model<span class="token punctuation">.</span>model<span class="token punctuation">}</span></span><span class="token string"> (参数大小: </span><span class="token interpolation"><span class="token punctuation">{</span>model<span class="token punctuation">.</span>details<span class="token punctuation">.</span>parameter_size<span class="token punctuation">}</span></span><span class="token string">)"</span></span><span class="token punctuation">)</span>
+
+        <span class="token comment"># 使用第一个模型进行对话</span>
+        <span class="token keyword">if</span> models<span class="token punctuation">.</span>models<span class="token punctuation">:</span>
+            model_name <span class="token operator">=</span> models<span class="token punctuation">.</span>models<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>model
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"\n使用模型: </span><span class="token interpolation"><span class="token punctuation">{</span>model_name<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+            <span class="token comment"># 进行对话</span>
+            response <span class="token operator">=</span> client<span class="token punctuation">.</span>generate<span class="token punctuation">(</span>
+                model<span class="token operator">=</span>model_name<span class="token punctuation">,</span>
+                prompt<span class="token operator">=</span><span class="token string">"Hello, how are you? Please respond briefly."</span>
+            <span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"\nAI 响应: </span><span class="token interpolation"><span class="token punctuation">{</span>response<span class="token punctuation">.</span>response<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+            <span class="token comment"># 如果有思考过程，也显示出来</span>
+            <span class="token keyword">if</span> <span class="token builtin">hasattr</span><span class="token punctuation">(</span>response<span class="token punctuation">,</span> <span class="token string">'thinking'</span><span class="token punctuation">)</span> <span class="token keyword">and</span> response<span class="token punctuation">.</span>thinking<span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"\n思考过程: </span><span class="token interpolation"><span class="token punctuation">{</span>response<span class="token punctuation">.</span>thinking<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"操作出错: </span><span class="token interpolation"><span class="token punctuation">{</span>e<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="ollama-test-py"><a href="#ollama-test-py" class="headerlink" title="ollama_test.py"></a>ollama_test.py</h2><table>
+<thead>
+<tr>
+<th align="left">方法名</th>
+<th align="left">方法介绍</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong><code>Client()</code></strong></td>
+<td align="left">创建Ollama客户端实例</td>
+<td align="left"><code>client = ollama.Client()</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>client.list()</code></strong></td>
+<td align="left">列出所有可用的模型</td>
+<td align="left"><code>models = client.list()</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>client.generate()</code></strong></td>
+<td align="left">使用指定模型生成文本响应</td>
+<td align="left"><code>response = client.generate(model='name', prompt='text')</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>client.show()</code></strong></td>
+<td align="left">显示指定模型的详细信息</td>
+<td align="left"><code>model_info = client.show('model-name')</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>client.ps()</code></strong></td>
+<td align="left">显示当前正在运行的模型</td>
+<td align="left"><code>running_models = client.ps()</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>client.pull()</code></strong></td>
+<td align="left">从仓库拉取模型</td>
+<td align="left"><code>client.pull('model-name')</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>client.push()</code></strong></td>
+<td align="left">推送模型到仓库</td>
+<td align="left"><code>client.push('model-name')</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>client.create()</code></strong></td>
+<td align="left">创建自定义模型</td>
+<td align="left"><code>client.create(model='name', modelfile='content')</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>client.delete()</code></strong></td>
+<td align="left">删除指定模型</td>
+<td align="left"><code>client.delete('model-name')</code></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">返回对象/属性</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong><code>client.list()</code></strong></td>
+<td align="left"><code>ListResponse</code></td>
+<td align="left">包含模型列表的响应对象</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>models.models</code></td>
+<td align="left">模型对象列表</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>model.model</code></td>
+<td align="left">模型名称</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>model.details.parameter_size</code></td>
+<td align="left">模型参数量</td>
+</tr>
+<tr>
+<td align="left"><strong><code>client.generate()</code></strong></td>
+<td align="left"><code>GenerateResponse</code></td>
+<td align="left">生成响应的结果对象</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>response.response</code></td>
+<td align="left">AI生成的文本内容</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><code>response.thinking</code></td>
+<td align="left">思考过程（如果模型支持）</td>
+</tr>
+<tr>
+<td align="left"><strong><code>client.show()</code></strong></td>
+<td align="left"><code>ModelInfo</code></td>
+<td align="left">模型的详细信息对象</td>
+</tr>
+<tr>
+<td align="left"><strong><code>client.ps()</code></strong></td>
+<td align="left"><code>List[Process]</code></td>
+<td align="left">正在运行的模型进程列表</td>
+</tr>
+</tbody></table>
+<h3 id="demo1"><a href="#demo1" class="headerlink" title="demo1:"></a>demo1:</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> ollama
+
+<span class="token comment"># 创建客户端 - 使用默认设置</span>
+client <span class="token operator">=</span> ollama<span class="token punctuation">.</span>Client<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"客户端创建成功:"</span><span class="token punctuation">,</span> client<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"展示模型详细信息: "</span><span class="token punctuation">,</span> client<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token string">"deepseek-r1:1.5b"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"正在运行的模型: "</span><span class="token punctuation">,</span> client<span class="token punctuation">.</span>ps<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 测试列出模型</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    models <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"可用的模型:"</span><span class="token punctuation">,</span> models<span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"列出模型时出错:"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span>
+
+<span class="token comment"># 测试生成响应</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        prompt <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请用户输入: "</span><span class="token punctuation">)</span>
+        response <span class="token operator">=</span> client<span class="token punctuation">.</span>generate<span class="token punctuation">(</span>model<span class="token operator">=</span><span class="token string">'deepseek-r1:1.5b'</span><span class="token punctuation">,</span> prompt<span class="token operator">=</span>prompt<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'模型响应: '</span><span class="token punctuation">,</span> response<span class="token punctuation">.</span>response<span class="token punctuation">)</span>
+
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"生成响应时出错:"</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="streamlit-test-py"><a href="#streamlit-test-py" class="headerlink" title="streamlit_test.py"></a>streamlit_test.py</h2><table>
+<thead>
+<tr>
+<th align="left">方法名</th>
+<th align="left">方法介绍</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong><code>st.title()</code></strong></td>
+<td align="left">设置页面主标题</td>
+<td align="left"><code>st.title('AI聊天助手')</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>st.write()</code></strong></td>
+<td align="left">创建段落文本，支持多种数据类型</td>
+<td align="left"><code>st.write('Hello, World!')</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>st.divider()</code></strong></td>
+<td align="left">添加水平分割线</td>
+<td align="left"><code>st.divider()</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>st.chat_input()</code></strong></td>
+<td align="left">创建聊天输入框，返回用户输入内容</td>
+<td align="left"><code>input = st.chat_input("请输入...")</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>st.chat_message()</code></strong></td>
+<td align="left">创建消息容器，支持不同角色样式:user、assistant、ai、human</td>
+<td align="left"><code>with st.chat_message("user"):</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>st.spinner()</code></strong></td>
+<td align="left">显示等待提示框和加载动画</td>
+<td align="left"><code>with st.spinner("思考中..."):</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>st.markdown()</code></strong></td>
+<td align="left">以Markdown格式渲染文本</td>
+<td align="left"><code>st.markdown('**粗体** 文本')</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>st.set_page_config()</code></strong></td>
+<td align="left">设置页面配置（标题、图标等）</td>
+<td align="left"><code>st.set_page_config(page_title="聊天")</code></td>
+</tr>
+<tr>
+<td align="left"><strong><code>st.session_state</code></strong></td>
+<td align="left">管理会话状态，保存聊天记录等数据</td>
+<td align="left"><code>st.session_state.messages = []</code></td>
+</tr>
+</tbody></table>
+<h3 id="demo1-1"><a href="#demo1-1" class="headerlink" title="demo1:"></a>demo1:</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time
+
+<span class="token keyword">import</span> streamlit <span class="token keyword">as</span> st
+
+<span class="token comment"># 标题</span>
+st<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"测试标题"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># write方法</span>
+st<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"你好~"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 分隔符</span>
+st<span class="token punctuation">.</span>divider<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 聊天输入框</span>
+name <span class="token operator">=</span> st<span class="token punctuation">.</span>chat_input<span class="token punctuation">(</span><span class="token string">"请输入你的名字: "</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> name<span class="token punctuation">:</span>
+    st<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"你好~,</span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># 等待提示框</span>
+<span class="token keyword">with</span> st<span class="token punctuation">.</span>spinner<span class="token punctuation">(</span><span class="token string">"思考中···"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+    st<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"思考完成"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 消息容器 user、assistant、ai、human</span>
+st<span class="token punctuation">.</span>chat_message<span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>markdown<span class="token punctuation">(</span><span class="token string">"你愁啥？"</span><span class="token punctuation">)</span>
+st<span class="token punctuation">.</span>chat_message<span class="token punctuation">(</span><span class="token string">"assistant"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>markdown<span class="token punctuation">(</span><span class="token string">"瞅你咋地？"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="demo2"><a href="#demo2" class="headerlink" title="demo2:"></a>demo2:</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> streamlit <span class="token keyword">as</span> st
+<span class="token keyword">import</span> ollama
+<span class="token keyword">import</span> time
+
+<span class="token comment"># 初始化Ollama客户端</span>
+client <span class="token operator">=</span> ollama<span class="token punctuation">.</span>Client<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 设置页面标题和图标</span>
+st<span class="token punctuation">.</span>set_page_config<span class="token punctuation">(</span>
+    page_title<span class="token operator">=</span><span class="token string">"AI聊天助手"</span><span class="token punctuation">,</span>
+    page_icon<span class="token operator">=</span><span class="token string">"🤖"</span><span class="token punctuation">,</span>
+    layout<span class="token operator">=</span><span class="token string">"wide"</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># 标题</span>
+st<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"🤖 AI聊天助手"</span><span class="token punctuation">)</span>
+st<span class="token punctuation">.</span>divider<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 初始化聊天历史</span>
+<span class="token keyword">if</span> <span class="token string">"messages"</span> <span class="token keyword">not</span> <span class="token keyword">in</span> st<span class="token punctuation">.</span>session_state<span class="token punctuation">:</span>
+    st<span class="token punctuation">.</span>session_state<span class="token punctuation">.</span>messages <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token comment"># 显示聊天历史</span>
+<span class="token keyword">for</span> message <span class="token keyword">in</span> st<span class="token punctuation">.</span>session_state<span class="token punctuation">.</span>messages<span class="token punctuation">:</span>
+    <span class="token keyword">with</span> st<span class="token punctuation">.</span>chat_message<span class="token punctuation">(</span>message<span class="token punctuation">[</span><span class="token string">"role"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        st<span class="token punctuation">.</span>markdown<span class="token punctuation">(</span>message<span class="token punctuation">[</span><span class="token string">"content"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 用户输入</span>
+<span class="token keyword">if</span> prompt <span class="token operator">:=</span> st<span class="token punctuation">.</span>chat_input<span class="token punctuation">(</span><span class="token string">"请输入您的问题..."</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 添加用户消息到历史</span>
+    st<span class="token punctuation">.</span>session_state<span class="token punctuation">.</span>messages<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"role"</span><span class="token punctuation">:</span> <span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token string">"content"</span><span class="token punctuation">:</span> prompt<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 显示用户消息</span>
+    <span class="token keyword">with</span> st<span class="token punctuation">.</span>chat_message<span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        st<span class="token punctuation">.</span>markdown<span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+
+    <span class="token comment"># 显示AI回复（带加载效果）</span>
+    <span class="token keyword">with</span> st<span class="token punctuation">.</span>chat_message<span class="token punctuation">(</span><span class="token string">"assistant"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        message_placeholder <span class="token operator">=</span> st<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            <span class="token comment"># 调用Ollama生成回复</span>
+            response <span class="token operator">=</span> client<span class="token punctuation">.</span>generate<span class="token punctuation">(</span>
+                model<span class="token operator">=</span><span class="token string">'deepseek-r1:1.5b'</span><span class="token punctuation">,</span>
+                prompt<span class="token operator">=</span>prompt<span class="token punctuation">,</span>
+                stream<span class="token operator">=</span><span class="token boolean">False</span>
+            <span class="token punctuation">)</span>
+
+            <span class="token comment"># 获取回复内容</span>
+            full_response <span class="token operator">=</span> response<span class="token punctuation">[</span><span class="token string">'response'</span><span class="token punctuation">]</span>
+
+            <span class="token comment"># 模拟流式输出效果</span>
+            simulated_response <span class="token operator">=</span> <span class="token string">""</span>
+            <span class="token keyword">for</span> chunk <span class="token keyword">in</span> full_response<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                simulated_response <span class="token operator">+=</span> chunk <span class="token operator">+</span> <span class="token string">" "</span>
+                message_placeholder<span class="token punctuation">.</span>markdown<span class="token punctuation">(</span>simulated_response <span class="token operator">+</span> <span class="token string">"▌"</span><span class="token punctuation">)</span>
+                time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.05</span><span class="token punctuation">)</span>
+
+            message_placeholder<span class="token punctuation">.</span>markdown<span class="token punctuation">(</span>simulated_response<span class="token punctuation">)</span>
+
+            <span class="token comment"># 添加AI回复到历史</span>
+            st<span class="token punctuation">.</span>session_state<span class="token punctuation">.</span>messages<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"role"</span><span class="token punctuation">:</span> <span class="token string">"assistant"</span><span class="token punctuation">,</span> <span class="token string">"content"</span><span class="token punctuation">:</span> full_response<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+            error_message <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"抱歉，出现错误：</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token builtin">str</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span>
+            message_placeholder<span class="token punctuation">.</span>markdown<span class="token punctuation">(</span>error_message<span class="token punctuation">)</span>
+            st<span class="token punctuation">.</span>session_state<span class="token punctuation">.</span>messages<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"role"</span><span class="token punctuation">:</span> <span class="token string">"assistant"</span><span class="token punctuation">,</span> <span class="token string">"content"</span><span class="token punctuation">:</span> error_message<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 侧边栏 - 清空聊天记录</span>
+<span class="token keyword">with</span> st<span class="token punctuation">.</span>sidebar<span class="token punctuation">:</span>
+    st<span class="token punctuation">.</span>header<span class="token punctuation">(</span><span class="token string">"设置"</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> st<span class="token punctuation">.</span>button<span class="token punctuation">(</span><span class="token string">"清空聊天记录"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        st<span class="token punctuation">.</span>session_state<span class="token punctuation">.</span>messages <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        st<span class="token punctuation">.</span>rerun<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 显示当前模型信息</span>
+    st<span class="token punctuation">.</span>divider<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    st<span class="token punctuation">.</span>subheader<span class="token punctuation">(</span><span class="token string">"模型信息"</span><span class="token punctuation">)</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        models <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> models<span class="token punctuation">.</span>models<span class="token punctuation">:</span>
+            current_model <span class="token operator">=</span> models<span class="token punctuation">.</span>models<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            st<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"**模型名称**: </span><span class="token interpolation"><span class="token punctuation">{</span>current_model<span class="token punctuation">.</span>model<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+            st<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"**参数量**: </span><span class="token interpolation"><span class="token punctuation">{</span>current_model<span class="token punctuation">.</span>details<span class="token punctuation">.</span>parameter_size<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+            st<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"**量化级别**: </span><span class="token interpolation"><span class="token punctuation">{</span>current_model<span class="token punctuation">.</span>details<span class="token punctuation">.</span>quantization_level<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        st<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"无法获取模型信息"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 页脚</span>
+st<span class="token punctuation">.</span>divider<span class="token punctuation">(</span><span class="token punctuation">)</span>
+st<span class="token punctuation">.</span>caption<span class="token punctuation">(</span><span class="token string">"基于Ollama和Streamlit构建的AI聊天助手"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251112173723277.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251112174008040.png"></p>
+<p>LangChain</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251112180712322.png"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pip install langchain langchain<span class="token operator">-</span>community dashscope<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/../Pictures/typora%E6%8F%92%E5%9B%BE/image-20251112181143455.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251112181240633.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251112181257028.png"></p>
+<h2 id="阿里百炼平台"><a href="#阿里百炼平台" class="headerlink" title="阿里百炼平台"></a>阿里百炼平台</h2><p><a target="_blank" rel="noopener" href="https://bailian.console.aliyun.com/?tab=model#/model-market">https://bailian.console.aliyun.com/?tab=model#/model-market</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251112181714020.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251112182335153.png"></p>
+<pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">ZhangYao</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://zhangyao0329.github.io/2025/11/13/python-da-mo-xing-demo1/">http://zhangyao0329.github.io/2025/11/13/python-da-mo-xing-demo1/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">ZhangYao</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/python%E5%A4%A7%E6%A8%A1%E5%9E%8B/">
+                                    <span class="chip bg-color">python大模型</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="wechat,twitter,qq" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+    
+        <div class="card" data-aos="fade-up">
+    <div id="utteranc-container" class="card-content">
+        <script src="https://utteranc.es/client.js" repo="zhangyao0329/zhangyao0329.github.io" issue-term="title"
+            label="Comment" theme="github-light" crossorigin="anonymous" async>
+            </script>
+    </div>
+</div>
+
+            
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2025/11/13/python-da-mo-xing-demo1/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20251112181240633.png" class="responsive-img" alt="python大模型demo1">
+                        
+                        <span class="card-title">python大模型demo1</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            大模型调用第一个视频
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-category">
+                                    环境配置
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python%E5%A4%A7%E6%A8%A1%E5%9E%8B/">
+                        <span class="chip bg-color">python大模型</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2025/07/18/ssm-mian-shi/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zhangyao0329/tuchuang-blog/tuchuang-blog/20250718212546996.jpg" class="responsive-img" alt="SSM面试">
+                        
+                        <span class="card-title">SSM面试</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            SSM框架相关面试题目
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-07-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
+                                    面试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/AOP/">
+                        <span class="chip bg-color">AOP</span>
+                    </a>
+                    
+                    <a href="/tags/MVC/">
+                        <span class="chip bg-color">MVC</span>
+                    </a>
+                    
+                    <a href="/tags/mybatis/">
+                        <span class="chip bg-color">mybatis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+                <div class="container row center-align"
+                    style="margin-bottom: 0px !important;">
+                    <div class="col s12 m8 l8 copy-right">
+
+                        <!--             
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024-2025</span>
+            
+            <span id="year">2024</span>
+            <a href="/about" target="_blank">ZhangYao</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> -->
+
+
+                        <!-- 自己添加的 -->
+                        <span>Copyright&nbsp;&copy; 2024 by ZhangYao</span>
+                        <span>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                            &nbsp; </span>
+                        <img src="https://cdn.jsdelivr.net/gh/blinkfox/blinkfox.github.io/medias/icp.png"
+                            style="vertical-align: text-bottom;" />
+                        <span>
+                            <!-- <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" -->
+                            <a href="https://dash.cloudflare.com/" target="_blank"
+                                style="color: #d4cbd6;">托管于cloudflare</a></span>
+
+
+
+                        <!-- <br> -->
+
+
+                                
+                                    
+                                                
+                                                            
+                                                                    <br>
+                                                                    
+                                                                            <br>
+                                                                            
+                                                                                </div>
+                    <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/zhangyao0329" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+<!-- 
+    <a href="weixin://" class="tooltipped" target="_blank" data-tooltip="添加我的微信: ZY18211848011" data-position="top"
+        data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+ -->
+
+    <a href="https://zhangyao0329.github.io/medias/images/wechat.jpg" class="tooltipped" target="_blank"
+        data-tooltip="添加我的微信: ZY18211848011" data-position="top"
+        data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+    
+    
+        <a href="https://zhangyao0329.github.io/medias/images/qq.jpg" class="tooltipped" target="_blank"
+            data-tooltip="添加我的QQ: 1870476411" data-position="top" data-delay="50">
+            <i class="fab fa-qq"></i>
+        </a>
+        
+        
+            <!-- 
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1870476411" class="tooltipped"
+        target="_blank" data-tooltip="添加我的QQ: 1870476411" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+ -->
+
+
+    <a href="mailto:1870476411@qq.com" class="tooltipped" target="_blank"
+        data-tooltip="添加我的邮箱: 1870476411@qq.com" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://x.com/zhangyao1287546" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://x.com/zhangyao1287546" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+                    </div>
+                    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='1'
+        zIndex="-1" count="333"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
